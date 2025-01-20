@@ -4,6 +4,7 @@ date = "2019-04-24"
 description = "On the undelivered dreams of the 90s."
 aliases = ["/hyper-stratification-and-cybernetic-capital/"]
 keywords =  "plant, weaving, cybernetics, notes, knowledge"
+toc = true
 
 [extra]
 image = "/imgs/hyper-stratification_and_cybernetic_capital.png"
