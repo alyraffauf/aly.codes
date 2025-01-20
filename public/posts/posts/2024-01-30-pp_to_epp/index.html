@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Fixing AMD &amp; Intel Power Management under Linux :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Saving battery life & unlocking greater performance by syncing Intel & AMD CPU Energy Performance Preferences with system power profiles." />
+<meta name="keywords" content="linux,, power-profiles-daemon,, battery, life,, fedora" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/posts/2024-01-30-pp_to_epp/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.dd0bf9c7cacb24c1b0184f52f1869b274e06689557468cc7030ccf632328eb97.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Fixing AMD &amp; Intel Power Management under Linux">
+<meta property="og:description" content="Saving battery life & unlocking greater performance by syncing Intel & AMD CPU Energy Performance Preferences with system power profiles." />
+<meta property="og:url" content="http://localhost:1313/posts/posts/2024-01-30-pp_to_epp/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-01-30 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Aly Raffauf
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/posts/2024-01-30-pp_to_epp/">Fixing AMD &amp; Intel Power Management under Linux</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-01-30</time></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="/imgs/pp-to-epp.jpg" alt="pp_to_epp.jpg"></p>
+<p>I was recently in the market for a laptop, and got a great deal on an Asus ROG Zephyrus G14 from Best Buy. It&rsquo;s a powerful machine, with an AMD Ryzen 7840HS processor, 16GB RAM, and an Nvidia RTX 4060, and, at first, seemed to work well enough under Linux, my preferred operating system. In the month-ish that I owned it, I discovered a wonderful community of folks actively working on developing and supporting <a href="https://asus-linux.org/">Linux on Asus laptops</a>, filling in the userspace gaps and patching the kernel as needed to deliver a somewhat workable experience.</p>
+<p>After weeks of diving through forums, the asus-linux discord, and random bug trackers, I found one of the biggest issues on modern AMD laptops involves the <code>amd-pstate</code> driver&rsquo;s exposure of the processor&rsquo;s energy performance preference. EPP works like a far more intelligent and impactful version of old school CPU governors. The <code>amd-pstate</code> kernel driver <a href="https://docs.kernel.org/admin-guide/pm/amd-pstate.html">docs</a> explain this further, but the gist is EPP is the key to getting the most performance <em>and</em> the best battery life out of your laptop CPU.</p>
+<p>The problem is that the version of <code>power-profiles-daemon</code> currently being shipped by most distros doesn&rsquo;t automatically adjust the EPP based on the user&rsquo;s stated performance profile, leading to increased battery usage, particularly at idle or when doing simple tasks. Power-profiles-daemon is unable to use the <code>amd-pstate</code> driver, so the setting never gets adjusted, leading to mismatched performance and cooling choices between <code>platform_profile</code> and <code>amd-pstate</code> on modern AMD laptops. Luckily, the community—particularly Marcin <a href="https://github.com/marcinx64">@marcinx64</a>—have developed a simple Python <a href="https://github.com/marcinx64">daemon</a> to automatically adjust the EPP based on the chosen power profile.</p>
+<p>Unfortunately, after a series of hardware problems (severe IPS backlight bleed), an exchange, and standard Nvidia buggyness (at least on Linux) later, I ended up returning the Asus for a Lenovo Yoga 9i with an Intel Core i7 1360P, 16GB RAM, and integrated graphics. I know, totally different product category. Oh well. But as it turns out, the <code>intel-pstate</code> driver is also affected by the same issue in <code>power-profiles-daemon</code>, but no utility exists for Intel users. Luckily, the interfaces exposed by the kernel for controlling EPP are basically the same, so I&rsquo;ve forked Marcin&rsquo;s utility to provide a <a href="https://github.com/alychace/pp-to-epp">temporary solution</a> for Intel and AMD users alike.</p>
+<p>There&rsquo;s an open <a href="https://gitlab.freedesktop.org/upower/power-profiles-daemon/-/issues/107">issue</a> in <code>power-profiles-daemon</code> to allow it to leverage both <code>platform_profile</code> and <code>amd-pstate</code>/<code>intel-pstate</code> simultaneously to deliver the best performance or power savings possible. Until then, this daemon provides a solid workaround for pstate power control for GNU/Linux users. For my G14, and now my Yoga 9i, this means getting battery life in Fedora 39 that meets or exceeds Windows 11. It should also work under other distros that use systemd (sorry protest distros!) and power-profiles-daemon.</p>
+<p>PS: I know this is a big departure from this blog&rsquo;s previous content. A lot has happened since then: a phd program left behind, a worldwide pandemic, a total career change, and several years of wandering. This blog has always been about technology in some form or fashion, so why the hell not? Beats making a new one.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="http://localhost:1313/posts/posts/2020-06-14-xf_immanence/" class="button inline next">
+        Xenofeminism: Immanence or Transcendence?
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
