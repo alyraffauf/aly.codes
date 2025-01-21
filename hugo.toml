@@ -101,6 +101,10 @@ enableRobotsTXT = true
           identifier = "blog"
           name = "Blog"
           url = "/blog"
+        [[languages.en.menu.main]]
+          identifier = "code"
+          name = "Code"
+          url = "/code"
 
 [module]
   # In case you would like to make changes to the theme and keep it locally in you repository,
