@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'Aly Raffauf'
 # baseurl = "/"
 pagination.pagerSize = 5
+enableGitInfo = true
+enableRobotsTXT = true
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -28,7 +30,7 @@ pagination.pagerSize = 5
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
+  showLastUpdated = true
 
   # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
   # updatedDatePrefix = "Updated"
