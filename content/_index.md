@@ -16,6 +16,4 @@ ______________________________________________________________________
 
 [alyraffauf@fastmail.com](mailto:alyraffauf@fastmail.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
 
-______________________________________________________________________
-
 [**\[See More\]**](/about)

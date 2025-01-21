@@ -14,20 +14,6 @@ I'm currently exploring new opportunities in cloud and DevOps and always enjoy c
 
 -----------------------------------------------------------------------
 
-## Languages
-
-[Python](https://github.com/alyraffauf?tab=repositories&q=&type=&language=python&sort=) :: [Ruby](https://github.com/alyraffauf?tab=repositories&q=&type=&language=ruby&sort=) :: [Bash](https://github.com/alyraffauf?tab=repositories&q=&type=&language=shell&sort=) :: [Nix](https://github.com/alyraffauf?tab=repositories&q=&type=&language=nix&sort=) :: [HTML](https://github.com/alyraffauf?tab=repositories&q=&type=&language=html&sort=) :: [CSS](https://github.com/alyraffauf?tab=repositories&q=&type=&language=css&sort=)
-
------------------------------------------------------------------------
-
-## Links
-
-[GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
-
-______________________________________________________________________
-
 ## Contact
 
 [alyraffauf@fastmail.com](mailto:alyraffauf@fastmail.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
-
-______________________________________________________________________
