@@ -109,6 +109,10 @@ enableRobotsTXT = true
           identifier = "academia"
           name = "Academia"
           url = "/academia"
+        [[languages.en.menu.main]]
+          identifier = "kit"
+          name = "Kit"
+          url = "/kit"
 
 [module]
   # In case you would like to make changes to the theme and keep it locally in you repository,
