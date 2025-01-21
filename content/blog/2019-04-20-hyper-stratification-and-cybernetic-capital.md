@@ -4,7 +4,7 @@ date = "2019-04-24"
 description = "On the undelivered dreams of the 90s."
 keywords = ["plant", "weaving", "cybernetics", "notes", "knowledge"]
 toc = true
-image = "/imgs/hyper-stratification_and_cybernetic_capital.png"
+cover = "imgs/hyper-stratification_and_cybernetic_capital.png"
 tags = ["xenofeminism", "firestone", "laboria cuboniks", "sophie lewis", "amy ireland", "donna haraway", "cyborg", "feminism"]
 +++
 

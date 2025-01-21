@@ -3,7 +3,7 @@ title = "Irigaray, Desirability, and Materialist (trans)Feminism"
 date = "2020-02-20"
 description = "Desirability in the materialist account of sex/gender."
 keywords = ["matfem", "feminism", "materialism", "irigaray", "transfeminism", "sex", "capital"]
-image = "/imgs/exchange.jpeg"
+cover = "imgs/exchange.jpeg"
 tags = ["xenofeminism", "firestone", "laboria cuboniks", "sophie lewis", "amy ireland", "donna haraway", "cyborg", "feminism"]
 +++
 

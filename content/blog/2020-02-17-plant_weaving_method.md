@@ -3,7 +3,7 @@ title = "Sadie Plant's Weaving Methodology"
 date = "2020-02-17"
 description = "Weaving as tactic of Feminist knowledge-production."
 keywords = ["plant", "weaving", "cybernetics", "notes", "knowledge"]
-image = "/imgs/weaving.jpeg"
+cover = "imgs/weaving.jpeg"
 tags = ["xenofeminism", "firestone", "laboria cuboniks", "sophie lewis", "amy ireland", "donna haraway", "cyborg", "feminism"]
 +++
 
