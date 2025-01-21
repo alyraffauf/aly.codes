@@ -10,12 +10,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
 
----
+______________________________________________________________________
 
 ## Contact
 
 [alyraffauf@fastmail.com](mailto:alyraffauf@fastmail.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
 
----
+______________________________________________________________________
 
-[**[See More]**](/about)
+[**\[See More\]**](/about)
