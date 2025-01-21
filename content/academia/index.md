@@ -4,7 +4,7 @@ hideComments = true
 readingTime = false
 +++
 
-From 2017 to 2021, I was a graduate student in the Departments of [Anthropology](https://anthropology.gsu.edu/) and the [School of Film, Media, and Theatre](https://fmt.gsu.edu/) at [Georgia State University](https://www.gsu.edu/). My research focused on the intersections of culture and technology, particularly in the context of gender minorities.
+From 2017 to 2021, I was a graduate student in the Department of [Anthropology](https://anthropology.gsu.edu/) and the [School of Film, Media, and Theatre](https://fmt.gsu.edu/) at [Georgia State University](https://www.gsu.edu/). My research focused on the intersections of culture and technology, particularly in the context of gender minorities.
 
 I've compiled here an incomplete list of my publications and presentations, as well as courses I've taught. For a more exhaustive list, check out my [Curriculum Vitae](/files/cv.pdf).
 

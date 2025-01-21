@@ -5,7 +5,7 @@ description = "On the undelivered dreams of the 90s."
 keywords = ["social media", "cybernetics", "pierre bourdieu", "mark fisher", "sara ahmed"]
 toc = true
 cover = "imgs/hyper-stratification_and_cybernetic_capital.png"
-tags = ["social media", "nickland", "pierrebourdieu", "markfisher", "saraahmed"]
+tags = ["socialmedia", "nickland", "pierrebourdieu", "markfisher", "saraahmed"]
 +++
 
 ## Dystopian Cyberspace
