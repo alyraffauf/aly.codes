@@ -4,14 +4,22 @@ hideComments = true
 readingTime = false
 +++
 
-From 2017 to 2021, I was a graduate student in the Department of [Anthropology](https://anthropology.gsu.edu/) and the [School of Film, Media, and Theatre](https://fmt.gsu.edu/) at [Georgia State University](https://www.gsu.edu/). My research focused on the intersections of culture and technology, particularly in the context of gender minorities.
+From 2017 to 2021, I was a graduate student in the [Department of Anthropology](https://anthropology.gsu.edu/) and the [School of Film, Media, and Theatre](https://fmt.gsu.edu/) at [Georgia State University](https://www.gsu.edu/). My research focused on the nexus of gender, technology, and visual culture.
 
-I've compiled here an incomplete list of my publications and presentations, as well as courses I've taught. For a more exhaustive list, check out my [Curriculum Vitae](/files/cv.pdf).
+Simultaneously, I worked as a research assistant providing support to faculty in data processing, visualization, and web scraping. I also worked as a teaching assistant and instructor for introductory anthropology and film courses.
+
+I've compiled here a list of my publications and presentations, as well as courses I've taught. For a more exhaustive list, check out my [Curriculum Vitae](/files/cv.pdf).
 
 ______________________________________________________________________
 
-## Publications + Presentations
-- "Demonic Feminism" in *Trans\*migrations: Cartographies of The Queer*, Litteraria Pragensia Books, 2020 :: [PDF](/files/demonic_feminism.pdf).
+## Publications
+- "Demonic Feminism" in *Trans\*migrations: Cartographies of The Queer*, Litteraria Pragensia Books, 2020 :: [PDF](/files/demonic_transfeminism.pdf).
+
+______________________________________________________________________
+
+## Presentations
+- "When Worlds Meet: Trans/Gender Discourse and Political Language" at _Critical Juncture_, 2019.
+- "Deep Play at Trans/Gender: Transfemininity and the Gaze in Horror Cinema" at _Georgia State Anthropology Graduate Symposium_, 2019.
 - "Barriers to Motherhood: Biotechnology, Reproductive Justice, and Transgender Women" at the *National Women Studies Association Conference*, 2018 :: [PDF](/files/barriers_to_motherhood.pdf).
 
 ______________________________________________________________________
