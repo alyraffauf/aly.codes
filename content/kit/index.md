@@ -3,12 +3,15 @@ title = "Kit"
 readingTime = false
 +++
 
+Here’s the gear I rely on day-to-day. It gets the job done, but I'll admit I have a little wanderlust.
+
+______________________________________________________________________
+
 ## Bike :: Aventon Level.2 Commuter
 
 Awesome, reliable e-bike for urban commuting.
 
 ______________________________________________________________________
-
 
 ## Camera :: Panasonic Lumix LX10
 
