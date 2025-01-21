@@ -2,6 +2,7 @@
 title = "About"
 framed = true
 hideComments = true
+readingTime = false
 +++
 
 Hi, I'm Aly.

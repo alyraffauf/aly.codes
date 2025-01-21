@@ -1,5 +1,6 @@
 +++
 title = "Code"
+readingTime = false
 +++
 
 ## Languages
