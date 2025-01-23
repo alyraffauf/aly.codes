@@ -34,6 +34,7 @@ Custom mini-ITX gaming desktop with the following specs:
 ______________________________________________________________________
 
 ## Everyday Carry
+
 - Aer Pro Pack 20L :: pretty good tech and light travel backpack.
 - ALPAKA Bravo Tote :: messenger x tote combo perfect for work.
 - Bellroy Venture Sling 9L :: a sling for just the essentials.
@@ -43,8 +44,10 @@ ______________________________________________________________________
 ______________________________________________________________________
 
 ## Gaming Consoles
+
 - Analogue Pocket :: FPGA emulation with style.
 - Asus ROG Ally X :: premium handheld gaming.
+- [Game Boy DMG](blog/2022-08-26-my_gameboy_dmg/) :: modded Game Boy DMG with IPS screen.
 - Nintendo Switch OLED :: sometimes I play Zelda.
 - Playstation 5 :: too many exclusives.
 - Retroid Pocket 5 :: awesome do-all Android console.
