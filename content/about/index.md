@@ -17,4 +17,4 @@ I'm currently exploring new opportunities in cloud and DevOps and always enjoy c
 
 ## Contact
 
-[alyraffauf@fastmail.com](mailto:alyraffauf@fastmail.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
+[aly@raffauflabs.com](mailto:aly@raffauflabs.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)

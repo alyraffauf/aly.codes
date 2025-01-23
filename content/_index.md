@@ -14,6 +14,6 @@ ______________________________________________________________________
 
 ## Contact
 
-[alyraffauf@fastmail.com](mailto:alyraffauf@fastmail.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
+[aly@raffauflabs.com](mailto:aly@raffauflabs.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
 
 [**\[See More\]**](/about)
