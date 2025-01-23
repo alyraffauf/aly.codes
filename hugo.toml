@@ -74,7 +74,7 @@ enableRobotsTXT = true
     title = "Aly Raffauf"
 
     [languages.en.params]
-      subtitle = "Blog + personal projects"
+      subtitle = "Blog + personal projects."
       owner = "Aly Raffauf"
       keywords = "Aly Raffauf, nix, linux, blog, python, ruby, xenofeminism,devops"
       copyright = "Aly Raffauf"
