@@ -6,7 +6,7 @@ hideComments = true
 
 ## Hi, I'm Aly.
 
-Coder, cyclist, ThinkPad enthusiast, long-haul homelaber, GNU/Linux girl, and keyboard snob. I use Nix btw.
+Coder, cyclist, ThinkPad enthusiast, long-haul homelaber, GNU/Linux girl, and mid-tier keyboard snob. I use Nix btw.
 
 [GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
 
