@@ -25,5 +25,5 @@ ______________________________________________________________________
 ______________________________________________________________________
 
 ## Courses
-- History of Motion Pictures, Fall 2020 :: [PDF]({{/files/flme2700.pdf).
-- Film Aesthetics and Analysis, Spring 2020 :: [PDF]({{/files/film1010.pdf).
+- History of Motion Pictures, Fall 2020 :: [PDF](/files/flme2700.pdf).
+- Film Aesthetics and Analysis, Spring 2020 :: [PDF](/files/film1010.pdf).
