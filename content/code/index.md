@@ -17,5 +17,3 @@ ______________________________________________________________________
 - [ghdp](https://github.com/alyraffauf/ghdp) :: Social network visualization of global health NGO data in [R](https://www.r-project.org/).
 - [qor](https://github.com/alyraffauf/qor) :: [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders) clone for [Python](https://www.python.org/) + [Pygame](https://www.pygame.org/).
 - [post](https://github.com/alyraffauf/post) :: Package manager with native [Ruby](https://www.ruby-lang.org/) and [YAML](https://yaml.org/) build scripts.
-
-______________________________________________________________________

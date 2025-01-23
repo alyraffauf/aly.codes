@@ -78,5 +78,3 @@ ______________________________________________________________________
 
 - Tailscale :: Secure networking with WireGuard.
 - Vaultwarden :: Self-hosted Bitwarden implementation for password management.
-
-______________________________________________________________________
