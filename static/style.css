@@ -1,9 +1,9 @@
 @import url(https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@4.2.1/index.min.css);
 
 :root {
-  --background: #1a170f;
+  --background: #202020;
   --foreground: #eceae5;
-  --accent: #ee82cf;
+  --accent: #d3869b;
   --radius: 0;
   --font-size: 1rem;
   --line-height: 1.54em;
@@ -253,7 +253,7 @@ ol li {
 code,
 kbd {
   font-family:
-    "Fira Code",
+    "Cascadia Code",
     Monaco,
     Consolas,
     Ubuntu Mono,
