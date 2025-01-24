@@ -1,12 +1,13 @@
 +++
-title = "An Autodidact's Guide to Accelerationism"
+title = "A Feminist's Guide to Accelerationism"
 date = "2020-08-08"
 description = "An introductory reading guide for the lost & curious."
 keywords = ["accelerationism", "sadie plant", "feminism", "marxism", "nick land", "xenofeminism"]
-draft = true
-cover = "imgs/acc_guide.jpg"
-
+tags = ["accelerationism", "afrofuturism", "sadieplant", "xenofeminism"]
+draft = false
 +++
+
+2025-01-24: *This was a sarcastic response to certain currents on Twitter, and an attempt to disrupt certain right wing deviations and neo-reactionaries by documenting an Afrofuturist and Feminist lineage behind the various then-popular 'accelerationist' philosophies and political theories that they themselves claimed heritage from. The attempt was to chart an alternative pathway to the neoreactionary movement by forcing them in conversation with their contingents. It is spiteful, and more than a little jocular, but nonetheless well-meant.*
 
 ## Author’s Note
 
