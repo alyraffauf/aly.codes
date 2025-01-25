@@ -2,7 +2,7 @@
 title = "Review: Retro Modding vs. FunnyPlaying Shells, Buttons, and Lenses for DMG"
 date = "2021-01-14"
 description = "A review of the Retro Modding and FunnyPlaying shells, buttons, and lenses for the Game Boy DMG."
-cover = "imgs/rm_vs_fp_shell/retromodding_dmg_shell.jpg"
+cover = "imgs/rm_vs_fp_shell/retromodding_dmg_shell.webp"
 keywords = ["Game Boy", "Nintendo", "mods", "video game mods"]
 tags = ["gameboy", "nintendo", "mods", "guide", "retromodding", "funnyplaying"]
 +++
@@ -13,9 +13,9 @@ Hey guys,
 
 Recently got my hands on a couple of the new(ish) FunnyPlaying DMG shells, so I thought I'd do a quick review and comparison between two builds I did recently--the first with Retro Modding parts and the RIPS v3, the second with FunnyPlaying parts and the Retro Pixel IPS screen.
 
-![Retro Modding DMG Shell](/imgs/rm_vs_fp_shell/retromodding_dmg_shell.jpg)
+![Retro Modding DMG Shell](/imgs/rm_vs_fp_shell/retromodding_dmg_shell.webp)
 
-![Funnyplaying DMG Shell](/imgs/rm_vs_fp_shell/funnyplaying_dmg_shell.jpg)
+![Funnyplaying DMG Shell](/imgs/rm_vs_fp_shell/funnyplaying_dmg_shell.webp)
 
 Retro Modding build in 'Pastel Pink,' FunnyPlaying build in 'Tiffany Blue' (looks very minty or turquoise to me).
 

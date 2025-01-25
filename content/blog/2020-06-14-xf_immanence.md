@@ -2,7 +2,7 @@
 title = "Xenofeminism: Immanence or Transcendence?"
 date = "2020-06-14"
 description = "On Xenofeminism's unresolved disputes."
-cover = "imgs/xf_immanence.jpg"
+cover = "imgs/xf_immanence.webp"
 tags = ["xenofeminism", "shulamithfirestone", "laboriacuboniks", "sophielewis", "amyireland", "donnaharaway", "vnsmatrix", "helenhester"]
 +++
 

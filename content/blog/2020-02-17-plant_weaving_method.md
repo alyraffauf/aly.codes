@@ -3,7 +3,7 @@ title = "Sadie Plant's Weaving Methodology"
 date = "2020-02-17"
 description = "Weaving as tactic of Feminist knowledge-production."
 keywords = ["sadie plant", "weaving", "cybernetics", "cyberfeminism", "epistemology"]
-cover = "imgs/weaving.jpeg"
+cover = "imgs/weaving.webp"
 tags = ["cyberfeminism", "jeanbaudrillard", "sadieplant", "deleuze-guattari", "josephjacquard"]
 +++
 

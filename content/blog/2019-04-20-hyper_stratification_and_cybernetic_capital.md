@@ -4,7 +4,7 @@ date = "2019-04-24"
 description = "On the undelivered dreams of the 90s."
 keywords = ["social media", "cybernetics", "pierre bourdieu", "mark fisher", "sara ahmed"]
 toc = true
-cover = "imgs/hyper-stratification_and_cybernetic_capital.png"
+cover = "imgs/hyper-stratification_and_cybernetic_capital.webp"
 tags = ["socialmedia", "nickland", "pierrebourdieu", "markfisher", "saraahmed"]
 +++
 

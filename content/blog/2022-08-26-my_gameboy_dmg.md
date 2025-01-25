@@ -2,7 +2,7 @@
 title = "My Game Boy :: August 2022"
 date = "2022-08-26"
 description = "My favorite Game Boy as of August 2022."
-cover = "imgs/2022-08-26-my_gameboy_dmg.jpg"
+cover = "imgs/2022-08-26-my_gameboy_dmg.webp"
 keywords = ["Game Boy", "Nintendo", "mods", "video game mods", "Dragon Quest"]
 tags = ["gameboy", "nintendo", "mods", "kit", "dragonquest"]
 +++

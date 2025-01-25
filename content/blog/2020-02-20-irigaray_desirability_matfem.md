@@ -3,7 +3,7 @@ title = "Irigaray, Desirability, and Materialist (trans)Feminism"
 date = "2020-02-20"
 description = "Desirability in the materialist account of sex/gender."
 keywords = ["matfem", "feminism", "materialism", "irigaray", "transfeminism", "sex", "capital"]
-cover = "imgs/exchange.jpeg"
+cover = "imgs/exchange.webp"
 tags = ["luceirigaray", "karlmarx", "claudelevi-strauss", "patriciahill-collins", "matfem"]
 +++
 
