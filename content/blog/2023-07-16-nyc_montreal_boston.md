@@ -8,7 +8,7 @@ tags = ["travel", "backpacking", "newyorkcity", "montreal", "boston"]
 toc = true
 +++
 
-My husband and I love to travel, and in 2023, we decided to take a trip backpacking through the Northeastern United States and Canada. We started by flying to New York City, and ended up in Boston by way of Montréal, upstate New York, and Vermont.
+My husband and I love to travel and, in 2023, we decided to take a trip backpacking through the Northeastern United States and Canada. We started by flying to New York City, and ended up in Boston by way of Montréal, upstate New York, and Vermont.
 
 CW: rail foamer shots incoming.
 
