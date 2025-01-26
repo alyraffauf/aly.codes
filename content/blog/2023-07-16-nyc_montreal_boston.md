@@ -5,13 +5,14 @@ description = "Two backpacks, three planes, half a dozen buses, fifteen trains, 
 cover = "imgs/2023-07-nyc_montreal_boston/PXL_20230708_111245760.webp"
 keywords = ["travel", "backpacking", "new york city", "montreal", "boston"]
 tags = ["travel", "backpacking", "newyorkcity", "montreal", "boston"]
+toc = true
 +++
-
---- 
 
 My husband and I love to travel, and in 2023, we decided to take a trip backpacking through the Northeastern United States and Canada. We started by flying to New York City, and ended up in Boston by way of Montréal, upstate New York, and Vermont.
 
 CW: rail foamer shots incoming.
+
+## Atlanta -> New York City
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/PXL_20230704_131259936.webp" alt="Flying into Newark Liberty International Airport" position="center" caption="Flying over Newark into Newark Liberty International Airport. Soprano's theme song playing in our heads." captionPosition="center" >}}
 
@@ -21,7 +22,9 @@ CW: rail foamer shots incoming.
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/IMG_0633.webp" alt="Midtown Manhattan" position="center" caption="Midtown Manhattan looking towards Times Square." captionPosition="center" >}}
 
----
+______________________________________________________________________
+
+## New York City -> Montréal
 
 Originally, we planned to take the Amtrak Adirondack to Montreal, but, at the last minute, the train was canceled due to the summer heatwave. Fortunately, we were able to catch a Greyhound bus from Port Authority Bus Terminal, which took about 9 hours to get us to Gare d'autocars du Montréal. We had two wonderful days to explore the city full-time.
 
@@ -39,7 +42,9 @@ Originally, we planned to take the Amtrak Adirondack to Montreal, but, at the la
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/PXL_20230708_111245760.webp" alt="Two backpacks under a Montréal poster in our Airbnb" position="center" caption="Our backpacks packed and ready to go in our Montréal Airbnb. Onwards to Boston!" captionPosition="center" >}}
 
----
+______________________________________________________________________
+
+## Montréal -> Boston
 
 After Montréal, we caught another 8-hour Greyhound bus from Gare d'autocars de Montréal to Boston South Station. In Boston, we stayed with friends, and honestly were pretty exhausted the whole time. Still, we rode some neat trains and ate some great food.
 
@@ -53,7 +58,9 @@ After Montréal, we caught another 8-hour Greyhound bus from Gare d'autocars de 
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/PXL_20230710_182513681.webp" alt="A chicken parmesan sandwich from Bricco's in the Boston Library" position="center" caption="A great sandwich from Bricco Salumeria & Pasta Shop, enjoyed in the Boston Public Library." captionPosition="center" >}}
 
----
+______________________________________________________________________
+
+## Boston -> Atlanta
 
 Ultimately, we flew back to Atlanta right on my birthday, over a week after flying out. I don't think I've ever been that relieved to see our cats again.
 
