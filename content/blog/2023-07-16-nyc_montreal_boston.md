@@ -22,7 +22,7 @@ CW: rail foamer shots incoming.
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/IMG_0633.webp" alt="Midtown Manhattan" position="center" caption="Midtown Manhattan looking towards Times Square." captionPosition="center" >}}
 
-______________________________________________________________________
+---
 
 ## New York City -> Montréal
 
@@ -42,7 +42,7 @@ Originally, we planned to take the Amtrak Adirondack to Montreal, but, at the la
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/PXL_20230708_111245760.webp" alt="Two backpacks under a Montréal poster in our Airbnb" position="center" caption="Our backpacks packed and ready to go in our Montréal Airbnb. Onwards to Boston!" captionPosition="center" >}}
 
-______________________________________________________________________
+---
 
 ## Montréal -> Boston
 
@@ -58,7 +58,7 @@ After Montréal, we caught another 8-hour Greyhound bus from Gare d'autocars de 
 
 {{< figure src="/imgs/2023-07-nyc_montreal_boston/PXL_20230710_182513681.webp" alt="A chicken parmesan sandwich from Bricco's in the Boston Library" position="center" caption="A great sandwich from Bricco Salumeria & Pasta Shop, enjoyed in the Boston Public Library." captionPosition="center" >}}
 
-______________________________________________________________________
+---
 
 ## Boston -> Atlanta
 

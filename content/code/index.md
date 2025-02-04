@@ -7,7 +7,7 @@ readingTime = false
 
 [Python](https://github.com/alyraffauf?tab=repositories&q=&type=&language=python&sort=) :: [Ruby](https://github.com/alyraffauf?tab=repositories&q=&type=&language=ruby&sort=) :: [Bash](https://github.com/alyraffauf?tab=repositories&q=&type=&language=shell&sort=) :: [Nix](https://github.com/alyraffauf?tab=repositories&q=&type=&language=nix&sort=) :: [HTML](https://github.com/alyraffauf?tab=repositories&q=&type=&language=html&sort=) :: [CSS](https://github.com/alyraffauf?tab=repositories&q=&type=&language=css&sort=)
 
-______________________________________________________________________
+---
 
 ## Cool Stuff
 

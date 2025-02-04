@@ -10,7 +10,7 @@ Coder, cyclist, ThinkPad enthusiast, long-haul homelaber, GNU/Linux girl, and mi
 
 [GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
 
-______________________________________________________________________
+---
 
 ## Contact
 

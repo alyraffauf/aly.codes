@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "jnoortheen.nix-ide",
+        "mkhl.direnv",
+        "tamasfe.even-better-toml",
+    ]
+}

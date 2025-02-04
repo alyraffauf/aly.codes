@@ -27,8 +27,12 @@
     devShells = forAllSystems ({pkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [
+          alejandra
           go
           hugo
+          nixd
+          nodePackages.prettier
+          taplo
         ];
       };
     });

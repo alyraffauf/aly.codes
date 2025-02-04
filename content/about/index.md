@@ -13,7 +13,7 @@ These days, I'm all-in on Nix [flakes](https://github.com/alyraffauf?tab=reposit
 
 I'm currently exploring new opportunities in cloud and DevOps and always enjoy connecting with like-minded tech and industry folks. Feel free to drop me an email or find me on socials. Let's chat!
 
------------------------------------------------------------------------
+---
 
 ## Contact
 

@@ -9,7 +9,8 @@ tags = ["gameboy", "nintendo", "mods", "kit", "dragonquest"]
 
 My Game Boy DMG as of August 2022.
 
-Upgrades: 
+Upgrades:
+
 - [Retro Modding](https://www.retromodding.com/) Kirby UV Printed Shell.
 - RIPS v3 IPS Screen Mod.
 - Silicone Buttons from [Kitsch-Bent](https://store.kitsch-bent.com/products/silicone-buttons).

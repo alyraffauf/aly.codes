@@ -1,0 +1,35 @@
+[[language]]
+  auto-format = true
+  formatter.command = "alejandra"
+  language-servers = ["nixd"]
+  name = "nix"
+
+[[language]]
+  auto-format = true
+  file-types = ["markdown", "md", "mdx"]
+  formatter = { command = "prettier", args = [
+    "%val{filename}",
+    "--parser",
+    "--stdin-filepath",
+    "markdown",
+  ] }
+  name = "markdown"
+
+[[language]]
+  comment-token = "#"
+  file-types = ["Cargo.lock", "poetry.lock", "toml"]
+  formatter = { command = "taplo", args = [
+    "fmt",
+    "--option",
+    "indent_entries=true",
+    "-",
+  ] }
+  indent = { tab-width = 2, unit = " " }
+  language-servers = ["taplo"]
+  name = "toml"
+  scope = "source.toml"
+
+
+[[grammar]]
+  name = "toml"
+  source = { git = "https://github.com/ikatyang/tree-sitter-toml", rev = "8bd2056818b21860e3d756b5a58c4f6e05fb744e" }

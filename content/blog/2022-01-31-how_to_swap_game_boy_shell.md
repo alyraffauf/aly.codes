@@ -9,7 +9,7 @@ tags = ["gameboy", "nintendo", "mods", "howto"]
 
 This guide was originally posted on Instagram [@alygbmods](https://www.instagram.com/alygbmods/) and later ported to this blog. Alt text has been provided for each slide.
 
-______________________________________________________________________
+---
 
 {{< figure src="/imgs/gb_shell_swap/1.webp" alt="How To: Swap Your Game Boy’s Outer Shell (Title Image) - A Game Boy DMG with a bright yellow and pink custom shell displayed in a hand against a textured background. The screen shows a Tamagotchi-themed game. The text provides a supply list for shell swapping." position="center" caption="How To: Swap Your Game Boy’s Outer Shell" captionPosition="center" >}}
 

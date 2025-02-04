@@ -10,20 +10,23 @@ Simultaneously, I worked as a research assistant providing support to faculty in
 
 I've compiled here a list of my publications and presentations, as well as courses I've taught. For a more exhaustive list, check out my [Curriculum Vitae](/files/cv.pdf).
 
-______________________________________________________________________
+---
 
 ## Publications
-- "Demonic Feminism" in *Trans\*migrations: Cartographies of The Queer*, Litteraria Pragensia Books, 2020 :: [PDF](/files/demonic_transfeminism.pdf).
 
-______________________________________________________________________
+- "Demonic Feminism" in _Trans\*migrations: Cartographies of The Queer_, Litteraria Pragensia Books, 2020 :: [PDF](/files/demonic_transfeminism.pdf).
+
+---
 
 ## Presentations
+
 - "When Worlds Meet: Trans/Gender Discourse and Political Language" at _Critical Juncture_, 2019.
 - "Deep Play at Trans/Gender: Transfemininity and the Gaze in Horror Cinema" at _Georgia State Anthropology Graduate Symposium_, 2019.
-- "Barriers to Motherhood: Biotechnology, Reproductive Justice, and Transgender Women" at the *National Women Studies Association Conference*, 2018 :: [PDF](/files/barriers_to_motherhood.pdf).
+- "Barriers to Motherhood: Biotechnology, Reproductive Justice, and Transgender Women" at the _National Women Studies Association Conference_, 2018 :: [PDF](/files/barriers_to_motherhood.pdf).
 
-______________________________________________________________________
+---
 
 ## Courses
+
 - History of Motion Pictures, Fall 2020 :: [PDF](/files/flme2700.pdf).
 - Film Aesthetics and Analysis, Spring 2020 :: [PDF](/files/film1010.pdf).

@@ -7,11 +7,11 @@ keywords = ["Game Boy", "Nintendo", "mods", "video game mods"]
 tags = ["gameboy", "nintendo", "mods", "guide", "retromodding", "funnyplaying"]
 +++
 
-*Originally Posted on Reddit.*
+_Originally Posted on Reddit._
 
 Recently got my hands on a couple of the new(ish) FunnyPlaying DMG shells, so I thought I'd do a quick review and comparison between two builds I did recently--the first with Retro Modding parts and the RIPS v3, the second with FunnyPlaying parts and the Retro Pixel IPS screen.
 
-______________________________________________________________________
+---
 
 ## Shells, Buttons, Lenses
 
@@ -35,7 +35,7 @@ As for the buttons, they're both quite good. The D-pads are a little looser than
 
 What I can't understand, however, is the color options on the FunnyPlaying side. Retro Modding makes buttons and screen lenses available in most of the colors they offer shells in--which means it's easy to match, if that's your thing. Pastel Pink is Pastel Pink is Pastel Pink. FunnyPlaying simply doesn't do this. Macaron Pink Shells are NOT the same as their Hot Pink buttons, and their pink screen lenses are a different color altogether. Light Green and Tiffany Blue likewise are similar colors but not the same. It's rather perplexing, and I personally feels like it looks a bit...worse, though I realize this is subjective. I guess I like the monochrome look on my Retro Modding build a bit more. :)
 
-______________________________________________________________________
+---
 
 ## RIPS v3 vs. FunnyPlaying Retro Pixel
 
@@ -49,13 +49,13 @@ I know prior RIPS kits had issues with the buttons, and I know some people have 
 
 One last oddity: the LED diffuser on the RIPS v3 kit is like, painfully ineffective. It's a bit distracting. You get used to it, but there's no denying it's a lot worse (that is, brighter) than the more muted LED on the FunnyPlaying kit. I'm wondering how easy these are to replace on these aftermarket boards.
 
-______________________________________________________________________
+---
 
 ## Retro Modding Speaker vs. FunnyPlaying Clear Speaker
 
 Just wanted to throw this in here as well since I happened to grab both for two separate projects: they're both good. I think the FunnyPlaying speaker is slightly better sounding (and maybe louder?), plus it comes with wires pre-soldered, which is a big time saver. It also comes with the tab that makes it fit perfectly in the shell--the Retro Modding speaker seems more likely to move around a bit, it's less snug. That said, the speaker I got from Retro Modding is pretty great nonetheless. No real complaints.
 
-______________________________________________________________________
+---
 
 ## Verdict
 
