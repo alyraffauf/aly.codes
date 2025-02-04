@@ -75,6 +75,7 @@ Custom mini-ITX gaming desktop with the following specs:
 
 - Framework Laptop 13 AMD 7000 :: sleek, repairable, ultraportable laptop.
 - Lenovo ThinkPad T400p :: my favorite workhorse (semi-retired).
+- Lenovo ThinkPad X1 Carbon Gen 9 :: ultraportable laptop for travel + around the house.
 - Lenovo Yoga Pro 9i :: big girl laptop for big girl things (and light gaming).
 
 ---
