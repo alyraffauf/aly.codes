@@ -1,7 +1,7 @@
 +++
 title = "Please Stop Using `nixos-rebuild switch`"
 date = "2025-02-07"
-description = "Good practices for safely and reliably deploying and updating NixOS systems."
+description = "Better practices for safely and reliably deploying and updating NixOS systems."
 keywords = "nix, nixos, linux, cicd, deployment, devops"
 tags = ["nix", "cicd", "linux"]
 toc = true
@@ -78,7 +78,7 @@ Instead of relying on blind faith in rollbacks for increasingly obfuscated gener
 
 Following these principles helps maintain a clean system history, reduces unnecessary breakage, and makes troubleshooting more manageable.
 
-### Good Practices for Testing Nix Configurations
+### Better Practices for Testing NixOS Configurations
 
 1. **Check Evaluation**
    Use `nix flake check` to catch syntax or logic errors.
@@ -91,7 +91,7 @@ Following these principles helps maintain a clean system history, reduces unnece
 5. **Apply Changes Ephemerally**  
    Run `nixos-rebuild test` to verify success before committing to a bootable generation.
 
-### Good Practices for Safe and Reliable Deployments
+### Better Practices for Safe and Reliable Deployments
 
 For most systems, manual updates should be avoided in favor of automated, controlled deployments. Several NixOS deployment tools exist[^fn1]. One straightforward solution is to simply use the `system.autoUpgrade` module in `nixpkgs`, which can:
 
