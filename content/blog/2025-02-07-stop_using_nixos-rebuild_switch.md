@@ -13,7 +13,7 @@ Okay, I know this will sound strange to many of you. But hear me out.
 
 **Please stop using `nixos-rebuild switch`.**
 
-Seriously. Every time you deploy this way, you're likely causing more harm than you realize. And I promise you, thereare better, safer, and more reliable ways to live on NixOS.
+Seriously. Every time you deploy this way, you're likely causing more harm than you realize. And I promise you, there are better, safer, and more reliable ways to live on NixOS.
 
 Let’s talk about it.
 
