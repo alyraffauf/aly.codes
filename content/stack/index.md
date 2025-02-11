@@ -9,7 +9,7 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 
 ## Base
 
-- Ghostty :: Customizable and fast cross-platform terminal.
+- Wezterm :: GPU-accelerated terminal emulator with lots of features.
 - Hyprland :: Slick Wayland compositor with tiling.
 - KDE :: Batteries-included desktop environment.
 - NixOS :: Declarative build system and GNU/Linux distribution.
