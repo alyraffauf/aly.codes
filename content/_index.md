@@ -14,4 +14,4 @@ Coder, cyclist, ThinkPad enthusiast, long-haul homelaber, GNU/Linux girl, and mi
 
 ## Contact
 
-[aly@raffauflabs.com](mailto:aly@raffauflabs.com) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
+[hello@aly.codes](mailto:hello@aly.codes) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
