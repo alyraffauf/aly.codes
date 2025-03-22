@@ -97,27 +97,27 @@ theme = "terminal"
 [[languages.en.menu.main]]
   identifier = "about"
   name = "About"
-  url = "/about"
+  url = "/about/"
 [[languages.en.menu.main]]
   identifier = "blog"
   name = "Blog"
-  url = "/blog"
+  url = "/blog/"
 [[languages.en.menu.main]]
   identifier = "code"
   name = "Code"
-  url = "/code"
+  url = "/code/"
 [[languages.en.menu.main]]
   identifier = "academia"
   name = "Academia"
-  url = "/academia"
+  url = "/academia/"
 [[languages.en.menu.main]]
   identifier = "kit"
   name = "Kit"
-  url = "/kit"
+  url = "/kit/"
 [[languages.en.menu.main]]
   identifier = "stack"
   name = "Stack"
-  url = "/stack"
+  url = "/stack/"
 
   # [module]
   # # In case you would like to make changes to the theme and keep it locally in you repository,
