@@ -1,6 +1,7 @@
 +++
 title = "Stack"
 readingTime = false
+toc = true
 +++
 
 Software I use on an (almost) daily basis. I aim to stick to free and open-source software whenever possible. That said, I also try to use the best tools for the job.
@@ -9,9 +10,9 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 
 ## Base
 
-- Wezterm :: GPU-accelerated terminal emulator with lots of features.
+- Ghostty :: Cross-platform GPU-accelerated terminal emulator with lots of features.
 - Hyprland :: Slick Wayland compositor with tiling.
-- KDE :: Batteries-included desktop environment.
+- MacOS :: Apple's operating system. It's pre-installed, so...
 - NixOS :: Declarative build system and GNU/Linux distribution.
 - Zsh :: Powerful and extensible command-line shell.
 
@@ -39,6 +40,7 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 - Git :: Version control from Mr. Linux himself.
 - Helix Editor :: Very slick and extensible terminal text editor.
 - Nix :: Declarative devShells, package builders, and more.
+- Podman :: Like Docker, but daemonless.
 - VSCodium :: Extensible code editor with a rich ecosystem.
 
 ---
@@ -63,7 +65,6 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 - Audiobookshelf :: Self-hosted audiobooks + podcasts.
 - Navidrome :: Awesome self-hosted Subsonic-compatible media server.
 - Plex :: High quality streaming for Linux ISOs (and more).
-- Symfonium :: Awesome Android music player with Subsonic support.
 
 ---
 

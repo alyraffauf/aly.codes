@@ -1,6 +1,7 @@
 +++
 title = "Kit"
 readingTime = false
+toc = true
 +++
 
 Here’s the gear I rely on day-to-day. It gets the job done, but I'll admit I have a little wanderlust.
@@ -33,11 +34,12 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ---
 
-## Everyday Carry
+## Everyday Carry + Travel
 
 - Aer Pro Pack 20L :: pretty good tech and light travel backpack.
 - ALPAKA Bravo Tote :: messenger x tote combo perfect for work.
 - Bellroy Venture Sling 9L :: a sling for just the essentials.
+- LTT Backpack :: a backpack for the tech nerds.
 - WANDRD PRVKE 31L :: big travel/outdoorsy backpack.
 - WANDRD ROGUE 9L :: amazing, if oddly shaped, sling for urban cycling.
 
@@ -49,7 +51,6 @@ Custom mini-ITX gaming desktop with the following specs:
 - Asus ROG Ally X :: premium handheld gaming.
 - [Game Boy DMG](blog/2022-08-26-my_gameboy_dmg/) :: modded Game Boy DMG with IPS screen.
 - Nintendo Switch OLED :: sometimes I play Zelda.
-- Playstation 5 :: too many exclusives.
 - Retroid Pocket 5 :: awesome do-all Android console.
 - Xbox Series X :: unadultered Game Pass machine.
 
@@ -57,7 +58,7 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ## Headphones
 
-- Beats Studio Buds Pro :: truly wireless buds for cycling + travel.
+- Beats Studio Buds + :: truly wireless buds for cycling + travel.
 - Linsoul 7Hz x Crinacle Zero:2 :: awesome + cheap wired IEMs.
 - Sennheiser HD 560 S :: not the HD 660 S, but really good value.
 
@@ -73,10 +74,9 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ## Laptops
 
-- Framework Laptop 13 AMD 7000 :: sleek, repairable, ultraportable laptop.
 - Lenovo ThinkPad T400p :: my favorite workhorse (semi-retired).
 - Lenovo ThinkPad X1 Carbon Gen 9 :: ultraportable laptop for travel + around the house.
-- Lenovo Yoga Pro 9i :: big girl laptop for big girl things (and light gaming).
+- MacBook Air M2 13 :: a suitable Macintosh with great battery life.
 
 ---
 
@@ -88,25 +88,27 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ---
 
-## Phone :: Google Pixel 8a.
+## Phone :: iPhone 16 (Teal).
 
-Best phone I've ever owned.
+Apple's gotten better with USB-C.
 
 ---
 
 ## Servers
 
 - Beelink Mini S12 Pro :: tiny PC running multimedia services.
-- Lenovo ThinkCentre M700 :: geriatric mini PC running nginx and Vaultwarden.
+- Lenovo ThinkCentre M700 :: geriatric mini PC running nginx.
+- Rapsberry Pi 4 :: tiny SBC running Uptime Kuma and Jellyfin.
+- t2.micro :: tiny EC2 intance running [aly.social](https://aly.social) and Vaultwarden.
 
 ---
 
-## Tablet :: Google Pixel Tablet.
+## Tablet :: iPad Air M1.
 
-Decent tablet for reading and note-taking.
+Great tablet for reading and note-taking.
 
 ---
 
-## Watch :: Samsung Galaxy Watch 4.
+## Watch :: Apple Watch Series 10.
 
-A great watch for the bike.
+Great way to stay off the phone + monitor bike workouts.
