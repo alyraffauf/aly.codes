@@ -88,7 +88,7 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ---
 
-## Phone :: iPhone 16 (Teal).
+## Phone :: iPhone 16.
 
 Apple's gotten better with USB-C.
 
