@@ -1,7 +1,7 @@
 +++
 title = "deployer.sh: Mildly Better Flake Deployments"
 date = "2025-05-19"
-description = "A simple Nix deployment tool I've been using lately."
+description = "A simple Nix deployment script I've written recently."
 keywords = "nix, nixos, flakes, linux, cicd, deployment, devops"
 tags = ["nix", "bash", "cicd", "linux"]
 toc = true
