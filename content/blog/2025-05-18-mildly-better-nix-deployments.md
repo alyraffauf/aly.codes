@@ -41,7 +41,7 @@ Here's what it does.
 
 ---
 
-## Step 1: Parsing deployments.nix
+## Parsing deployments.nix
 
 Your `deployments.nix` is a simple [attribute set](https://nixos.org/manual/nix/stable/language/attributes) of job names along with their target hostname (or IP address), output, and remote SSH user. **deployer.sh** supports privilege elevation with `sudo`, but you can also target any user able to rebuild the system.
 
@@ -72,7 +72,7 @@ mapfile -t HOSTS < <(printf '%s\n' "$HOSTS_JSON" | jq -r 'keys[]')
 
 ---
 
-## Step 2: Build closures
+## Building closures
 
 In NixOS, a [closure](https://zero-to-nix.com/concepts/closures/) is every package needed to run a system—the kernel, drivers, your packages, and all their dependencies. **deployer.sh** builds each closure locally—on the machine running deployer—and stores the resulting paths in a Bash array.
 
@@ -99,9 +99,9 @@ done
 
 ---
 
-## Step 3: Copy closure & activate
+## Pushing & activating generations
 
-Now that we have our closures, we can copy them to the remote machines and activate them. Each NixOS generation includes a [`switch-to-configuration`](https://nixos.org/manual/nixos/stable/#sec-switch-to-configuration) script, which can switch to a new generation, roll back to a prior one, or schedule the switch for the next boot. **deployer.sh** uses this script to activate the new generation.
+Now that we have our closures, we need to copy them to the remote machines and activate them. Each NixOS generation includes a [`switch-to-configuration`](https://nixos.org/manual/nixos/stable/#sec-switch-to-configuration) script, which can switch to a new generation, roll back to a prior one, or schedule the switch for the next boot. **deployer.sh** uses this script to activate the new generation.
 
 ```bash
 # deployer.sh
