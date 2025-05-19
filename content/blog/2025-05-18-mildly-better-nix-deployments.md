@@ -99,7 +99,7 @@ done
 
 ---
 
-## Pushing & activating generations
+## Pushing changes
 
 Now that we have our closures, we need to copy them to the remote machines and activate them. Each NixOS generation includes a [`switch-to-configuration`](https://nixos.org/manual/nixos/stable/#sec-switch-to-configuration) script, which can switch to a new generation, roll back to a prior one, or schedule the switch for the next boot. **deployer.sh** uses this script to activate the new generation.
 
