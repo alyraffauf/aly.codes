@@ -135,7 +135,7 @@ Such a simple script comes with limitations compared with more feature‑rich al
 
 - Automatic rollbacks (not feasible in this design).
 - Parallel deployments (probably not worth it).
-- Deploying any Nix profile outside `nixosConfigurations`.
+- Any Nix profile that isn't a nixosConfiguration specifically.
 - Split deployments (tags, groups, etc.).
 
 If you need any of these features, you're likely better off with an existing solution. That said, I have a couple of improvements in mind:
