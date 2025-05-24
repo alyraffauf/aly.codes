@@ -85,7 +85,7 @@ Following these principles helps maintain a clean system history, reduces unnece
 2. **Build the Configuration**  
    Run `nix build` to ensure the configuration compiles successfully.
 3. **Preview System Changes**  
-   Use `nixos-rebuild --dry-activate` to preview modifications.
+   Use `nixos-rebuild dry-activate` to preview modifications.
 4. **Test in an Isolated Environment**  
    Run `nixos-rebuild build-vm`—especially useful for multi-host setups.
 5. **Apply Changes Ephemerally**  
