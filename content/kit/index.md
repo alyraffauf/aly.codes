@@ -20,7 +20,7 @@ Pretty long in the tooth, but I've had a lot of fun with it.
 
 ---
 
-## Desktop
+<!-- ## Desktop
 
 Custom mini-ITX gaming desktop with the following specs:
 
@@ -32,7 +32,7 @@ Custom mini-ITX gaming desktop with the following specs:
 - 2TB SATA HDD
 - NZXT H210 Case
 
----
+--- -->
 
 ## Everyday Carry + Travel
 
@@ -58,7 +58,8 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ## Headphones
 
-- Beats Studio Buds + :: truly wireless buds for cycling + travel.
+- AirPods Max :: the best all-around ANC headphones.
+- AirPods Pro 2 :: everyday wireless earbuds for cycling + travel.
 - Linsoul 7Hz x Crinacle Zero:2 :: awesome + cheap wired IEMs.
 - Sennheiser HD 560 S :: not the HD 660 S, but really good value.
 
@@ -74,7 +75,7 @@ Custom mini-ITX gaming desktop with the following specs:
 
 ## Laptops
 
-- Lenovo ThinkPad T400p :: my favorite workhorse (semi-retired).
+- Lenovo ThinkPad T440p :: my favorite workhorse (semi-retired).
 - Lenovo ThinkPad X1 Carbon Gen 9 :: ultraportable laptop for travel + around the house.
 - MacBook Air M2 13 :: a suitable Macintosh with great battery life.
 
@@ -96,14 +97,14 @@ Apple's gotten better with USB-C.
 
 ## Servers
 
-- Beelink Mini S12 Pro :: tiny PC running multimedia services.
-- Lenovo ThinkCentre M700 :: geriatric mini PC running nginx.
-- Rapsberry Pi 4 :: tiny SBC running Uptime Kuma and Jellyfin.
-- t2.micro :: tiny EC2 intance running [aly.social](https://aly.social) and Vaultwarden.
+- Beelink Mini S12 Pro :: super compact N100 mini PC.
+- Lenovo ThinkCentre M700 :: geriatric mini PC.
+- Lilycove :: Custom-built NAS in Fractal Node 804.
+- Rapsberry Pi 4 :: tiny SBC.
 
 ---
 
-## Tablet :: iPad Air M1.
+## Tablet :: iPad A16.
 
 Great tablet for reading and note-taking.
 
