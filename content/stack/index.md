@@ -20,14 +20,16 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 
 ## Browsers
 
-- Brave :: Privacy-centric chromium fork with ad-blocking.
+<!-- - Brave :: Privacy-centric chromium fork with ad-blocking. -->
+
 - Firefox :: Highly extendable and flexible independent web browser.
 
 ---
 
 ## Communication
 
-- Matrix + Element :: Reasonably secure and decentralized messaging platform.
+<!-- - Matrix + Element :: Reasonably secure and decentralized messaging platform. -->
+
 - Signal :: Very secure messaging platform.
 - Thunderbird :: Open source email client.
 - Vesktop :: Discord with extra features.
@@ -39,7 +41,7 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 - Direnv :: Isolated per-project development environments.
 - Git :: Version control from Mr. Linux himself.
 - Helix Editor :: Very slick and extensible terminal text editor.
-- Nix :: Declarative devShells, package builders, and more.
+- Lix (like Nix) :: Declarative devShells, package builders, and more.
 - Podman :: Like Docker, but daemonless.
 - VSCodium :: Extensible code editor with a rich ecosystem.
 
@@ -62,8 +64,10 @@ Software I use on an (almost) daily basis. I aim to stick to free and open-sourc
 
 ## Media
 
-- Audiobookshelf :: Self-hosted audiobooks + podcasts.
-- Navidrome :: Awesome self-hosted Subsonic-compatible media server.
+<!-- - Audiobookshelf :: Self-hosted audiobooks + podcasts. -->
+<!-- - Navidrome :: Awesome self-hosted Subsonic-compatible media server. -->
+
+- Apple Podcasts :: Reasonably good podcast app with video support.
 - Plex :: High quality streaming for Linux ISOs (and more).
 
 ---
