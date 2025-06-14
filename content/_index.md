@@ -10,7 +10,9 @@ Coder, cyclist, ThinkPad enthusiast, long-haul homelaber, GNU/Linux girl, and mi
 
 Hosted on [cute.haus](https://cute.haus), my self-hosted cloud infra.
 
-[GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
+<!-- [GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf) -->
+
+[GitHub](https://github.com/alyraffauf) :: [Forĝejo](https://git.aly.codes) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
 
 ---
 
