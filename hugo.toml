@@ -5,7 +5,7 @@ title = 'Aly Raffauf'
 pagination.pagerSize = 5
 enableGitInfo = true
 enableRobotsTXT = true
-theme = "terminal"
+theme = ["hugo-cloak-email", "terminal"]
 
 [params]
   # dir name of your main content (default is `content/posts`).

@@ -18,4 +18,4 @@ Hosted on [cute.haus](https://cute.haus), my self-hosted cloud infra.
 
 ## Contact
 
-[aly@aly.codes](mailto:aly@aly.codes) :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
+{{< cloakemail "aly@aly.codes" >}} :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
