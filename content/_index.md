@@ -5,11 +5,11 @@ hideComments = true
 +++
 
 <style>
-.profile { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+.profile { display: flex; flex-direction: column; gap: 1.5rem; align-items: center;}
 .profile-pic { width: 200px; height: 200px; object-fit: cover; margin: 0; }
-.profile-text h2 { margin-top: 0; }
+.profile-text h2 { margin-top: 0; vertical-align: middle; }
 @media (min-width: 600px) {
-  .profile { flex-direction: row; align-items: flex-start; }
+  .profile { flex-direction: row; align-items: center; }
   .profile-pic { flex-shrink: 0; }
 }
 </style>
