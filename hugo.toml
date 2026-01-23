@@ -7,6 +7,11 @@ enableGitInfo = true
 enableRobotsTXT = true
 theme = ["hugo-cloak-email", "terminal"]
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+  unsafe = true
+
 [params]
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
@@ -110,14 +115,14 @@ theme = ["hugo-cloak-email", "terminal"]
   identifier = "academia"
   name = "Academia"
   url = "/academia/"
-[[languages.en.menu.main]]
-  identifier = "kit"
-  name = "Kit"
-  url = "/kit/"
-[[languages.en.menu.main]]
-  identifier = "stack"
-  name = "Stack"
-  url = "/stack/"
+# [[languages.en.menu.main]]
+#   identifier = "kit"
+#   name = "Kit"
+#   url = "/kit/"
+# [[languages.en.menu.main]]
+#   identifier = "stack"
+#   name = "Stack"
+#   url = "/stack/"
 
   # [module]
   # # In case you would like to make changes to the theme and keep it locally in you repository,
