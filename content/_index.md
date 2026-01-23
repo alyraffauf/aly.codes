@@ -4,18 +4,14 @@ framed = true
 hideComments = true
 +++
 
-## Hi, I'm Aly.
+## Hi, I'm Aly!
 
-Coder, cyclist, ThinkPad enthusiast, long-haul homelaber, GNU/Linux girl, and mid-tier keyboard snob. I use Nix btw.
+Hacker, tinkerer, cyclist. I care about free software, open culture, and walkable cities. I spend my time touching computers, playing video games, and taking my bike places I shouldn't.
 
-Hosted on [cute.haus](https://cute.haus), my self-hosted cloud infra.
-
-<!-- [GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.ruffruff.party) :: [LinkedIn](https://linkedin.com/in/alyraffauf) -->
-
-[GitHub](https://github.com/alyraffauf) :: [Forĝejo](https://git.aly.codes) :: [LinkedIn](https://linkedin.com/in/alyraffauf)
+This site is self-hosted on [cute.haus](https://cute.haus), my personal cloud infra.
 
 ---
 
-## Contact
+## Find me elsewhere
 
-{{< cloakemail "aly@aly.codes" >}} :: [@alymch:matrix.org](https://matrix.to/#/@alymch:matrix.org)
+[GitHub](https://github.com/alyraffauf) :: [Bluesky](https://bsky.app/profile/aly.codes) :: [LinkedIn](https://linkedin.com/in/alyraffauf) :: {{< cloakemail address="aly@aly.codes" display="E-mail" >}}
