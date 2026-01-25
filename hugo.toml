@@ -108,9 +108,13 @@ theme = ["hugo-cloak-email", "terminal"]
   name = "Blog"
   url = "/blog/"
 [[languages.en.menu.main]]
-  identifier = "code"
-  name = "Code"
-  url = "https://git.aly.codes/alyraffauf"
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+[[languages.en.menu.main]]
+  identifier = "github"
+  name = "GitHub"
+  url = "https://github.com/alyraffauf"
 [[languages.en.menu.main]]
   identifier = "academia"
   name = "Academia"
