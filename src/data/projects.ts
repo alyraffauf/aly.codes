@@ -21,4 +21,8 @@ export const projects: Project[] = [
     title: "kyanite",
     github: "alyraffauf/kyanite",
   },
+  {
+    title: "aly.codes",
+    github: "alyraffauf/aly.codes",
+  },
 ];
