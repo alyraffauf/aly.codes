@@ -29,7 +29,7 @@ export default function Project({
         target="_blank"
         className="block p-4 border-2 border-rose-200 rounded-lg hover:bg-rose-300 transition-colors hover:scale-105 hover:animate-jiggle"
       >
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-center">
           <h3 className="text-xl font-semibold">{title}</h3>
 
           <div className="flex gap-4 text-sm shrink-0">
