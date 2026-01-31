@@ -29,10 +29,10 @@ export default function Project({
         target="_blank"
         className="block p-4 border-2 border-rose-200 rounded-lg hover:bg-rose-300 transition-colors hover:scale-105 hover:animate-jiggle"
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start">
           <h3 className="text-xl font-semibold">{title}</h3>
 
-          <div className="flex gap-4 text-sm">
+          <div className="flex gap-4 text-sm shrink-0">
             <span
               className={`${getLanguageColor(language)} px-2 py-0.5 rounded-full`}
             >
