@@ -17,7 +17,7 @@ async function getRepoData(githubRepo: string): Promise<RepoData | null> {
   }
 }
 
-export default function ProjectList() {
+export default function ProjectList({ limit }: { limit?: number }) {
   const [projectsWithData, setProjectsWithData] = useState<ProjectProps[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -62,7 +62,7 @@ export default function ProjectList() {
 
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      {projectsWithData.map((project) => (
+      {projectsWithData.slice(0, limit).map((project) => (
         <Project
           key={project.title}
           title={project.title}
