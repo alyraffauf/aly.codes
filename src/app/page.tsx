@@ -65,7 +65,7 @@ export default function Home() {
             <FolderGit /> Recent Projects
           </div>
         </h2>
-        <ProjectList limit={6} />
+        <ProjectList limit={8} />
       </section>
 
       <section className="mb-12">

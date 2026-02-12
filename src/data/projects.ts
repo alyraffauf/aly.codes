@@ -29,4 +29,8 @@ export const projects: Project[] = [
     title: "switchyard-website",
     github: "alyraffauf/switchyard-website",
   },
+  {
+    title: "dewy",
+    github: "alyraffauf/dewy",
+  },
 ];
