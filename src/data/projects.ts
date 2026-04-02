@@ -18,14 +18,6 @@ export const projects: Project[] = [
     github: "alyraffauf/watsup",
   },
   {
-    title: "kyanite",
-    github: "alyraffauf/kyanite",
-  },
-  {
-    title: "aly.codes",
-    github: "alyraffauf/aly.codes",
-  },
-  {
     title: "morsels",
     github: "alyraffauf/morsels",
   },
