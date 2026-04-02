@@ -26,8 +26,8 @@ export const projects: Project[] = [
     github: "alyraffauf/aly.codes",
   },
   {
-    title: "switchyard-website",
-    github: "alyraffauf/switchyard-website",
+    title: "morsels",
+    github: "alyraffauf/morsels",
   },
   {
     title: "dewy",
