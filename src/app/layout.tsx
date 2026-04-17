@@ -14,8 +14,11 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Aly Raffauf",
+  title: { default: "Aly Raffauf", template: "%s · Aly Raffauf" },
+  metadataBase: new URL("https://aly.codes"),
   description: "Aly Raffauf's personal website",
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23fda4af'>A</text></svg>",
   },

@@ -1,6 +1,7 @@
 import { getPostBySlug, getAllPosts } from "../../lib/posts";
 import type { PostProps } from "../../types";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
@@ -27,11 +28,40 @@ export default async function PostPage({ params }: PostProps) {
         />
       )}
 
-      <div className="prose prose-a:text-rose-700 prose-a:hover:underline prose-code:text-zinc-800 prose-pre:bg-rose-300 prose-pre:text-zinc-100 prose-hr:border-rose-300 prose-hr:border-2 prose-blockquote:border-rose-300 prose-blockquote:border-l-[2px] max-w-none">
+      <div className="prose prose-a:text-rose-700 prose-a:hover:underline prose-code:text-zinc-800 prose-pre:bg-rose-300 prose-pre:text-zinc-100 prose-hr:border-rose-300 prose-hr:border-2 prose-blockquote:border-rose-300 prose-blockquote:border-l-2 max-w-none">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
     </article>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PostProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: { canonical: `/blog/${slug}/` },
+
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.description,
+      url: `/blog/${slug}/`,
+      publishedTime: post.date,
+      images: post.cover ? [`/${post.cover}`] : undefined,
+    },
+
+    twitter: {
+      title: post.title,
+      description: post.description,
+      images: post.cover ? [`/${post.cover}`] : undefined,
+    },
+  };
 }
 
 export function generateStaticParams() {
