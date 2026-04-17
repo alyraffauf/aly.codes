@@ -22,7 +22,7 @@ export const projects: Project[] = [
     github: "alyraffauf/morsels",
   },
   {
-    title: "dewy",
-    github: "alyraffauf/dewy",
+    title: "atbbs",
+    github: "alyraffauf/atbbs",
   },
 ];
