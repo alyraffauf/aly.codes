@@ -21,6 +21,23 @@ const PUBLICATION_COLLECTION = "site.standard.publication";
 const DOCUMENT_COLLECTION = "site.standard.document";
 const MAX_BLOB_BYTES = 1_000_000;
 
+const rgb = (r: number, g: number, b: number) => ({
+  $type: "site.standard.theme.color#rgb",
+  r,
+  g,
+  b,
+});
+
+// Matches the site's Tailwind palette: bg-pink-100, text-zinc-900,
+// rose-700 link/accent color.
+const BASIC_THEME = {
+  $type: "site.standard.theme.basic",
+  background: rgb(252, 231, 243),
+  foreground: rgb(24, 24, 27),
+  accent: rgb(190, 18, 60),
+  accentForeground: rgb(255, 255, 255),
+};
+
 const MIME_TYPES: Record<string, string> = {
   ".webp": "image/webp",
   ".jpg": "image/jpeg",
@@ -133,6 +150,7 @@ async function main() {
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
         icon,
+        basicTheme: BASIC_THEME,
         preferences: { showInDiscover: true },
       },
     });
@@ -147,6 +165,7 @@ async function main() {
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
         icon,
+        basicTheme: BASIC_THEME,
         preferences: { showInDiscover: true },
       },
     });
