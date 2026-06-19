@@ -29,24 +29,24 @@ export default function Home() {
             <p className="leading-relaxed">
               This site is hosted on{" "}
               <a
-                href="https://aly.social"
+                href="https://cute.haus"
                 className="text-rose-700 hover:underline"
               >
-                aly.social
+                cute.haus
               </a>
-              , my{" "}
+              , and available via{" "}
               <a
                 href="https://atproto.com/"
                 className="text-rose-700 hover:underline"
               >
                 atproto
               </a>{" "}
-              personal data server, with CDN and scaffolding provided by{" "}
+              with{" "}
               <a
-                href="https://wisp.place"
+                href="https://standard.site/"
                 className="text-rose-700 hover:underline"
               >
-                wisp.place
+                standard.site
               </a>
               .
             </p>
