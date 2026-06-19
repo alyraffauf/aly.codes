@@ -9,6 +9,7 @@ import { AtpAgent } from "@atproto/api";
 const SITE_URL = "https://aly.codes";
 const SITE_NAME = "Aly Raffauf";
 const SITE_DESCRIPTION = "Aly Raffauf's personal website";
+const SITE_ICON = "profile.jpg";
 
 const POSTS_DIR = path.join(process.cwd(), "content/posts");
 const STANDARD_SITE_CONFIG = path.join(
@@ -30,22 +31,22 @@ const MIME_TYPES: Record<string, string> = {
 
 config({ path: path.join(process.cwd(), ".env.local") });
 
-async function loadCoverBlob(
-  coverPath: string,
+async function loadImageBlob(
+  imagePath: string,
 ): Promise<{ data: Uint8Array; mimeType: string }> {
-  const fullPath = path.join(process.cwd(), "public", coverPath);
+  const fullPath = path.join(process.cwd(), "public", imagePath);
   const buffer = fs.readFileSync(fullPath);
-  const mimeType = MIME_TYPES[path.extname(coverPath).toLowerCase()];
+  const mimeType = MIME_TYPES[path.extname(imagePath).toLowerCase()];
   if (!mimeType) {
-    throw new Error(`Unsupported cover image type: ${coverPath}`);
+    throw new Error(`Unsupported image type: ${imagePath}`);
   }
 
   if (buffer.length <= MAX_BLOB_BYTES) {
     return { data: buffer, mimeType };
   }
 
-  // site.standard.document#coverImage must be under 1MB; re-encode oversized
-  // covers as webp at shrinking quality/size until they fit.
+  // Standard.site blob fields (coverImage, icon) must be under 1MB;
+  // re-encode oversized images as webp at shrinking quality/size until they fit.
   let quality = 80;
   let width = (await sharp(buffer).metadata()).width;
   let resized: Uint8Array = buffer;
@@ -106,6 +107,13 @@ async function main() {
   await agent.login({ identifier: handle, password });
   const did = agent.session!.did;
 
+  const { data: iconData, mimeType: iconMimeType } =
+    await loadImageBlob(SITE_ICON);
+  const uploadedIcon = await agent.com.atproto.repo.uploadBlob(iconData, {
+    encoding: iconMimeType,
+  });
+  const icon = uploadedIcon.data.blob;
+
   const existingPubs = await agent.com.atproto.repo.listRecords({
     repo: did,
     collection: PUBLICATION_COLLECTION,
@@ -124,6 +132,7 @@ async function main() {
         url: SITE_URL,
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
+        icon,
         preferences: { showInDiscover: true },
       },
     });
@@ -137,6 +146,7 @@ async function main() {
         url: SITE_URL,
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
+        icon,
         preferences: { showInDiscover: true },
       },
     });
@@ -166,7 +176,7 @@ async function main() {
 
     let coverImage;
     if (data.cover) {
-      const { data: blobData, mimeType } = await loadCoverBlob(data.cover);
+      const { data: blobData, mimeType } = await loadImageBlob(data.cover);
       const uploaded = await agent.com.atproto.repo.uploadBlob(blobData, {
         encoding: mimeType,
       });

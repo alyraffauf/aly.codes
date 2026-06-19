@@ -27,7 +27,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
-  }
+  },
+
+  openGraph: {
+    type: "website",
+    title: "Aly Raffauf",
+    description: "Aly Raffauf's personal website",
+    url: "/",
+  },
+
+  twitter: {
+    title: "Aly Raffauf",
+    description: "Aly Raffauf's personal website",
+  },
 };
 
 export default function RootLayout({
