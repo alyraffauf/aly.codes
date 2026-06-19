@@ -1,8 +1,8 @@
+import fs from "fs";
+import path from "path";
 import { ImageResponse } from "next/og";
 
-export const dynamic = "force-static";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+const SIZE = { width: 1200, height: 630 };
 
 async function loadQuicksandBold(): Promise<ArrayBuffer> {
   const css = await fetch(
@@ -60,12 +60,12 @@ function Rose({
   );
 }
 
-export default async function Image() {
+async function main() {
   const roseStrong = "rgba(253,164,175,0.7)";
   const roseSoft = "rgba(254,205,211,0.85)";
   const quicksandBold = await loadQuicksandBold();
 
-  return new ImageResponse(
+  const response = new ImageResponse(
     (
       <div
         style={{
@@ -123,7 +123,6 @@ export default async function Image() {
         <div
           style={{
             display: "flex",
-            zIndex: 1,
             fontFamily: "Quicksand",
             fontSize: 110,
             fontWeight: 700,
@@ -136,10 +135,25 @@ export default async function Image() {
       </div>
     ),
     {
-      ...size,
+      ...SIZE,
       fonts: [
-        { name: "Quicksand", data: quicksandBold, weight: 700, style: "normal" },
+        {
+          name: "Quicksand",
+          data: quicksandBold,
+          weight: 700,
+          style: "normal",
+        },
       ],
     },
   );
+
+  const buffer = Buffer.from(await response.arrayBuffer());
+  const outPath = path.join(process.cwd(), "public/opengraph-image.png");
+  fs.writeFileSync(outPath, buffer);
+  console.log(`Wrote ${outPath}`);
 }
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

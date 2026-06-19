@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "sync:standard-site": "tsx scripts/sync-standard-site.mts"
+    "sync:standard-site": "tsx scripts/sync-standard-site.mts",
+    "generate:og-image": "tsx scripts/generate-og-image.tsx"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.0-alpha.3",

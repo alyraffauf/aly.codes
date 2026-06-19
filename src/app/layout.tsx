@@ -34,11 +34,14 @@ export const metadata: Metadata = {
     title: "Aly Raffauf",
     description: "Aly Raffauf's personal website",
     url: "/",
+    images: ["/opengraph-image.png"],
   },
 
   twitter: {
+    card: "summary_large_image",
     title: "Aly Raffauf",
     description: "Aly Raffauf's personal website",
+    images: ["/opengraph-image.png"],
   },
 };
 
