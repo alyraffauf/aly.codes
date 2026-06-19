@@ -30,6 +30,8 @@ export function getAllPosts(limit?: number): Post[] {
         description: data.description,
         content,
         cover: data.cover ?? null,
+        tags: data.tags ?? [],
+        atUri: data.atUri ?? null,
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));

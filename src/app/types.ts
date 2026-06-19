@@ -19,6 +19,8 @@ export type Post = {
   description: string;
   content: string;
   cover?: string;
+  tags?: string[];
+  atUri?: string;
 };
 
 export type PostProps = {

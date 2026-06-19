@@ -5,6 +5,7 @@ description = "Better practices for safely and reliably deploying and updating N
 keywords = "nix, nixos, linux, cicd, deployment, devops"
 tags = ["nix", "cicd", "linux"]
 toc = true
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg75tcl22"
 +++
 
 🚨 Attention NixOS users! 🚨

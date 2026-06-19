@@ -5,6 +5,7 @@ description = "Breathe new life in your Game Boy DMG with a simple shell swap."
 cover = "imgs/gb_shell_swap/cover.webp"
 keywords = ["Game Boy", "Nintendo", "mods", "video game mods"]
 tags = ["gameboy", "nintendo", "mods", "howto"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg6r5dk22"
 +++
 
 This guide was originally posted on Instagram [@alygbmods](https://www.instagram.com/alygbmods/) and later ported to this blog. Alt text has been provided for each slide.

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:standard-site": "tsx scripts/sync-standard-site.mts"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.0-alpha.3",
@@ -20,13 +21,17 @@
     "toml": "^3.0.0"
   },
   "devDependencies": {
+    "@atproto/api": "^0.20.16",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.5",
+    "sharp": "^0.35.2",
     "tailwindcss": "^4",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }

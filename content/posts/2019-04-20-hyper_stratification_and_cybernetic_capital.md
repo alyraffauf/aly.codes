@@ -6,6 +6,7 @@ keywords = ["social media", "cybernetics", "pierre bourdieu", "mark fisher", "sa
 toc = true
 cover = "imgs/hyper-stratification_and_cybernetic_capital.webp"
 tags = ["socialmedia", "nickland", "pierrebourdieu", "markfisher", "saraahmed"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg5neub22"
 +++
 
 ## Dystopian Cyberspace

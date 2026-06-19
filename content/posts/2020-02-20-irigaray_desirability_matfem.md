@@ -5,6 +5,7 @@ description = "Desirability in the materialist account of sex/gender."
 keywords = ["matfem", "feminism", "materialism", "irigaray", "transfeminism", "sex", "capital"]
 cover = "imgs/exchange.webp"
 tags = ["luceirigaray", "karlmarx", "claudelevi-strauss", "patriciahill-collins", "matfem"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg63dqf22"
 +++
 
 Two things:

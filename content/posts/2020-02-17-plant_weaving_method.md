@@ -5,6 +5,7 @@ description = "Weaving as tactic of Feminist knowledge-production."
 keywords = ["sadie plant", "weaving", "cybernetics", "cyberfeminism", "epistemology"]
 cover = "imgs/weaving.webp"
 tags = ["cyberfeminism", "jeanbaudrillard", "sadieplant", "deleuze-guattari", "josephjacquard"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg5xs3p22"
 +++
 
 What follows is a series of footnotes on Sadie Plant’s _The Future Looms: Weaving Women and Cybernetics_--putting into practice her account of the relationship between weaving, footnotes, and knowledge production. This is nothing definitive (nor should it be), just a series of notes.

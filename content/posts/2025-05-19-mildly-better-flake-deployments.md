@@ -5,6 +5,7 @@ description = "A simple Nix deployment script I've written recently."
 keywords = "nix, nixos, flakes, linux, cicd, deployment, devops"
 tags = ["nix", "bash", "cicd", "linux"]
 toc = true
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg7bocx22"
 +++
 
 ## Introduction

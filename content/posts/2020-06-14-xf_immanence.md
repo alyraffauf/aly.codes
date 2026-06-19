@@ -4,6 +4,7 @@ date = "2020-06-14"
 description = "On Xenofeminism's unresolved disputes."
 cover = "imgs/xf_immanence.webp"
 tags = ["xenofeminism", "shulamithfirestone", "laboriacuboniks", "sophielewis", "amyireland", "donnaharaway", "vnsmatrix", "helenhester"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg6e7k722"
 +++
 
 Introduced in 2015’s _Xenofeminism: A Politics for Alienation_, a production of the _Laboria Cuboniks_ collective of academics, artists, and writers from around the globe, Xenofeminism (XF) presents “a technomaterialist, anti-naturalist, and gender abolitionist form of feminism” (Hester 2018, 6), which avows the technological, disavows the natural, and searches for a way out of the perennial hangups of contemporary feminist, not just through a re-hash of cyberfeminist/Harawayan language but as a project that intimately practices what it preaches—_Laboria_ herself is already an exercise in high-intensity cybernetics, both a singular entity and multiplicitous collective: autonomous nodes working neither in homogenous unity nor in heat-death isolationist heterogeneity.

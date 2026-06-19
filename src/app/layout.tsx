@@ -4,6 +4,7 @@ import MobileNav from "@/app/components/MobileNav";
 import { navBarLinks } from "@/data/navBar";
 import type { Metadata } from "next";
 import BackgroundRoses from "@/app/components/BackgroundRoses";
+import { PUBLICATION_URI } from "@/data/standardSite";
 
 import { Quicksand } from "next/font/google";
 import "./globals.css";
@@ -37,6 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-pink-100 text-zinc-900">
       <body className={`${quicksand.variable} font-sans antialiased`}>
+        {PUBLICATION_URI && (
+          <link rel="site.standard.publication" href={PUBLICATION_URI} />
+        )}
         <BackgroundRoses />
         <main className="min-h-screen p-8 max-w-3xl mx-auto text-zinc-900">
           <header className="mb-12 flex items-center justify-between">

@@ -6,6 +6,7 @@ cover = "imgs/2023-07-nyc_montreal_boston/PXL_20230708_111245760.webp"
 keywords = ["travel", "backpacking", "new york city", "montreal", "boston"]
 tags = ["travel", "backpacking", "newyorkcity", "montreal", "boston"]
 toc = true
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg6xip422"
 +++
 
 My husband and I love to travel and, in 2023, we decided to take a trip backpacking through the Northeastern United States and Canada. We started by flying to New York City, and ended up in Boston by way of Montréal, upstate New York, and Vermont.

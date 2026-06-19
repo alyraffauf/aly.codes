@@ -5,6 +5,7 @@ description = "A review of the Retro Modding and FunnyPlaying shells, buttons, a
 cover = "imgs/rm_vs_fp_shell/retromodding_dmg_shell.webp"
 keywords = ["Game Boy", "Nintendo", "mods", "video game mods"]
 tags = ["gameboy", "nintendo", "mods", "guide", "retromodding", "funnyplaying"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg6nbab22"
 +++
 
 _Originally Posted on Reddit._

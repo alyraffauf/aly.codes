@@ -15,6 +15,9 @@ export default async function PostPage({ params }: PostProps) {
 
   return (
     <article>
+      {post.atUri && (
+        <link rel="site.standard.document" href={post.atUri} />
+      )}
       <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
       <p className="text-sm text-zinc-600 mb-8">{post.date}</p>
 

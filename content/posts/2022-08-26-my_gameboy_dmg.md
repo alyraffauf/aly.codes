@@ -5,6 +5,7 @@ description = "My favorite Game Boy as of August 2022."
 cover = "imgs/2022-08-26-my_gameboy_dmg.webp"
 keywords = ["Game Boy", "Nintendo", "mods", "video game mods", "Dragon Quest"]
 tags = ["gameboy", "nintendo", "mods", "kit", "dragonquest"]
+atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3moocg6tlud22"
 +++
 
 My Game Boy DMG as of August 2022.
