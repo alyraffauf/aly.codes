@@ -17,7 +17,7 @@ Flatpak, Nix, Homebrew, distro packages, and AppImages all have their place in t
 
 ---
 
-I'm focusong on AppImages here because they occupy a particularly annoying middle ground in this crowded field. They are not quite packages, not quite portable apps, and not quite installers. An AppImage is basically an executable runtime with a compressed filesystem glued onto it. That filesystem contains the application, its libraries, and usually a `.desktop` file and icon. When you run the AppImage, the runtime mounts or extracts that payload and launches the app inside it.
+I'm focusing on AppImages here because they occupy a particularly annoying middle ground in this crowded field. They are not quite packages, not quite portable apps, and not quite installers. An AppImage is basically an executable runtime with a compressed filesystem glued onto it. That filesystem contains the application, its libraries, and usually a `.desktop` file and icon. When you run the AppImage, the runtime mounts or extracts that payload and launches the app inside it.
 
 They are executable filesystem bundles with just enough desktop-adjacent metadata to look like apps, but not enough glue to behave like installed software. That's a clever trick, but it also explains most of the weirdness.
 
