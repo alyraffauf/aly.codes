@@ -8,7 +8,7 @@ import { AtpAgent } from "@atproto/api";
 
 const SITE_URL = "https://aly.codes";
 const SITE_NAME = "Aly Raffauf";
-const SITE_DESCRIPTION = "Aly Raffauf's personal website";
+const SITE_DESCRIPTION = "Aly Raffauf's blog";
 const SITE_ICON = "profile.jpg";
 
 const POSTS_DIR = path.join(process.cwd(), "content/posts");

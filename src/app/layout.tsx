@@ -17,7 +17,7 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   title: { default: "Aly Raffauf", template: "%s · Aly Raffauf" },
   metadataBase: new URL("https://aly.codes"),
-  description: "Aly Raffauf's personal website",
+  description: "Aly Raffauf's blog",
   robots: { index: true, follow: true },
 
   icons: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Aly Raffauf",
     title: "Aly Raffauf",
-    description: "Aly Raffauf's personal website",
+    description: "Aly Raffauf's blog",
     url: "/",
     images: ["/opengraph-image.png"],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aly Raffauf",
-    description: "Aly Raffauf's personal website",
+    description: "Aly Raffauf's blog",
     images: ["/opengraph-image.png"],
   },
 };
