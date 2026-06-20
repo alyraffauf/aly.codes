@@ -76,6 +76,35 @@ export function RoseBackground({
    *  "corner" is a quieter two-rose pattern for post covers. */
   variant?: "full" | "corner";
 }) {
+  const corners = (
+    <>
+      <Rose size={180} color={ROSE_STRONG} rotate={-30} top={-30} left={-30} />
+      <Rose
+        size={180}
+        color={ROSE_SOFT}
+        rotate={30}
+        flip
+        top={-20}
+        left={SIZE.width - 40 - 180}
+      />
+      <Rose
+        size={180}
+        color={ROSE_SOFT}
+        rotate={-30}
+        top={SIZE.height - 30 - 180}
+        left={-10}
+      />
+      <Rose
+        size={180}
+        color={ROSE_STRONG}
+        rotate={30}
+        flip
+        top={SIZE.height - 40 - 180}
+        left={SIZE.width - 20 - 180}
+      />
+    </>
+  );
+
   return (
     <div
       style={{
@@ -87,32 +116,10 @@ export function RoseBackground({
         backgroundColor: "#fce7f3",
       }}
     >
-      {variant === "full" ? (
+      {corners}
+
+      {variant === "full" && (
         <>
-          <Rose size={180} color={ROSE_STRONG} rotate={-30} top={-30} left={-30} />
-          <Rose
-            size={180}
-            color={ROSE_SOFT}
-            rotate={30}
-            flip
-            top={-20}
-            left={SIZE.width - 40 - 180}
-          />
-          <Rose
-            size={180}
-            color={ROSE_SOFT}
-            rotate={-30}
-            top={SIZE.height - 30 - 180}
-            left={-10}
-          />
-          <Rose
-            size={180}
-            color={ROSE_STRONG}
-            rotate={30}
-            flip
-            top={SIZE.height - 40 - 180}
-            left={SIZE.width - 20 - 180}
-          />
           <Rose size={130} color={ROSE_STRONG} rotate={25} flip top={150} left={40} />
           <Rose
             size={130}
@@ -121,32 +128,6 @@ export function RoseBackground({
             flip
             top={150}
             left={SIZE.width - 40 - 130}
-          />
-        </>
-      ) : (
-        <>
-          <Rose size={150} color={ROSE_SOFT} rotate={30} flip top={-15} left={-15} />
-          <Rose
-            size={150}
-            color={ROSE_SOFT}
-            rotate={-30}
-            top={-15}
-            left={SIZE.width - 150 + 15}
-          />
-          <Rose
-            size={150}
-            color={ROSE_SOFT}
-            rotate={30}
-            flip
-            top={SIZE.height - 150 + 15}
-            left={-15}
-          />
-          <Rose
-            size={150}
-            color={ROSE_SOFT}
-            rotate={-30}
-            top={SIZE.height - 150 + 15}
-            left={SIZE.width - 150 + 15}
           />
         </>
       )}
