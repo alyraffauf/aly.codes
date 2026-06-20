@@ -30,6 +30,7 @@ export function getAllPosts(limit?: number): Post[] {
         description: data.description,
         content,
         cover: data.cover ?? null,
+        hideCover: data.hideCover ?? false,
         tags: data.tags ?? [],
         atUri: data.atUri ?? null,
       };

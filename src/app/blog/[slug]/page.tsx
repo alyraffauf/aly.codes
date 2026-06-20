@@ -3,9 +3,9 @@ import type { PostProps } from "../../types";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Script from "next/script";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import BlueskyEmbedScript from "../../components/BlueskyEmbedScript";
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
@@ -25,7 +25,7 @@ export default async function PostPage({ params }: PostProps) {
       <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
       <p className="text-sm text-zinc-600 mb-8">{post.date}</p>
 
-      {post.cover && (
+      {post.cover && !post.hideCover && (
         <Image
           src={`/${post.cover}`}
           alt={post.title}
@@ -41,13 +41,7 @@ export default async function PostPage({ params }: PostProps) {
         </ReactMarkdown>
       </div>
 
-      {hasBlueskyEmbed && (
-        <Script
-          async
-          src="https://embed.bsky.app/static/embed.js"
-          strategy="lazyOnload"
-        />
-      )}
+      {hasBlueskyEmbed && <BlueskyEmbedScript />}
     </article>
   );
 }

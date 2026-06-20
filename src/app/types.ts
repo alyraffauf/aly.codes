@@ -19,6 +19,7 @@ export type Post = {
   description: string;
   content: string;
   cover?: string;
+  hideCover?: boolean;
   tags?: string[];
   atUri?: string;
 };
@@ -41,6 +42,7 @@ export type PostPreviewProps = {
   date: string;
   description: string;
   cover?: string | null;
+  hideCover?: boolean;
 };
 
 export type Project = {

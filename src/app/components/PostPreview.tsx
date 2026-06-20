@@ -9,6 +9,7 @@ export default function PostPreview({
   date,
   description,
   cover,
+  hideCover,
 }: PostPreviewProps) {
   return (
     <>
@@ -17,7 +18,7 @@ export default function PostPreview({
         href={`/blog/${slug}`}
         className="block p-4 border-2 border-rose-200 rounded-lg hover:bg-rose-300 transition-colors hover:scale-105 hover:animate-jiggle"
       >
-        {cover && (
+        {cover && !hideCover && (
           <div className="relative h-80 mb-3">
             <Image
               src={`/${cover}`}

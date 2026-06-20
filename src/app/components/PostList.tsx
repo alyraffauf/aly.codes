@@ -15,6 +15,7 @@ export default function PostList({ limit }: { limit?: number }) {
             date={post.date}
             description={post.description}
             cover={post.cover}
+            hideCover={post.hideCover}
           />
         ))}
       </div>

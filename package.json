@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "sync:standard-site": "tsx scripts/sync-standard-site.mts",
-    "generate:og-image": "tsx scripts/generate-og-image.tsx"
+    "generate:og-image": "tsx scripts/generate-og-image.tsx",
+    "generate:cover-image": "tsx scripts/generate-cover-image.tsx"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.0-alpha.3",
