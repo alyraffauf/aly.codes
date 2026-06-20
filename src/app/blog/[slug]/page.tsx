@@ -3,9 +3,10 @@ import type { PostProps } from "../../types";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { isValidElement } from "react";
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
-import BlueskyEmbedScript from "../../components/BlueskyEmbedScript";
+import { extractBlueskyEmbedRefs, getBlueskyPostByRef } from "../../lib/bluesky";
+import BlueskyEmbedCard from "../../components/BlueskyEmbedCard";
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
@@ -15,7 +16,11 @@ export default async function PostPage({ params }: PostProps) {
     notFound();
   }
 
-  const hasBlueskyEmbed = post.content.includes("bluesky-embed");
+  const blueskyRefs = extractBlueskyEmbedRefs(post.content);
+  const blueskyPosts = await Promise.all(blueskyRefs.map(getBlueskyPostByRef));
+  const blueskyDataByRef = new Map(
+    blueskyRefs.map((ref, i) => [ref, blueskyPosts[i]]),
+  );
 
   return (
     <article>
@@ -36,12 +41,28 @@ export default async function PostPage({ params }: PostProps) {
       )}
 
       <div className="prose prose-a:text-rose-700 prose-a:hover:underline prose-code:text-zinc-800 prose-pre:bg-rose-300 prose-pre:text-zinc-100 prose-hr:border-rose-300 prose-hr:border-2 prose-blockquote:border-rose-300 prose-blockquote:border-l-2 prose-li:marker:text-rose-400 max-w-none">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+        <ReactMarkdown
+          components={{
+            pre({ children }) {
+              const child = Array.isArray(children) ? children[0] : children;
+              if (
+                isValidElement<{ className?: string; children?: string }>(
+                  child,
+                ) &&
+                child.props.className?.includes("language-bsky")
+              ) {
+                const ref = String(child.props.children).trim();
+                return (
+                  <BlueskyEmbedCard data={blueskyDataByRef.get(ref) ?? null} />
+                );
+              }
+              return <pre>{children}</pre>;
+            },
+          }}
+        >
           {post.content}
         </ReactMarkdown>
       </div>
-
-      {hasBlueskyEmbed && <BlueskyEmbedScript />}
     </article>
   );
 }

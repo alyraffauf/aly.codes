@@ -13,11 +13,11 @@ atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3mooywkcs5
 
 Linux has many ways to install an app, which is a polite way of saying nobody agrees on one.
 
-Flatpak, Nix, Homebrew, distro packages, and AppImages all have their place in theory, but in practice you are not choosing a format. You are choosing an app, and the app shows up in whatever format the author and your distribution chose to make it available.
+Flatpak, Nix, Homebrew, distro packages, and AppImages all have their place in theory, but in practice you are not choosing a format. You are choosing an app, and the app shows up in whatever format the author and your distribution chose to make it available. Sometimes, that format _sucks_.
 
 ---
 
-I'm focusing on AppImages here because they occupy a particularly annoying middle ground in this crowded field. They are not quite packages, not quite portable apps, and not quite installers. An AppImage is basically an executable runtime with a compressed filesystem glued onto it. That filesystem contains the application, its libraries, and usually a `.desktop` file and icon. When you run the AppImage, the runtime mounts or extracts that payload and launches the app inside it.
+I'm going to focus on AppImages here because they occupy a particularly annoying middle ground in this crowded field. They are not quite packages, not quite portable apps, and not quite installers. An AppImage is basically an executable runtime with a compressed filesystem glued onto it. That filesystem contains the application, its libraries, and usually a `.desktop` file and icon. When you run the AppImage, the runtime mounts or extracts that payload and launches the app inside it.
 
 They are executable filesystem bundles with just enough desktop-adjacent metadata to look like apps, but not enough glue to behave like installed software. That's a clever trick, but it also explains most of the weirdness.
 
@@ -59,11 +59,9 @@ The trick that makes this feel automatic is a systemd user path unit that watche
 
 To the user, this is basically transparent. Drop an app in the folder and within seconds it's in your menu. Delete it and it disappears just as fast.
 
-<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:zntngpowgd6rorjt3haywj36/app.bsky.feed.post/3mojhvxap7c2u" data-bluesky-cid="bafyreic3io5yb7idnyd2iwdrv2vul3tfk7fdxbke7ytcdtmdw5vsk4av74" data-bluesky-embed-color-mode="system">
-<p lang="en">I think I have successfully &#x27;fixed&#x27; the UX of appimages<br><br>this started as a rawdogged (no internet no AI no nothing) python script I hallucinated in one shot on the plane (I spent like 8hrs on planes recently), but I think I think I&#x27;ve eliminated basically all the pain points<br><br>(and rewrote it in Go)<br><br><a href="https://bsky.app/profile/did:plc:zntngpowgd6rorjt3haywj36/post/3mojhvxap7c2u?ref_src=embed">[image or embed]</a></p>
-&mdash; aly (<a href="https://bsky.app/profile/did:plc:zntngpowgd6rorjt3haywj36?ref_src=embed">@aly.codes</a>)
-<a href="https://bsky.app/profile/did:plc:zntngpowgd6rorjt3haywj36/post/3mojhvxap7c2u?ref_src=embed">7:32 PM · Jun 17, 2026</a>
-</blockquote>
+```bsky
+at://did:plc:zntngpowgd6rorjt3haywj36/app.bsky.feed.post/3mojhvxap7c2u
+```
 
 Since this is automatic rather than manually invoked, the systemd unit it triggers is relatively locked down. It runs with `NoNewPrivileges`, a private temp directory, a read-only system view, and explicit write access only to the directories AppHerder needs to manage. It is still your user account managing your files, not a sandbox, but it is tighter than a normal shell command.
 
