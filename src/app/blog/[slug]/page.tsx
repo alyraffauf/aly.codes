@@ -3,7 +3,9 @@ import type { PostProps } from "../../types";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
@@ -12,6 +14,8 @@ export default async function PostPage({ params }: PostProps) {
   if (!post) {
     notFound();
   }
+
+  const hasBlueskyEmbed = post.content.includes("bluesky-embed");
 
   return (
     <article>
@@ -31,9 +35,19 @@ export default async function PostPage({ params }: PostProps) {
         />
       )}
 
-      <div className="prose prose-a:text-rose-700 prose-a:hover:underline prose-code:text-zinc-800 prose-pre:bg-rose-300 prose-pre:text-zinc-100 prose-hr:border-rose-300 prose-hr:border-2 prose-blockquote:border-rose-300 prose-blockquote:border-l-2 max-w-none">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+      <div className="prose prose-a:text-rose-700 prose-a:hover:underline prose-code:text-zinc-800 prose-pre:bg-rose-300 prose-pre:text-zinc-100 prose-hr:border-rose-300 prose-hr:border-2 prose-blockquote:border-rose-300 prose-blockquote:border-l-2 prose-li:marker:text-rose-400 max-w-none">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+          {post.content}
+        </ReactMarkdown>
       </div>
+
+      {hasBlueskyEmbed && (
+        <Script
+          async
+          src="https://embed.bsky.app/static/embed.js"
+          strategy="lazyOnload"
+        />
+      )}
     </article>
   );
 }
