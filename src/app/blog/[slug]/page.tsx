@@ -81,6 +81,7 @@ export async function generateMetadata({
 
     openGraph: {
       type: "article",
+      siteName: "Aly Raffauf",
       title: post.title,
       description: post.description,
       url: `/blog/${slug}/`,

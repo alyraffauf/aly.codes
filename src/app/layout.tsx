@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
+    siteName: "Aly Raffauf",
     title: "Aly Raffauf",
     description: "Aly Raffauf's personal website",
     url: "/",
