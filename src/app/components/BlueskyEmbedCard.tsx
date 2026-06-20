@@ -79,7 +79,7 @@ export default function BlueskyEmbedCard({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-4 text-sm text-zinc-500 no-underline hover:underline"
+        className="flex items-center gap-4 text-sm text-zinc-500 no-underline"
       >
         <span>{formatDate(data.createdAt)}</span>
         <span className="flex items-center gap-1">
