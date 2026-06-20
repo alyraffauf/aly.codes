@@ -67,8 +67,6 @@ To the user, this is basically transparent. Drop an app in the folder and within
 at://did:plc:zntngpowgd6rorjt3haywj36/app.bsky.feed.post/3mojhvxap7c2u
 ```
 
-Since this is automatic rather than manually invoked, the systemd unit it triggers is relatively locked down. It runs with `NoNewPrivileges`, a private temp directory, a read-only system view, and explicit write access only to the directories AppHerder needs to manage. It is still your user account managing your files, not a sandbox, but it is tighter than a normal shell command.
-
 AppHerder uses the same systemd-user approach for automatic upgrades, with a timer instead of a path watcher. Because AppImages have no universal update mechanism, it is very easy to collect stale binaries that need to be manually replaced.
 
 Luckily, many AppImages provide basic update info in an embedded `.upd_info` section of the binary. AppHerder checks that first, then falls back to user-configurable sources when upstream metadata is missing or wrong.
