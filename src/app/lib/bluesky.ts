@@ -31,62 +31,40 @@ export function extractBlueskyEmbedRefs(content: string): string[] {
   );
 }
 
-const BLUESKY_POST_URL_REGEX =
-  /^https:\/\/bsky\.app\/profile\/([^/]+)\/post\/([a-zA-Z0-9]+)\/?$/;
-const BLUESKY_AT_URI_REGEX =
-  /^at:\/\/([^/]+)\/app\.bsky\.feed\.post\/([a-zA-Z0-9]+)$/;
+const GET_POSTS_ENDPOINT = "https://public.api.bsky.app/xrpc/app.bsky.feed.getPosts";
+const POST_BATCH_SIZE = 25;
 
-async function resolveHandleToDid(handle: string): Promise<string | null> {
-  if (handle.startsWith("did:")) return handle;
+type BlueskyPostView = {
+  uri: string;
+  author: { handle: string; displayName?: string; avatar?: string };
+  record?: { text?: string; createdAt?: string };
+  indexedAt?: string;
+  likeCount?: number;
+  repostCount?: number;
+  replyCount?: number;
+  embed?: {
+    $type: string;
+    images?: { thumb: string; alt?: string }[];
+    thumbnail?: string;
+    playlist?: string;
+  };
+};
 
-  const res = await fetch(
-    `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${encodeURIComponent(handle)}`,
-  );
-  if (!res.ok) return null;
-
-  const { did } = await res.json();
-  return did ?? null;
-}
-
-export async function getBlueskyPostByRef(
-  ref: string,
-): Promise<BlueskyPostData | null> {
-  const match = ref.match(BLUESKY_AT_URI_REGEX) ?? ref.match(BLUESKY_POST_URL_REGEX);
-  if (!match) return null;
-
-  const [, authority, rkey] = match;
-  const did = await resolveHandleToDid(authority);
-  if (!did) return null;
-
-  return getBlueskyPost(`at://${did}/app.bsky.feed.post/${rkey}`);
-}
-
-async function getBlueskyPost(atUri: string): Promise<BlueskyPostData | null> {
-  const res = await fetch(
-    `https://public.api.bsky.app/xrpc/app.bsky.feed.getPosts?uris=${encodeURIComponent(atUri)}`,
-  );
-  if (!res.ok) return null;
-
-  const json = await res.json();
-  const post = json.posts?.[0];
-  if (!post) return null;
-
+function parseBlueskyPostView(post: BlueskyPostView): BlueskyPostData | null {
   let embed: BlueskyEmbed = null;
   if (post.embed?.$type === "app.bsky.embed.images#view") {
     embed = {
       type: "images",
-      images: post.embed.images.map(
-        (img: { thumb: string; alt?: string }) => ({
-          thumb: img.thumb,
-          alt: img.alt ?? "",
-        }),
-      ),
+      images: (post.embed.images ?? []).map((image) => ({
+        thumb: image.thumb,
+        alt: image.alt ?? "",
+      })),
     };
   } else if (post.embed?.$type === "app.bsky.embed.video#view") {
     embed = {
       type: "video",
-      thumbnail: post.embed.thumbnail,
-      playlist: post.embed.playlist,
+      thumbnail: post.embed.thumbnail ?? "",
+      playlist: post.embed.playlist ?? "",
     };
   }
 
@@ -98,10 +76,44 @@ async function getBlueskyPost(atUri: string): Promise<BlueskyPostData | null> {
       avatar: post.author.avatar,
     },
     text: post.record?.text ?? "",
-    createdAt: post.record?.createdAt ?? post.indexedAt,
+    createdAt: post.record?.createdAt ?? post.indexedAt ?? "",
     likeCount: post.likeCount ?? 0,
     repostCount: post.repostCount ?? 0,
     replyCount: post.replyCount ?? 0,
     embed,
   };
+}
+
+export async function getBlueskyPostsByUris(
+  atUris: string[],
+): Promise<(BlueskyPostData | null)[]> {
+  if (atUris.length === 0) return [];
+
+  const found = new Map<string, BlueskyPostData>();
+
+  for (let index = 0; index < atUris.length; index += POST_BATCH_SIZE) {
+    const batch = atUris.slice(index, index + POST_BATCH_SIZE);
+    const params = new URLSearchParams();
+    for (const uri of batch) params.append("uris", uri);
+
+    let posts: BlueskyPostView[] = [];
+    try {
+      const response = await fetch(`${GET_POSTS_ENDPOINT}?${params.toString()}`);
+      if (response.ok) posts = (await response.json()).posts ?? [];
+    } catch {
+      posts = [];
+    }
+
+    for (const post of posts) {
+      const parsed = parseBlueskyPostView(post);
+      if (parsed) found.set(parsed.uri, parsed);
+    }
+  }
+
+  return atUris.map((uri) => found.get(uri) ?? null);
+}
+
+export async function getBlueskyPost(atUri: string): Promise<BlueskyPostData | null> {
+  const [post] = await getBlueskyPostsByUris([atUri]);
+  return post;
 }

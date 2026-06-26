@@ -5,8 +5,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { isValidElement } from "react";
 import ReactMarkdown from "react-markdown";
-import { extractBlueskyEmbedRefs, getBlueskyPostByRef } from "../../lib/bluesky";
+import {
+  extractBlueskyEmbedRefs,
+  getBlueskyPost,
+} from "../../lib/bluesky";
 import BlueskyEmbedCard from "../../components/BlueskyEmbedCard";
+import BlueskyMentions from "../../components/BlueskyMentions";
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
@@ -17,16 +21,14 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   const blueskyRefs = extractBlueskyEmbedRefs(post.content);
-  const blueskyPosts = await Promise.all(blueskyRefs.map(getBlueskyPostByRef));
+  const blueskyPosts = await Promise.all(blueskyRefs.map(getBlueskyPost));
   const blueskyDataByRef = new Map(
     blueskyRefs.map((ref, i) => [ref, blueskyPosts[i]]),
   );
 
   return (
     <article>
-      {post.atUri && (
-        <link rel="site.standard.document" href={post.atUri} />
-      )}
+      {post.atUri && <link rel="site.standard.document" href={post.atUri} />}
       <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
       <p className="text-sm text-zinc-600 mb-8">{post.date}</p>
 
@@ -63,6 +65,8 @@ export default async function PostPage({ params }: PostProps) {
           {post.content}
         </ReactMarkdown>
       </div>
+
+      {post.atUri && <BlueskyMentions subject={post.atUri} />}
     </article>
   );
 }

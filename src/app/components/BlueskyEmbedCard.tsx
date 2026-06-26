@@ -5,7 +5,10 @@ import { blueskyPostUrl, type BlueskyPostData } from "@/app/lib/bluesky";
 import BlueskyVideoPlayer from "./BlueskyVideoPlayer";
 
 function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
+  if (!iso) return "----";
+  const date = new Date(iso);
+  if (isNaN(date.getTime())) return "----";
+  return date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
