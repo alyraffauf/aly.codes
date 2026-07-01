@@ -20,11 +20,30 @@ export default function Home() {
           {/*<h2 className="text-2xl font-semibold mb-4">About Me</h2>*/}
           <div className="flex flex-col gap-4">
             <p className="leading-relaxed">
-              Hi, I&apos;m Aly! I spend my time building tools, breaking Linux
-              systems (and fixing them), and self-hosting my digital life. I
-              care deeply about free software, open culture, and making
-              technology work for people. Outside of tech, I&apos;m usually
-              cycling somewhere I shouldn&apos;t be.
+              Hi, I&apos;m Aly! I spend my time building{" "}
+              <a
+                href="https://github.com/alyraffauf/cute.haus"
+                className="text-rose-700 hover:underline"
+              >
+                infrastructure
+              </a>
+              ,{" "}
+              <a
+                href="https://github.com/alyraffauf/tartarus"
+                className="text-rose-700 hover:underline"
+              >
+                experimenting
+              </a>{" "}
+              with AI, and thinking about{" "}
+              <a
+                href="https://github.com/alyraffauf/atbbs"
+                className="text-rose-700 hover:underline"
+              >
+                decentralized
+              </a>{" "}
+              communities. I care deeply about free software, open culture, and
+              building better futures with tech. And when I'm not at my
+              computer, I&apos;m probably cycling somewhere I shouldn&apos;t.
             </p>
             <p className="leading-relaxed">
               This site is hosted on{" "}
