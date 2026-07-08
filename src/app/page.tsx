@@ -8,6 +8,17 @@ export default function Home() {
   return (
     <>
       <section className="mb-12">
+        <Image
+          src="/imgs/gorilla.png"
+          alt="A friendly gorilla welcoming visitors to the site"
+          width={1024}
+          height={576}
+          priority
+          className="w-full h-auto rounded-lg shadow-lg ring-1 ring-rose-200"
+        />
+      </section>
+
+      <section className="mb-12">
         <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
           <Image
             src="/profile.jpg"
