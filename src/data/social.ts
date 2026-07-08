@@ -1,5 +1,5 @@
 import type { SocialLink } from "@/app/types";
-import { FaGithub, FaLinkedin, FaBluesky, FaEnvelope } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaBluesky, FaEnvelope, FaMonero } from "react-icons/fa6";
 
 export const socialLinks: SocialLink[] = [
   {
@@ -21,5 +21,10 @@ export const socialLinks: SocialLink[] = [
     href: "mailto:aly@aly.codes",
     label: "Email",
     icon: FaEnvelope,
+  },
+  {
+    href: "monero:88VjvLZhDncTnCc2zHmB8k1tGmiYPR2Yy9UuRVJpUcyVcTrxsNfGhZFcvyGmtExpiGQKoE5UYX6uqLeWXsZgM99oAdA2Zue",
+    label: "XMR",
+    icon: FaMonero,
   },
 ];
