@@ -10,16 +10,16 @@ export const projects: Project[] = [
     github: "alyraffauf/switchyard",
   },
   {
-    title: "cute.haus",
-    github: "alyraffauf/cute.haus",
+    title: "infra",
+    github: "alyraffauf/infra",
   },
   {
-    title: "watsup",
-    github: "alyraffauf/watsup",
+    title: "asterism",
+    github: "alyraffauf/asterism",
   },
   {
-    title: "morsels",
-    github: "alyraffauf/morsels",
+    title: "tartarus",
+    github: "alyraffauf/tartarus",
   },
   {
     title: "atbbs",
