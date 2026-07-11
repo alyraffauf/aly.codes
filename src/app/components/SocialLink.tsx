@@ -1,4 +1,4 @@
-import { SocialLinkProps } from "@/app/types";
+import type { SocialLinkProps } from "@/app/types";
 
 export default function SocialLink({
   href,
