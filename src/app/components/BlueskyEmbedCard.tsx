@@ -58,11 +58,11 @@ export default function BlueskyEmbedCard({
 
       {data.embed?.type === "images" && (
         <div className="grid grid-cols-2 gap-2">
-          {data.embed.images.map((img) => (
+          {data.embed.images.map((image) => (
             <Image
-              key={img.thumb}
-              src={img.thumb}
-              alt={img.alt}
+              key={image.thumb}
+              src={image.thumb}
+              alt={image.alt}
               width={400}
               height={300}
               className="rounded-md object-cover"

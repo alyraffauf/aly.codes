@@ -4,21 +4,21 @@ export const dynamic = "force-static";
 
 const SITE_URL = "https://aly.codes";
 
-const escape = (s: string) =>
-    s.replace(/[&<>"']/g, (c) =>
-        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[c]!,
+const escape = (text: string) =>
+    text.replace(/[&<>"']/g, (char) =>
+        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[char]!,
     );
 
 export function GET() {
     const posts = getAllPosts();
 
     const items = posts.map(
-        (p) => `    <item>
-      <title>${escape(p.title)}</title>
-      <link>${SITE_URL}/blog/${p.slug}/</link>
-      <guid isPermaLink="true">${SITE_URL}/blog/${p.slug}/</guid>
-      <pubDate>${new Date(p.date).toUTCString()}</pubDate>
-      <description>${escape(p.description ?? "")}</description>
+        (post) => `    <item>
+      <title>${escape(post.title)}</title>
+      <link>${SITE_URL}/blog/${post.slug}/</link>
+      <guid isPermaLink="true">${SITE_URL}/blog/${post.slug}/</guid>
+      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      <description>${escape(post.description ?? "")}</description>
     </item>`,
     ).join("\n");
 

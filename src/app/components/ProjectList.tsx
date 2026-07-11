@@ -7,9 +7,9 @@ import type { ProjectProps, RepoData } from "@/app/types";
 
 async function getRepoData(githubRepo: string): Promise<RepoData | null> {
   try {
-    const res = await fetch(`https://api.github.com/repos/${githubRepo}`);
-    if (!res.ok) return null;
-    return res.json();
+    const response = await fetch(`https://api.github.com/repos/${githubRepo}`);
+    if (!response.ok) return null;
+    return response.json();
   } catch {
     return null;
   }
