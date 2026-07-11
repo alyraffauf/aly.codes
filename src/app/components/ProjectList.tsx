@@ -7,9 +7,7 @@ import type { ProjectProps, RepoData } from "@/app/types";
 
 async function getRepoData(githubRepo: string): Promise<RepoData | null> {
   try {
-    const res = await fetch(`https://api.github.com/repos/${githubRepo}`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(`https://api.github.com/repos/${githubRepo}`);
     if (!res.ok) return null;
     return res.json();
   } catch {
@@ -27,9 +25,13 @@ export default function ProjectList({ limit }: { limit?: number }) {
       const cacheTime = localStorage.getItem("projectsDataTime");
 
       if (cached && cacheTime && Date.now() - Number(cacheTime) < 600000) {
-        setProjectsWithData(JSON.parse(cached));
-        setLoading(false);
-        return;
+        try {
+          setProjectsWithData(JSON.parse(cached));
+          setLoading(false);
+          return;
+        } catch {
+          // Corrupted cache; fall through to refetch.
+        }
       }
 
       const data = await Promise.all(
