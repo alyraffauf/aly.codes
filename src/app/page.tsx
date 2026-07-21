@@ -42,7 +42,7 @@ export default function Home() {
                 decentralized
               </a>{" "}
               communities. I care deeply about free software, open culture, and
-              building better futures with tech. And when I'm not at my
+              building better futures with tech. And when I&apos;m not at my
               computer, I&apos;m probably cycling somewhere I shouldn&apos;t.
             </p>
             <p className="leading-relaxed">
