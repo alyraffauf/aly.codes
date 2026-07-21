@@ -2,6 +2,7 @@ import type { ProjectProps } from "@/app/types";
 
 function getLanguageColor(language: string): string {
   const colors: Record<string, string> = {
+    Gleam: "bg-pink-200",
     Go: "bg-cyan-200",
     TypeScript: "bg-blue-200",
     JavaScript: "bg-yellow-200",
