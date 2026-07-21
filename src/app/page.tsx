@@ -11,6 +11,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
           <Image
             src="/profile.jpg"
+            loading="eager"
             alt="Aly Raffauf"
             width={200}
             height={200}
