@@ -3,17 +3,8 @@
 import { useState, useEffect } from "react";
 import Project from "@/app/components/Project";
 import { projects } from "@/data/projects";
-import type { ProjectProps, RepoData } from "@/app/types";
-
-async function getRepoData(githubRepo: string): Promise<RepoData | null> {
-  try {
-    const response = await fetch(`https://api.github.com/repos/${githubRepo}`);
-    if (!response.ok) return null;
-    return response.json();
-  } catch {
-    return null;
-  }
-}
+import { getRepoData } from "@/app/lib/github";
+import type { ProjectProps } from "@/app/types";
 
 export default function ProjectList({ limit }: { limit?: number }) {
   const [projectsWithData, setProjectsWithData] = useState<ProjectProps[]>([]);
@@ -51,7 +42,12 @@ export default function ProjectList({ limit }: { limit?: number }) {
         }),
       );
 
-      setProjectsWithData(data.sort((a, b) => b.stars - a.stars));
+      const sorted = data.sort((a, b) => b.stars - a.stars)
+
+      localStorage.setItem("projectsData", JSON.stringify(sorted));
+      localStorage.setItem("projectsDataTime", String(Date.now()))
+
+      setProjectsWithData(sorted);
       setLoading(false);
     }
 
