@@ -16,7 +16,9 @@ export async function getTangledStars(repoDid: string): Promise<number> {
       source: STAR_SOURCE,
       limit: "1",
     });
-    const response = await fetch(`${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`);
+    const response = await fetch(
+      `${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`,
+    );
     if (!response.ok) return 0;
     const data: { total?: number } = await response.json();
     return data.total ?? 0;
@@ -32,7 +34,9 @@ export async function getTangledRepo(rkey: string): Promise<TangledRepoRecord | 
       collection: "sh.tangled.repo",
       rkey,
     });
-    const response = await fetch(`${SLINGSHOT}/xrpc/com.atproto.repo.getRecord?${params}`);
+    const response = await fetch(
+      `${SLINGSHOT}/xrpc/com.atproto.repo.getRecord?${params}`,
+    );
     if (!response.ok) return null;
     const data: { value: TangledRepoRecord } = await response.json();
     return data.value;

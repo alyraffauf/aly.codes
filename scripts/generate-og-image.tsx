@@ -7,22 +7,20 @@ async function main() {
   const quicksandBold = await loadQuicksandBold();
 
   const response = new ImageResponse(
-    (
-      <RoseBackground>
-        <div
-          style={{
-            display: "flex",
-            fontFamily: "Quicksand",
-            fontSize: 110,
-            fontWeight: 700,
-            color: "#18181b",
-            letterSpacing: -2,
-          }}
-        >
-          Aly Raffauf
-        </div>
-      </RoseBackground>
-    ),
+    <RoseBackground>
+      <div
+        style={{
+          display: "flex",
+          fontFamily: "Quicksand",
+          fontSize: 110,
+          fontWeight: 700,
+          color: "#18181b",
+          letterSpacing: -2,
+        }}
+      >
+        Aly Raffauf
+      </div>
+    </RoseBackground>,
     {
       ...SIZE,
       fonts: [

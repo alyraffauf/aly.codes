@@ -39,7 +39,9 @@ export async function fetchBacklinks(
     });
     if (cursor) params.set("cursor", cursor);
 
-    const response = await fetch(`${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`);
+    const response = await fetch(
+      `${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`,
+    );
     if (!response.ok) {
       throw new Error(`Failed to fetch backlinks: ${response.status}`);
     }

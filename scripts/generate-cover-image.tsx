@@ -13,8 +13,18 @@ function fontSizeForTitle(title: string): number {
 }
 
 const MONTH_NAMES = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 function formatDate(isoDate: string): string {
@@ -59,97 +69,95 @@ async function main() {
   const quicksandBold = await loadQuicksandBold();
 
   const response = new ImageResponse(
-    (
-      <RoseBackground variant="corner">
+    <RoseBackground variant="corner">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+          padding: "0 100px",
+        }}
+      >
+        <div
+          style={{
+            width: 56,
+            height: 6,
+            borderRadius: 3,
+            backgroundColor: "#be123c",
+            marginBottom: 28,
+          }}
+        />
+
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-            height: "100%",
-            justifyContent: "center",
-            padding: "0 100px",
+            fontFamily: "Quicksand",
+            fontSize: fontSizeForTitle(title),
+            fontWeight: 700,
+            color: "#18181b",
+            letterSpacing: -1,
+            lineHeight: 1.15,
+            maxWidth: 920,
           }}
         >
-          <div
-            style={{
-              width: 56,
-              height: 6,
-              borderRadius: 3,
-              backgroundColor: "#be123c",
-              marginBottom: 28,
-            }}
-          />
+          {title}
+        </div>
 
+        {data.description && (
           <div
             style={{
               display: "flex",
               fontFamily: "Quicksand",
-              fontSize: fontSizeForTitle(title),
-              fontWeight: 700,
-              color: "#18181b",
-              letterSpacing: -1,
-              lineHeight: 1.15,
-              maxWidth: 920,
+              fontSize: 28,
+              fontWeight: 500,
+              color: "#52525b",
+              lineHeight: 1.3,
+              maxWidth: 820,
+              marginTop: 20,
             }}
           >
-            {title}
+            {data.description}
           </div>
+        )}
 
-          {data.description && (
-            <div
-              style={{
-                display: "flex",
-                fontFamily: "Quicksand",
-                fontSize: 28,
-                fontWeight: 500,
-                color: "#52525b",
-                lineHeight: 1.3,
-                maxWidth: 820,
-                marginTop: 20,
-              }}
-            >
-              {data.description}
-            </div>
-          )}
-
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: 32,
+          }}
+        >
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              marginTop: 32,
+              fontFamily: "Quicksand",
+              fontSize: 24,
+              fontWeight: 700,
+              color: "#be123c",
             }}
           >
+            Aly Raffauf
+          </div>
+          {data.date && (
             <div
               style={{
                 display: "flex",
                 fontFamily: "Quicksand",
                 fontSize: 24,
-                fontWeight: 700,
-                color: "#be123c",
+                fontWeight: 500,
+                color: "#a1a1aa",
+                marginLeft: 10,
               }}
             >
-              Aly Raffauf
+              · {formatDate(data.date)}
             </div>
-            {data.date && (
-              <div
-                style={{
-                  display: "flex",
-                  fontFamily: "Quicksand",
-                  fontSize: 24,
-                  fontWeight: 500,
-                  color: "#a1a1aa",
-                  marginLeft: 10,
-                }}
-              >
-                · {formatDate(data.date)}
-              </div>
-            )}
-          </div>
+          )}
         </div>
-      </RoseBackground>
-    ),
+      </div>
+    </RoseBackground>,
     {
       ...SIZE,
       fonts: [
@@ -170,11 +178,7 @@ async function main() {
   fs.writeFileSync(outPath, buffer);
   console.log(`Wrote ${outPath}`);
 
-  const withCover = setFrontmatterField(
-    raw,
-    "cover",
-    JSON.stringify(coverRelPath),
-  );
+  const withCover = setFrontmatterField(raw, "cover", JSON.stringify(coverRelPath));
   const withHideCover = setFrontmatterField(withCover, "hideCover", "true");
   fs.writeFileSync(fullPath, withHideCover);
   console.log(`Set cover = "${coverRelPath}" and hideCover = true in ${fullPath}`);

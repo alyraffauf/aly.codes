@@ -40,9 +40,7 @@ export default function Project({
           <h3 className="text-xl font-semibold">{title}</h3>
 
           <div className="flex gap-4 text-sm shrink-0">
-            <span
-              className={`${getLanguageColor(language)} px-2 py-0.5 rounded-full`}
-            >
+            <span className={`${getLanguageColor(language)} px-2 py-0.5 rounded-full`}>
               {language}
             </span>
             <span className="border border-zinc-300 px-2 py-0.5 rounded-full">

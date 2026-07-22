@@ -4,11 +4,7 @@ type SocialLinkProps = {
   icon: React.ElementType;
 };
 
-export default function SocialLink({
-  href,
-  children,
-  icon: Icon,
-}: SocialLinkProps) {
+export default function SocialLink({ href, children, icon: Icon }: SocialLinkProps) {
   return (
     <>
       <a

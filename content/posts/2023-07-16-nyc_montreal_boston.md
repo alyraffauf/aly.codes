@@ -17,19 +17,19 @@ CW: rail foamer shots incoming.
 
 ![Flying into Newark Liberty International Airport](/imgs/2023-07-nyc_montreal_boston/PXL_20230704_131259936.webp)
 
-*Flying over Newark into Newark Liberty International Airport. Soprano's theme song playing in our heads.*
+_Flying over Newark into Newark Liberty International Airport. Soprano's theme song playing in our heads._
 
 ![Catching the A train on the NYC Subway](/imgs/2023-07-nyc_montreal_boston/IMG_0624.webp)
 
-*Taking the A train on the NYC Subway.*
+_Taking the A train on the NYC Subway._
 
 ![Central Park in NYC](/imgs/2023-07-nyc_montreal_boston/IMG_0627.webp)
 
-*Central Park on a hot, wet, rainy day in July.*
+_Central Park on a hot, wet, rainy day in July._
 
 ![Midtown Manhattan](/imgs/2023-07-nyc_montreal_boston/IMG_0633.webp)
 
-*Midtown Manhattan looking towards Times Square.*
+_Midtown Manhattan looking towards Times Square._
 
 ---
 
@@ -39,31 +39,31 @@ Originally, we planned to take the Amtrak Adirondack to Montreal, but, at the la
 
 ![Berri-UQAM station in Montréal](/imgs/2023-07-nyc_montreal_boston/IMG_0653.webp)
 
-*Berri-UQAM station in Montréal. Sorry for the mid-tier foamer shot.*
+_Berri-UQAM station in Montréal. Sorry for the mid-tier foamer shot._
 
 ![Poppy seed bagel from St. Viateur in Mile-End](/imgs/2023-07-nyc_montreal_boston/PXL_20230706_120653512.MP.webp)
 
-*We got poppy seed bagels from the famous St. Viateur Bagels in Mile-End.*
+_We got poppy seed bagels from the famous St. Viateur Bagels in Mile-End._
 
 ![Phone booth near Jean Talon Market](/imgs/2023-07-nyc_montreal_boston/PXL_20230706_124451266.webp)
 
-*My husband exploring a phone booth near Jean Talon Market.*
+_My husband exploring a phone booth near Jean Talon Market._
 
 ![Downtown Montreal skyline from Mont-Royal](/imgs/2023-07-nyc_montreal_boston/PXL_20230706_160358485.webp)
 
-*Looking towards Downtown from Mont-Royal.*
+_Looking towards Downtown from Mont-Royal._
 
 ![My husband checking out a beer at an Italian market in Verdun](/imgs/2023-07-nyc_montreal_boston/PXL_20230707_232358584.webp)
 
-*Enjoying some sandwiches and beer at BOSSA Prêt à manger in Verdun.*
+_Enjoying some sandwiches and beer at BOSSA Prêt à manger in Verdun._
 
 ![Mirror selfie in our Montréal Airbnb](/imgs/2023-07-nyc_montreal_boston/PXL_20230707_143140207.webp)
 
-*Selfie from our Airbnb. :)*
+_Selfie from our Airbnb. :)_
 
 ![Two backpacks under a Montréal poster in our Airbnb](/imgs/2023-07-nyc_montreal_boston/PXL_20230708_111245760.webp)
 
-*Our backpacks packed and ready to go in our Montréal Airbnb. Onwards to Boston!*
+_Our backpacks packed and ready to go in our Montréal Airbnb. Onwards to Boston!_
 
 ---
 
@@ -73,23 +73,23 @@ After Montréal, we caught another 8-hour Greyhound bus from Gare d'autocars de 
 
 ![Rustic view of a small Vermont town](/imgs/2023-07-nyc_montreal_boston/IMG_0667.webp)
 
-*Vermont might be the most beautiful state.*
+_Vermont might be the most beautiful state._
 
 ![Selfie of Aly + husband on the Greyhound bus](/imgs/2023-07-nyc_montreal_boston/IMG_0672.webp)
 
-*Selfie with my husband on our 8-hour Greyhound to Boston.*
+_Selfie with my husband on our 8-hour Greyhound to Boston._
 
 ![Boston red line subway train bound for Alewife](/imgs/2023-07-nyc_montreal_boston/IMG_0682.webp)
 
-*Catching a red line train bound for Alewife.*
+_Catching a red line train bound for Alewife._
 
 ![Foggy day in Downtown Boston](/imgs/2023-07-nyc_montreal_boston/IMG_0684.webp)
 
-*Beautiful, foggy, and rustic view of Downtown Boston.*
+_Beautiful, foggy, and rustic view of Downtown Boston._
 
 ![A chicken parmesan sandwich from Bricco's in the Boston Library](/imgs/2023-07-nyc_montreal_boston/PXL_20230710_182513681.webp)
 
-*A great sandwich from Bricco Salumeria & Pasta Shop, enjoyed in the Boston Public Library.*
+_A great sandwich from Bricco Salumeria & Pasta Shop, enjoyed in the Boston Public Library._
 
 ---
 
@@ -99,4 +99,4 @@ Ultimately, we flew back to Atlanta right on my birthday, over a week after flyi
 
 ![Dustin hugging our cat](/imgs/2023-07-nyc_montreal_boston/PXL_20230712_000612979.PORTRAIT.webp)
 
-*My husband, Dustin, hugging our cat, Nigel Thornberry. :)*
+_My husband, Dustin, hugging our cat, Nigel Thornberry. :)_

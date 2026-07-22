@@ -35,9 +35,7 @@ type ListRecordsResponse = {
   cursor?: string;
 };
 
-export async function getRecentRocksky(
-  limit = 4,
-): Promise<RockskyScrobbleRecord[]> {
+export async function getRecentRocksky(limit = 4): Promise<RockskyScrobbleRecord[]> {
   try {
     const pds = await getPds(ATPROTO_DID);
     const params = new URLSearchParams({
@@ -47,9 +45,7 @@ export async function getRecentRocksky(
       reverse: "false",
     });
 
-    const response = await fetch(
-      `${pds}/xrpc/com.atproto.repo.listRecords?${params}`,
-    );
+    const response = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`);
 
     if (!response.ok) return [];
 

@@ -19,9 +19,7 @@ type AtprotoService = {
   serviceEndpoint: string;
 };
 
-export async function resolveDidDocument(
-  did: string,
-): Promise<AtprotoDidDocument> {
+export async function resolveDidDocument(did: string): Promise<AtprotoDidDocument> {
   const response = await fetch(getDidDocumentUrl(did));
 
   if (!response.ok) {

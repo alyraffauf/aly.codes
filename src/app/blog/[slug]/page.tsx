@@ -4,10 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { isValidElement } from "react";
 import ReactMarkdown from "react-markdown";
-import {
-  extractBlueskyEmbedRefs,
-  getBlueskyPost,
-} from "@/lib/atproto/bluesky";
+import { extractBlueskyEmbedRefs, getBlueskyPost } from "@/lib/atproto/bluesky";
 import BlueskyEmbedCard from "../../components/BlueskyEmbedCard";
 import BlueskyMentions from "../../components/BlueskyMentions";
 
@@ -25,9 +22,7 @@ export default async function PostPage({ params }: PostProps) {
 
   const blueskyRefs = extractBlueskyEmbedRefs(post.content);
   const blueskyPosts = await Promise.all(blueskyRefs.map(getBlueskyPost));
-  const blueskyDataByRef = new Map(
-    blueskyRefs.map((ref, i) => [ref, blueskyPosts[i]]),
-  );
+  const blueskyDataByRef = new Map(blueskyRefs.map((ref, i) => [ref, blueskyPosts[i]]));
 
   return (
     <article>
@@ -51,15 +46,11 @@ export default async function PostPage({ params }: PostProps) {
             pre({ children }) {
               const child = Array.isArray(children) ? children[0] : children;
               if (
-                isValidElement<{ className?: string; children?: string }>(
-                  child,
-                ) &&
+                isValidElement<{ className?: string; children?: string }>(child) &&
                 child.props.className?.includes("language-bsky")
               ) {
                 const ref = String(child.props.children).trim();
-                return (
-                  <BlueskyEmbedCard data={blueskyDataByRef.get(ref) ?? null} />
-                );
+                return <BlueskyEmbedCard data={blueskyDataByRef.get(ref) ?? null} />;
               }
               return <pre>{children}</pre>;
             },
@@ -74,9 +65,7 @@ export default async function PostPage({ params }: PostProps) {
   );
 }
 
-export async function generateMetadata({
-  params,
-}: PostProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PostProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};

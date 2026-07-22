@@ -15,11 +15,7 @@ function formatDate(iso: string): string {
   });
 }
 
-export default function BlueskyEmbedCard({
-  data,
-}: {
-  data: BlueskyPostData | null;
-}) {
+export default function BlueskyEmbedCard({ data }: { data: BlueskyPostData | null }) {
   if (!data) return null;
 
   const url = blueskyPostUrl(data);
@@ -46,9 +42,7 @@ export default function BlueskyEmbedCard({
             <span className="font-semibold text-zinc-900">
               {data.author.displayName ?? data.author.handle}
             </span>
-            <span className="text-sm text-zinc-500">
-              @{data.author.handle}
-            </span>
+            <span className="text-sm text-zinc-500">@{data.author.handle}</span>
           </div>
           <FaBluesky className="ml-auto h-5 w-5 shrink-0 text-rose-400" />
         </div>

@@ -20,13 +20,13 @@ First, let's talk about the shells. Both are very high quality. They feel great 
 
 ![Pink Retro Modding DMG shell](/imgs/rm_vs_fp_shell/retromodding_dmg_shell.webp)
 
-*Pastel Pink Retro Modding Shell for Game Boy DMG.*
+_Pastel Pink Retro Modding Shell for Game Boy DMG._
 
 The Retro Modding shell uses a mold very similar to the OEM shell. As such, it fits the OEM display, front board, and lens perfectly, but requires modification for any of the popular IPS mods. For the RIPS v3, it's as simple as nipping two screw posts and cutting a tab in the cut out for the contrast wheel. You can do all of this with flush cutters, a craft knife, and (optionally) sand paper. For the FunnyPlaying kit and the RIPS v4 (or any 'Q5' size panel), however, the modifications will be more extensive, because you have to open up the actual display window to accommodate the larger viewing area, which can be trickier to get right. It's certainly less clean. It also requires a special screen lens to accommodate the larger screen--all of the screen lenses provided by Retro Modding aren't large enough, which can really put a damper on your color scheme if you've gotten specific parts to match.
 
 ![Pink Retro Modding DMG shell](/imgs/rm_vs_fp_shell/funnyplaying_dmg_shell.webp)
 
-*Tiffany Blue FunnyPlaying Shell for Game Boy DMG.*
+_Tiffany Blue FunnyPlaying Shell for Game Boy DMG._
 
 The FunnyPlaying shell, on the other hand, requires no modification for the FunnyPlaying or RIPS v4 mod. It's literally drop in with the FP bracket. You can definitely fit RIPS V3, but it'll require the same modification as usual. OEM boards & displays should also work.
 

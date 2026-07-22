@@ -52,9 +52,7 @@ export default function Scrobble({
       )}
 
       <div className="min-w-0">
-        <h3 className="line-clamp-2 text-lg font-semibold leading-tight">
-          {title}
-        </h3>
+        <h3 className="line-clamp-2 text-lg font-semibold leading-tight">{title}</h3>
         <p className="mt-1 line-clamp-2 text-xs leading-tight text-zinc-600">
           {artist} · {album}
         </p>

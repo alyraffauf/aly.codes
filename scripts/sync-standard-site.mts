@@ -12,10 +12,7 @@ const SITE_DESCRIPTION = "Aly Raffauf's blog";
 const SITE_ICON = "profile.jpg";
 
 const POSTS_DIR = path.join(process.cwd(), "content/posts");
-const STANDARD_SITE_CONFIG = path.join(
-  process.cwd(),
-  "src/config/standard-site.ts",
-);
+const STANDARD_SITE_CONFIG = path.join(process.cwd(), "src/config/standard-site.ts");
 
 const PUBLICATION_COLLECTION = "site.standard.publication";
 const DOCUMENT_COLLECTION = "site.standard.document";
@@ -124,8 +121,7 @@ async function main() {
   await agent.login({ identifier: handle, password });
   const did = agent.session!.did;
 
-  const { data: iconData, mimeType: iconMimeType } =
-    await loadImageBlob(SITE_ICON);
+  const { data: iconData, mimeType: iconMimeType } = await loadImageBlob(SITE_ICON);
   const uploadedIcon = await agent.com.atproto.repo.uploadBlob(iconData, {
     encoding: iconMimeType,
   });
@@ -178,9 +174,7 @@ async function main() {
     `// Populated by \`npm run sync:standard-site\`. Do not edit by hand.\nexport const PUBLICATION_URI = "${publicationUri}";\n`,
   );
 
-  const filenames = fs
-    .readdirSync(POSTS_DIR)
-    .filter((name) => name.endsWith(".md"));
+  const filenames = fs.readdirSync(POSTS_DIR).filter((name) => name.endsWith(".md"));
 
   for (const filename of filenames) {
     const fullPath = path.join(POSTS_DIR, filename);
@@ -232,10 +226,7 @@ async function main() {
         record,
       });
       documentUri = created.data.uri;
-      fs.writeFileSync(
-        fullPath,
-        setFrontmatterField(raw, "atUri", documentUri),
-      );
+      fs.writeFileSync(fullPath, setFrontmatterField(raw, "atUri", documentUri));
       console.log(`Created document record for ${slug}: ${documentUri}`);
     }
   }

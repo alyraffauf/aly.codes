@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "sync:standard-site": "tsx scripts/sync-standard-site.mts",
     "generate:og-image": "tsx scripts/generate-og-image.tsx",
     "generate:cover-image": "tsx scripts/generate-cover-image.tsx"
@@ -32,6 +34,8 @@
     "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "^16.2.11",
+    "prettier": "^3.6.2",
+    "prettier": "^3.9.6",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.1",

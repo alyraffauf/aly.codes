@@ -57,10 +57,10 @@ export default function ProjectList({ limit }: { limit?: number }) {
         }),
       );
 
-      const sorted = data.sort((a, b) => b.stars - a.stars)
+      const sorted = data.sort((a, b) => b.stars - a.stars);
 
       localStorage.setItem("projectsData", JSON.stringify(sorted));
-      localStorage.setItem("projectsDataTime", String(Date.now()))
+      localStorage.setItem("projectsDataTime", String(Date.now()));
 
       setProjectsWithData(sorted);
       setLoading(false);

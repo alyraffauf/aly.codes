@@ -6,9 +6,7 @@ export type RepoData = {
   stargazers_count: number;
 };
 
-export async function getRepoData(
-  githubRepo: string,
-): Promise<RepoData | null> {
+export async function getRepoData(githubRepo: string): Promise<RepoData | null> {
   try {
     const response = await fetch(`https://api.github.com/repos/${githubRepo}`);
     if (!response.ok) return null;
