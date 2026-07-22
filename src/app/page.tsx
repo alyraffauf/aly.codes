@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { FolderGit, Rss } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import { getAboutContent } from "@/app/lib/about"
 import ProjectList from "@/app/components/ProjectList";
 import SocialLinkList from "@/app/components/SocialLinkList";
 import PostList from "@/app/components/PostList";
+
+const aboutContent = getAboutContent();
 
 export default function Home() {
   return (
@@ -20,56 +24,17 @@ export default function Home() {
 
           {/*<h2 className="text-2xl font-semibold mb-4">About Me</h2>*/}
           <div className="flex flex-col gap-4">
-            <p className="leading-relaxed">
-              Hi, I&apos;m Aly! I spend my time building{" "}
-              <a
-                href="https://github.com/alyraffauf/cute.haus"
-                className="text-rose-700 hover:underline"
+            <div className="prose prose-a:text-rose-700 prose-a:hover:underline max-w-none">
+              <ReactMarkdown
+                components={{
+                  p({ children }) {
+                    return <p className="leading-relaxed">{children}</p>;
+                  },
+                }}
               >
-                infrastructure
-              </a>
-              ,{" "}
-              <a
-                href="https://github.com/alyraffauf/tartarus"
-                className="text-rose-700 hover:underline"
-              >
-                experimenting
-              </a>{" "}
-              with AI, and thinking about{" "}
-              <a
-                href="https://github.com/alyraffauf/atbbs"
-                className="text-rose-700 hover:underline"
-              >
-                decentralized
-              </a>{" "}
-              communities. I care deeply about free software, open culture, and
-              building better futures with tech. And when I&apos;m not at my
-              computer, I&apos;m probably cycling somewhere I shouldn&apos;t.
-            </p>
-            <p className="leading-relaxed">
-              This site is hosted on{" "}
-              <a
-                href="https://cute.haus"
-                className="text-rose-700 hover:underline"
-              >
-                cute.haus
-              </a>
-              , and available via{" "}
-              <a
-                href="https://atproto.com/"
-                className="text-rose-700 hover:underline"
-              >
-                atproto
-              </a>{" "}
-              with{" "}
-              <a
-                href="https://standard.site/"
-                className="text-rose-700 hover:underline"
-              >
-                standard.site
-              </a>
-              .
-            </p>
+                {aboutContent}
+              </ReactMarkdown>
+            </div>
           </div>
         </div>
       </section>
