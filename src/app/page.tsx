@@ -57,7 +57,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4">
           {" "}
           <div className="flex items-center gap-2">
-            <Rss /> Recent Posts
+            <Rss /> Recent Blogs
           </div>
         </h2>
 
