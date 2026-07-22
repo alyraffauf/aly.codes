@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Project from "@/app/components/Project";
 import { projects } from "@/data/projects";
 import { getRepoData } from "@/app/lib/github";
+import { getTangledRepo, getTangledStars } from "@/app/lib/tangled";
 import type { ProjectProps } from "@/app/types";
 
 export default function ProjectList({ limit }: { limit?: number }) {
@@ -27,17 +28,32 @@ export default function ProjectList({ limit }: { limit?: number }) {
 
       const data = await Promise.all(
         projects.map(async (project) => {
-          const repoData = await getRepoData(project.github);
+          if (project.source === "github") {
+            const repoData = await getRepoData(project.repo);
+
+            return {
+              title: project.title,
+              description: repoData?.description || "No description",
+              language: repoData?.language || "Unknown",
+              link:
+                repoData?.homepage ||
+                repoData?.html_url ||
+                `https://github.com/${project.repo}`,
+              stars: repoData?.stargazers_count ?? 0,
+            };
+          }
+
+          const [repo, stars] = await Promise.all([
+            getTangledRepo(project.title),
+            getTangledStars(project.repoDid),
+          ]);
 
           return {
             title: project.title,
-            description: repoData?.description || "No description",
-            language: repoData?.language || "Unknown",
-            link:
-              repoData?.homepage ||
-              repoData?.html_url ||
-              `https://github.com/${project.github}`,
-            stars: repoData?.stargazers_count ?? 0,
+            description: repo?.description || "No description",
+            language: project.language,
+            link: repo?.website || `https://tangled.org/${project.repo}`,
+            stars,
           };
         }),
       );

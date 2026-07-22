@@ -45,9 +45,27 @@ export type PostPreviewProps = {
   hideCover?: boolean;
 };
 
-export type Project = {
+type GithubProject = {
   title: string;
-  github: string;
+  source: "github";
+  repo: string; // "owner/repo", e.g. "alyraffauf/nynx"
+};
+
+type TangledProject = {
+  title: string;
+  source: "tangled";
+  repo: string; // "owner/repo", e.g. "aly.codes/nynx"
+  repoDid: string;
+  language: string;
+};
+
+export type Project = GithubProject | TangledProject;
+
+export type TangledRepoRecord = {
+  repoDid: string;
+  description?: string;
+  website?: string;
+  topics?: string[];
 };
 
 export type RepoData = {

@@ -1,5 +1,5 @@
-const CONSTELLATION_API =
-  "https://constellation.microcosm.blue/xrpc/blue.microcosm.links.getBacklinks";
+import { CONSTELLATION } from "@/data/atproto";
+
 const DOCUMENT_BACKLINK_SOURCE =
   "app.bsky.feed.post:embed.external.associatedRefs[com.atproto.repo.strongRef].uri";
 const PAGE_SIZE = 100;
@@ -39,7 +39,7 @@ export async function fetchBacklinks(
     });
     if (cursor) params.set("cursor", cursor);
 
-    const response = await fetch(`${CONSTELLATION_API}?${params.toString()}`);
+    const response = await fetch(`${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch backlinks: ${response.status}`);
     }
