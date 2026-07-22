@@ -25,17 +25,21 @@ export default function ScrobbleList({ limit }: { limit?: number }) {
   }
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {scrobbles.slice(0, limit).map((scrobble) => (
-        <Scrobble
-          key={scrobble.mbid}
-          album={scrobble.album}
-          title={scrobble.title}
-          artist={scrobble.artist}
-          spotifyLink={scrobble.spotifyLink}
-          albumArt={scrobble.albumArtUrl}
-        />
-      ))}
+    <div className="max-w-3xl">
+      <div>
+        {scrobbles.slice(0, limit).map((scrobble, index) => (
+          <Scrobble
+            key={`${scrobble.createdAt}-${scrobble.mbid}`}
+            album={scrobble.album}
+            createdAt={scrobble.createdAt}
+            title={scrobble.title}
+            artist={scrobble.artist}
+            spotifyLink={scrobble.spotifyLink}
+            albumArt={scrobble.albumArtUrl}
+            index={index}
+          />
+        ))}
+      </div>
     </div>
   );
 }

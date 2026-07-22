@@ -1,38 +1,62 @@
+import { Music2 } from "lucide-react";
 import type { ScrobbleProps } from "@/app/types";
+
+function formatRelativeTime(createdAt: string) {
+  const elapsedMinutes = Math.round(
+    (Date.now() - new Date(createdAt).getTime()) / 60000,
+  );
+
+  if (elapsedMinutes < 1) return "just now";
+  if (elapsedMinutes < 60) return `${elapsedMinutes} min ago`;
+
+  const elapsedHours = Math.round(elapsedMinutes / 60);
+  if (elapsedHours < 24) return `${elapsedHours} hr ago`;
+
+  return `${Math.round(elapsedHours / 24)} days ago`;
+}
 
 export default function Scrobble({
   title,
   artist,
   album,
+  createdAt,
   spotifyLink,
   albumArt,
-}: ScrobbleProps) {
+  index,
+}: ScrobbleProps & { index: number }) {
   return (
     <a
       href={spotifyLink}
       target="_blank"
-      className="flex h-28 items-center gap-3 rounded-lg border-2 border-rose-200 p-3 transition-colors hover:animate-jiggle hover:scale-105 hover:bg-rose-300"
+      rel="noreferrer"
+      className="group -mx-2 grid grid-cols-[3.5rem_1fr_auto] items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-rose-300"
     >
-      {albumArt && (
+      {albumArt ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={albumArt}
           alt={`${album} album art`}
-          width={64}
-          height={64}
-          className="size-16 shrink-0 rounded-md object-cover"
+          width={48}
+          height={48}
+          className={`size-12 rounded-md object-cover shadow-sm transition-transform group-hover:rotate-0 ${index % 2 === 0 ? "-rotate-2" : "rotate-2"}`}
         />
+      ) : (
+        <div />
       )}
 
       <div className="min-w-0">
         <h3 className="line-clamp-2 text-lg font-semibold leading-tight">
           {title}
         </h3>
-
-        <p className="mt-1 line-clamp-2 text-sm leading-tight text-zinc-600">
-          {artist}
+        <p className="mt-1 line-clamp-2 text-xs leading-tight text-zinc-600">
+          {artist} · {album}
         </p>
       </div>
+
+      <span className="flex items-center gap-1 whitespace-nowrap text-xs text-rose-500">
+        <Music2 className="size-3" />
+        {formatRelativeTime(createdAt)}
+      </span>
     </a>
   );
 }

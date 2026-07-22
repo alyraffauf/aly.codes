@@ -48,6 +48,7 @@ export type PostPreviewProps = {
 export type ScrobbleProps = {
   album: string;
   artist: string;
+  createdAt: string;
   title: string;
   spotifyLink?: string;
   albumArt?: string;
