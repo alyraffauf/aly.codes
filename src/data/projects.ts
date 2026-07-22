@@ -45,8 +45,10 @@ export const projects: Project[] = [
   },
   {
     title: "morsels",
-    source: "github",
-    repo: "alyraffauf/morsels",
+    source: "tangled",
+    repo: "aly.codes/morsels",
+    repoDid: "did:plc:rdgtjxv7f5jgxvy3hruwv77q",
+    language: "Python",
   },
   {
     title: "citytexture",
