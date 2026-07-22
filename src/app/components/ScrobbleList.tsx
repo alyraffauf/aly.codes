@@ -11,8 +11,23 @@ export default function ScrobbleList({ limit }: { limit?: number }) {
 
   useEffect(() => {
     async function loadScrobbles() {
+      const cached = localStorage.getItem("scrobbles");
+      const cacheTime = localStorage.getItem("scrobblesTime");
+
+      if (cached && cacheTime && Date.now() - Number(cacheTime) < 300000) {
+        try {
+          setScrobbles(JSON.parse(cached));
+          setLoading(false);
+          return;
+        } catch {
+          // Corrupted cache; fall through to refetch.
+        }
+      }
+
       setLoading(true);
       const recentScrobbles = await getRecentRocksky(limit ?? 4);
+      localStorage.setItem("scrobbles", JSON.stringify(recentScrobbles));
+      localStorage.setItem("scrobblesTime", String(Date.now()));
       setScrobbles(recentScrobbles);
       setLoading(false);
     }
