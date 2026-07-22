@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { FolderGit, Rss } from "lucide-react";
+import { AudioLines, FolderGit, Rss } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { getAboutContent } from "@/app/lib/about"
 import ProjectList from "@/app/components/ProjectList";
 import SocialLinkList from "@/app/components/SocialLinkList";
 import PostList from "@/app/components/PostList";
+import ScrobbleList from "@/app/components/ScrobbleList";
 
 const aboutContent = getAboutContent();
 
@@ -40,8 +41,16 @@ export default function Home() {
       </section>
 
       <section className="mb-12">
-        {/*<h2 className="text-2xl font-semibold mb-4">Elsewhere</h2>*/}
         <SocialLinkList />
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">
+          <div className="flex items-center gap-2">
+            <AudioLines /> Recent Listens
+          </div>
+        </h2>
+        <ScrobbleList limit={4} />
       </section>
 
       <section className="mb-12">

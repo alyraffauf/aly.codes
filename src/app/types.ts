@@ -45,6 +45,14 @@ export type PostPreviewProps = {
   hideCover?: boolean;
 };
 
+export type ScrobbleProps = {
+  album: string;
+  artist: string;
+  title: string;
+  spotifyLink?: string;
+  albumArt?: string;
+};
+
 type GithubProject = {
   title: string;
   source: "github";
@@ -86,4 +94,30 @@ export type SocialLinkProps = {
   href: string;
   children: React.ReactNode;
   icon: React.ElementType;
+};
+
+
+export type RockskyScrobbleRecord = {
+  $type: "app.rocksky.scrobble";
+  album: string;
+  albumArtUrl: string;
+  albumArtist: string;
+  artist: string;
+  artists: RockskyArtist[];
+  createdAt: string;
+  discNumber: number;
+  duration: number;
+  isrc: string;
+  mbid: string;
+  releaseDate: string;
+  spotifyLink: string;
+  tags: string[];
+  title: string;
+  trackNumber: number;
+  year: number;
+};
+
+export type RockskyArtist = {
+  mbid: string;
+  name: string;
 };
