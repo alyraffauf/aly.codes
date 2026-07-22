@@ -122,3 +122,24 @@ export type RockskyArtist = {
   mbid: string;
   name: string;
 };
+
+export type AtprotoDidDocument = {
+  "@context": string[];
+  id: `did:${string}`;
+  alsoKnownAs: string[];
+  verificationMethod: AtprotoVerificationMethod[];
+  service: AtprotoService[];
+};
+
+export type AtprotoVerificationMethod = {
+  id: string;
+  type: "Multikey";
+  controller: `did:${string}`;
+  publicKeyMultibase: string;
+};
+
+export type AtprotoService = {
+  id: "#atproto_pds";
+  type: "AtprotoPersonalDataServer";
+  serviceEndpoint: string;
+};
