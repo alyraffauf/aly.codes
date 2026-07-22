@@ -1,5 +1,5 @@
 import SocialLink from "@/app/components/SocialLink";
-import { socialLinks } from "@/data/social";
+import { socialLinks } from "@/content/social";
 
 export default async function SocialLinkList() {
   return (

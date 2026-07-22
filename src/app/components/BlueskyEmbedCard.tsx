@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { FaBluesky } from "react-icons/fa6";
-import { blueskyPostUrl, type BlueskyPostData } from "@/app/lib/bluesky";
+import { blueskyPostUrl, type BlueskyPostData } from "@/lib/atproto/bluesky";
 import BlueskyVideoPlayer from "./BlueskyVideoPlayer";
 
 function formatDate(iso: string): string {

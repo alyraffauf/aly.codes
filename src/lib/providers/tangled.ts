@@ -1,5 +1,11 @@
-import { TangledRepoRecord } from "../types";
-import { ATPROTO_DID, CONSTELLATION, SLINGSHOT } from "@/data/atproto";
+import { ATPROTO_DID, CONSTELLATION, SLINGSHOT } from "@/config/atproto";
+
+export type TangledRepoRecord = {
+  repoDid: string;
+  description?: string;
+  website?: string;
+  topics?: string[];
+};
 
 const STAR_SOURCE = "sh.tangled.feed.star:subject.did";
 

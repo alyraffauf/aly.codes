@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { AudioLines, FolderGit, Rss } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { getAboutContent } from "@/app/lib/about"
+import { getAboutContent } from "@/lib/content/about"
 import ProjectList from "@/app/components/ProjectList";
 import SocialLinkList from "@/app/components/SocialLinkList";
 import PostList from "@/app/components/PostList";

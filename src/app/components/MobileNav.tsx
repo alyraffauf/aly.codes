@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { MobileNavProps } from "@/app/types";
+import type { NavBarLink } from "@/content/navigation";
+
+type MobileNavProps = {
+  links: NavBarLink[];
+};
 
 export default function MobileNav({ links }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);

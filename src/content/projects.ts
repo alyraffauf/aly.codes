@@ -1,4 +1,18 @@
-import type { Project } from "@/app/types";
+export type GithubProject = {
+  title: string;
+  source: "github";
+  repo: string;
+};
+
+export type TangledProject = {
+  title: string;
+  source: "tangled";
+  repo: string;
+  repoDid: string;
+  language: string;
+};
+
+export type Project = GithubProject | TangledProject;
 
 export const projects: Project[] = [
   {

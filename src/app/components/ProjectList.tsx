@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Project from "@/app/components/Project";
-import { projects } from "@/data/projects";
-import { getRepoData } from "@/app/lib/github";
-import { getTangledRepo, getTangledStars } from "@/app/lib/tangled";
-import type { ProjectProps } from "@/app/types";
+import Project, { type ProjectProps } from "@/app/components/Project";
+import { projects } from "@/content/projects";
+import { getRepoData } from "@/lib/providers/github";
+import { getTangledRepo, getTangledStars } from "@/lib/providers/tangled";
 
 export default function ProjectList({ limit }: { limit?: number }) {
   const [projectsWithData, setProjectsWithData] = useState<ProjectProps[]>([]);

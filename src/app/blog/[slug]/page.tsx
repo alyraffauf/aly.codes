@@ -1,5 +1,4 @@
-import { getPostBySlug, getAllPosts } from "../../lib/posts";
-import type { PostProps } from "../../types";
+import { getPostBySlug, getAllPosts } from "@/lib/content/posts";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -8,9 +7,13 @@ import ReactMarkdown from "react-markdown";
 import {
   extractBlueskyEmbedRefs,
   getBlueskyPost,
-} from "../../lib/bluesky";
+} from "@/lib/atproto/bluesky";
 import BlueskyEmbedCard from "../../components/BlueskyEmbedCard";
 import BlueskyMentions from "../../components/BlueskyMentions";
+
+type PostProps = {
+  params: Promise<{ slug: string }>;
+};
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;

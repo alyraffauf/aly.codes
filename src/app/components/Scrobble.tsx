@@ -1,5 +1,12 @@
 import { Music2 } from "lucide-react";
-import type { ScrobbleProps } from "@/app/types";
+import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";
+
+type ScrobbleProps = Pick<
+  RockskyScrobbleRecord,
+  "album" | "artist" | "createdAt" | "title" | "spotifyLink"
+> & {
+  albumArt?: string;
+};
 
 function formatRelativeTime(createdAt: string) {
   const elapsedMinutes = Math.round(

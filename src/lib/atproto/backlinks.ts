@@ -1,4 +1,4 @@
-import { CONSTELLATION } from "@/data/atproto";
+import { CONSTELLATION } from "@/config/atproto";
 
 const DOCUMENT_BACKLINK_SOURCE =
   "app.bsky.feed.post:embed.external.associatedRefs[com.atproto.repo.strongRef].uri";

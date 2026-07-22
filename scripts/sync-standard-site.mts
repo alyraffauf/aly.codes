@@ -14,7 +14,7 @@ const SITE_ICON = "profile.jpg";
 const POSTS_DIR = path.join(process.cwd(), "content/posts");
 const STANDARD_SITE_CONFIG = path.join(
   process.cwd(),
-  "src/data/standardSite.ts",
+  "src/config/standard-site.ts",
 );
 
 const PUBLICATION_COLLECTION = "site.standard.publication";

@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { MessageCircle } from "lucide-react";
 import BlueskyEmbedCard from "./BlueskyEmbedCard";
-import { backlinkAtUri, fetchBacklinks } from "../lib/backlinks";
-import { getBlueskyPostsByUris, type BlueskyPostData } from "../lib/bluesky";
+import { backlinkAtUri, fetchBacklinks } from "@/lib/atproto/backlinks";
+import { getBlueskyPostsByUris, type BlueskyPostData } from "@/lib/atproto/bluesky";
 
 export default function BlueskyMentions({ subject }: { subject: string }) {
   const [posts, setPosts] = useState<BlueskyPostData[] | null>(null);

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import NavBarLink from "@/app/components/NavBarLink";
 import MobileNav from "@/app/components/MobileNav";
-import { navBarLinks } from "@/data/navBar";
+import { navBarLinks } from "@/content/navigation";
 import type { Metadata } from "next";
 import BackgroundRoses from "@/app/components/BackgroundRoses";
-import { PUBLICATION_URI } from "@/data/standardSite";
+import { PUBLICATION_URI } from "@/config/standard-site";
 
 import { Quicksand } from "next/font/google";
 import "./globals.css";

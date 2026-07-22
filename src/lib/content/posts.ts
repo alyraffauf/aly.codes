@@ -1,10 +1,21 @@
-import type { Post } from "@/app/types";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import toml from "toml";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
+
+export type Post = {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  content: string;
+  cover?: string;
+  hideCover?: boolean;
+  tags?: string[];
+  atUri?: string;
+};
 
 export function getAllPosts(limit?: number): Post[] {
   const filenames = fs.readdirSync(postsDirectory);

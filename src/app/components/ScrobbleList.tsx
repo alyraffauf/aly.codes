@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Scrobble from "@/app/components/Scrobble";
-import { getRecentRocksky } from "@/app/lib/rocksky";
-import type { RockskyScrobbleRecord } from "@/app/types";
+import { getRecentRocksky } from "@/lib/providers/rocksky";
+import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";
 
 export default function ScrobbleList({ limit }: { limit?: number }) {
   const [scrobbles, setScrobbles] = useState<RockskyScrobbleRecord[]>([]);

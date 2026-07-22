@@ -1,4 +1,4 @@
-import { ATPROTO_DID } from "@/data/atproto";
+import { ATPROTO_DID } from "@/config/atproto";
 
 export const dynamic = "force-static";
 

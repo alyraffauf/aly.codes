@@ -1,4 +1,4 @@
-import { getAllPosts } from "../lib/posts";
+import { getAllPosts } from "@/lib/content/posts";
 import PostPreview from "../components/PostPreview";
 
 export default function PostList({ limit }: { limit?: number }) {

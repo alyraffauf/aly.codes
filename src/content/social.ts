@@ -1,5 +1,10 @@
-import type { SocialLink } from "@/app/types";
 import { FaGithub, FaLinkedin, FaBluesky, FaEnvelope, FaMonero } from "react-icons/fa6";
+
+export type SocialLink = {
+  href: string;
+  label: string;
+  icon: React.ElementType;
+};
 
 export const socialLinks: SocialLink[] = [
   {

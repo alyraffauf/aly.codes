@@ -1,4 +1,8 @@
-import type { SocialLinkProps } from "@/app/types";
+type SocialLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  icon: React.ElementType;
+};
 
 export default function SocialLink({
   href,

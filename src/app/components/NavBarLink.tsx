@@ -1,5 +1,9 @@
-import type { NavBarLinkProps } from "@/app/types";
 import Link from "next/link";
+
+type NavBarLinkProps = {
+  href: string;
+  children: React.ReactNode;
+};
 
 export default function NavBarLink({ href, children }: NavBarLinkProps) {
   return (

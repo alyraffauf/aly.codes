@@ -1,4 +1,10 @@
-import type { ProjectProps } from "@/app/types";
+export type ProjectProps = {
+  title: string;
+  description: string;
+  link: string;
+  stars?: number;
+  language: string;
+};
 
 function getLanguageColor(language: string): string {
   const colors: Record<string, string> = {

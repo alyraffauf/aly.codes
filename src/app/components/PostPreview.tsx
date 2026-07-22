@@ -1,7 +1,14 @@
-// import { Post } from "@/app/lib/posts";
-import type { PostPreviewProps } from "@/app/types";
 import Link from "next/link";
 import Image from "next/image";
+
+type PostPreviewProps = {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  cover?: string | null;
+  hideCover?: boolean;
+};
 
 export default function PostPreview({
   slug,
