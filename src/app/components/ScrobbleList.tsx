@@ -5,42 +5,51 @@ import Scrobble from "@/app/components/Scrobble";
 import { getRecentRocksky } from "@/lib/providers/rocksky";
 import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";
 
+const REFRESH_INTERVAL = 20_000;
+
 export default function ScrobbleList({
   pds,
-  profileUrl,
   limit,
 }: {
   pds: string | null;
-  profileUrl?: string;
   limit?: number;
 }) {
   const [scrobbles, setScrobbles] = useState<RockskyScrobbleRecord[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function loadScrobbles() {
+    let isMounted = true;
+
+    function loadCachedScrobbles() {
       const cached = localStorage.getItem("scrobbles");
-      const cacheTime = localStorage.getItem("scrobblesTime");
+      if (!cached) return;
 
-      if (cached && cacheTime && Date.now() - Number(cacheTime) < 300000) {
-        try {
-          setScrobbles(JSON.parse(cached));
-          setLoading(false);
-          return;
-        } catch {
-          // Corrupted cache; fall through to refetch.
-        }
+      try {
+        setScrobbles(JSON.parse(cached));
+        setLoading(false);
+      } catch {
+        localStorage.removeItem("scrobbles");
       }
+    }
 
-      setLoading(true);
+    async function refreshScrobbles() {
       const recentScrobbles = await getRecentRocksky(pds, limit ?? 4);
+      if (!isMounted) return;
+
       localStorage.setItem("scrobbles", JSON.stringify(recentScrobbles));
-      localStorage.setItem("scrobblesTime", String(Date.now()));
       setScrobbles(recentScrobbles);
       setLoading(false);
     }
 
-    loadScrobbles();
+    loadCachedScrobbles();
+    refreshScrobbles();
+
+    const refreshTimer = window.setInterval(refreshScrobbles, REFRESH_INTERVAL);
+
+    return () => {
+      isMounted = false;
+      window.clearInterval(refreshTimer);
+    };
   }, [limit, pds]);
 
   if (loading) {
@@ -61,19 +70,6 @@ export default function ScrobbleList({
           index={index}
         />
       ))}
-
-      {/* {profileUrl && (
-        <div className="flex justify-end">
-          <a
-            href={profileUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-2 inline-block text-xs text-rose-700 hover:underline"
-          >
-            Rocksky ↗
-          </a>
-        </div>
-      )} */}
     </div>
   );
 }

@@ -54,15 +54,7 @@ export default async function Home() {
             <AudioLines /> Recent Listens
           </span>
         </h2>
-        <ScrobbleList
-          pds={identity?.pds ?? null}
-          profileUrl={
-            identity?.handle
-              ? `https://rocksky.app/profile/${identity.handle}`
-              : undefined
-          }
-          limit={3}
-        />
+        <ScrobbleList pds={identity?.pds ?? null} limit={3} />
       </section>
 
       <section className="mb-12">

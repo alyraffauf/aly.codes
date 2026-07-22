@@ -48,7 +48,9 @@ export async function getRecentRocksky(
       reverse: "false",
     });
 
-    const response = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`);
+    const response = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`, {
+      cache: "no-store",
+    });
 
     if (!response.ok) return [];
 
