@@ -48,18 +48,3 @@ function getDidDocumentUrl(did: string): string {
 
   throw new Error(`Unsupported DID method: ${did}`);
 }
-
-export async function getPds(did: string): Promise<string> {
-  const document = await resolveDidDocument(did);
-  const pds = document.service.find(
-    (service) =>
-      service.type === "AtprotoPersonalDataServer" &&
-      service.id.endsWith("#atproto_pds"),
-  );
-
-  if (!pds) {
-    throw new Error(`No PDS found for DID: ${did}`);
-  }
-
-  return pds.serviceEndpoint;
-}

@@ -1,5 +1,4 @@
 import { ATPROTO_DID } from "@/config/atproto";
-import { getPds } from "@/lib/atproto/did";
 
 export type RockskyScrobbleRecord = {
   $type: "app.rocksky.scrobble";
@@ -35,9 +34,13 @@ type ListRecordsResponse = {
   cursor?: string;
 };
 
-export async function getRecentRocksky(limit = 4): Promise<RockskyScrobbleRecord[]> {
+export async function getRecentRocksky(
+  pds: string | null,
+  limit = 4,
+): Promise<RockskyScrobbleRecord[]> {
+  if (!pds) return [];
+
   try {
-    const pds = await getPds(ATPROTO_DID);
     const params = new URLSearchParams({
       repo: ATPROTO_DID,
       collection: "app.rocksky.scrobble",

@@ -5,7 +5,13 @@ import Scrobble from "@/app/components/Scrobble";
 import { getRecentRocksky } from "@/lib/providers/rocksky";
 import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";
 
-export default function ScrobbleList({ limit }: { limit?: number }) {
+export default function ScrobbleList({
+  pds,
+  limit,
+}: {
+  pds: string | null;
+  limit?: number;
+}) {
   const [scrobbles, setScrobbles] = useState<RockskyScrobbleRecord[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +31,7 @@ export default function ScrobbleList({ limit }: { limit?: number }) {
       }
 
       setLoading(true);
-      const recentScrobbles = await getRecentRocksky(limit ?? 4);
+      const recentScrobbles = await getRecentRocksky(pds, limit ?? 4);
       localStorage.setItem("scrobbles", JSON.stringify(recentScrobbles));
       localStorage.setItem("scrobblesTime", String(Date.now()));
       setScrobbles(recentScrobbles);
@@ -33,7 +39,7 @@ export default function ScrobbleList({ limit }: { limit?: number }) {
     }
 
     loadScrobbles();
-  }, [limit]);
+  }, [limit, pds]);
 
   if (loading) {
     return <p>Loading scrobbles...</p>;
