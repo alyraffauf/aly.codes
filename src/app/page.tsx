@@ -54,19 +54,15 @@ export default async function Home() {
             <AudioLines /> Recent Listens
           </span>
         </h2>
-        <ScrobbleList pds={identity?.pds ?? null} limit={4} />
-        {identity?.handle && (
-          <div className="flex justify-end">
-            <a
-              href={`https://rocksky.app/profile/${identity.handle}`}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-block text-xs text-rose-700 hover:underline"
-            >
-              Rocksky ↗
-            </a>
-          </div>
-        )}
+        <ScrobbleList
+          pds={identity?.pds ?? null}
+          profileUrl={
+            identity?.handle
+              ? `https://rocksky.app/profile/${identity.handle}`
+              : undefined
+          }
+          limit={3}
+        />
       </section>
 
       <section className="mb-12">

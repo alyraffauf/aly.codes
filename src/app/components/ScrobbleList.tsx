@@ -7,9 +7,11 @@ import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";
 
 export default function ScrobbleList({
   pds,
+  profileUrl,
   limit,
 }: {
   pds: string | null;
+  profileUrl?: string;
   limit?: number;
 }) {
   const [scrobbles, setScrobbles] = useState<RockskyScrobbleRecord[]>([]);
@@ -47,20 +49,31 @@ export default function ScrobbleList({
 
   return (
     <div className="max-w-3xl">
-      <div>
-        {scrobbles.slice(0, limit).map((scrobble, index) => (
-          <Scrobble
-            key={`${scrobble.createdAt}-${scrobble.mbid}`}
-            album={scrobble.album}
-            createdAt={scrobble.createdAt}
-            title={scrobble.title}
-            artist={scrobble.artist}
-            spotifyLink={scrobble.spotifyLink}
-            albumArt={scrobble.albumArtUrl}
-            index={index}
-          />
-        ))}
-      </div>
+      {scrobbles.slice(0, limit).map((scrobble, index) => (
+        <Scrobble
+          key={`${scrobble.createdAt}-${scrobble.mbid}`}
+          album={scrobble.album}
+          createdAt={scrobble.createdAt}
+          title={scrobble.title}
+          artist={scrobble.artist}
+          spotifyLink={scrobble.spotifyLink}
+          albumArt={scrobble.albumArtUrl}
+          index={index}
+        />
+      ))}
+
+      {/* {profileUrl && (
+        <div className="flex justify-end">
+          <a
+            href={profileUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-block text-xs text-rose-700 hover:underline"
+          >
+            Rocksky ↗
+          </a>
+        </div>
+      )} */}
     </div>
   );
 }
