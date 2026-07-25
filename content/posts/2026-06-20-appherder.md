@@ -6,7 +6,6 @@ keywords = "appimage, appherder, linux, systemd, go, package management"
 tags = ["appimage", "appherder", "linux", "systemd", "go", "cli", "package-management"]
 toc = false
 draft = false
-cover = "imgs/covers/2026-06-20-appherder.png"
 hideCover = true
 atUri = "at://did:plc:zntngpowgd6rorjt3haywj36/site.standard.document/3mooywkcs5s22"
 +++
