@@ -171,7 +171,7 @@ async function main() {
 
   fs.writeFileSync(
     STANDARD_SITE_CONFIG,
-    `// Populated by \`npm run sync:standard-site\`. Do not edit by hand.\nexport const PUBLICATION_URI = "${publicationUri}";\n`,
+    `// Populated by \`bun run sync:standard-site\`. Do not edit by hand.\nexport const PUBLICATION_URI = "${publicationUri}";\n`,
   );
 
   const filenames = fs.readdirSync(POSTS_DIR).filter((name) => name.endsWith(".md"));

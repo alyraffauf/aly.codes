@@ -50,7 +50,7 @@ function setFrontmatterField(raw: string, field: string, rawValue: string): stri
 async function main() {
   const inputArg = process.argv[2];
   if (!inputArg) {
-    console.error("Usage: npm run generate:cover-image -- <path-to-post.md>");
+    console.error("Usage: bun run generate:cover-image -- <path-to-post.md>");
     process.exit(1);
   }
 
