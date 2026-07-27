@@ -1,11 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Scrobble from "@/app/components/Scrobble";
-import { getRecentRocksky } from "@/lib/providers/rocksky";
-import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";
-
-const REFRESH_INTERVAL = 20_000;
+import { useRockskyListens } from "@/hooks/useRockskyListens";
 
 export default function ScrobbleList({
   pds,
@@ -14,45 +10,9 @@ export default function ScrobbleList({
   pds: string | null;
   limit?: number;
 }) {
-  const [scrobbles, setScrobbles] = useState<RockskyScrobbleRecord[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { scrobbles, isLoading } = useRockskyListens({ pds, limit });
 
-  useEffect(() => {
-    let isMounted = true;
-
-    function loadCachedScrobbles() {
-      const cached = localStorage.getItem("scrobbles");
-      if (!cached) return;
-
-      try {
-        setScrobbles(JSON.parse(cached));
-        setLoading(false);
-      } catch {
-        localStorage.removeItem("scrobbles");
-      }
-    }
-
-    async function refreshScrobbles() {
-      const recentScrobbles = await getRecentRocksky(pds, limit ?? 4);
-      if (!isMounted) return;
-
-      localStorage.setItem("scrobbles", JSON.stringify(recentScrobbles));
-      setScrobbles(recentScrobbles);
-      setLoading(false);
-    }
-
-    loadCachedScrobbles();
-    refreshScrobbles();
-
-    const refreshTimer = window.setInterval(refreshScrobbles, REFRESH_INTERVAL);
-
-    return () => {
-      isMounted = false;
-      window.clearInterval(refreshTimer);
-    };
-  }, [limit, pds]);
-
-  if (loading) {
+  if (isLoading) {
     return <p>Loading scrobbles...</p>;
   }
 
