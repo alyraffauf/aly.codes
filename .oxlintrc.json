@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "react", "nextjs", "jsx-a11y"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "nextjs/no-img-element": "warn",
+    "jsx-a11y/media-has-caption": "warn"
+  },
+  "env": {
+    "builtin": true
+  }
+}
