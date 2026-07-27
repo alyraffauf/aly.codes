@@ -1,40 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { MessageCircle } from "lucide-react";
 import BlueskyEmbedCard from "./BlueskyEmbedCard";
-import { backlinkAtUri, fetchBacklinks } from "@/lib/atproto/backlinks";
-import { getBlueskyPostsByUris, type BlueskyPostData } from "@/lib/atproto/bluesky";
+import { useBlueskyMentions } from "@/hooks/useBlueskyMentions";
 
 export default function BlueskyMentions({ subject }: { subject: string }) {
-  const [posts, setPosts] = useState<BlueskyPostData[] | null>(null);
-  const [loadFailed, setLoadFailed] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    (async () => {
-      try {
-        const records = await fetchBacklinks(subject);
-        const uris = records.map(backlinkAtUri);
-        const fetched = await getBlueskyPostsByUris(uris);
-        const resolved = fetched.filter(
-          (post): post is BlueskyPostData => post !== null,
-        );
-        resolved.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-
-        if (!cancelled) setPosts(resolved);
-      } catch {
-        if (!cancelled) setLoadFailed(true);
-      }
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [subject]);
-
-  const isLoading = posts === null && !loadFailed;
+  const { posts, isLoading, loadFailed } = useBlueskyMentions(subject);
 
   return (
     <section className="not-prose mt-12">
