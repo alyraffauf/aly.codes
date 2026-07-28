@@ -1,4 +1,5 @@
 import { getPostBySlug, getAllPosts } from "@/lib/content/posts";
+import { ATPROTO_DID } from "@/config/atproto";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -74,6 +75,11 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
     title: post.title,
     description: post.description,
     alternates: { canonical: `/blog/${slug}/` },
+    other: {
+      "at:author": `at://${ATPROTO_DID}`,
+      "at:me": `at://${ATPROTO_DID}`,
+      ...(post.atUri ? { "at:canonical": post.atUri } : {}),
+    },
 
     openGraph: {
       type: "article",

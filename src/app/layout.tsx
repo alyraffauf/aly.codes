@@ -4,6 +4,7 @@ import MobileNav from "@/app/components/MobileNav";
 import { navBarLinks } from "@/content/navigation";
 import type { Metadata } from "next";
 import BackgroundRoses from "@/app/components/BackgroundRoses";
+import { ATPROTO_DID } from "@/config/atproto"
 import { PUBLICATION_URI } from "@/config/standard-site";
 
 import { Quicksand } from "next/font/google";
@@ -43,6 +44,11 @@ export const metadata: Metadata = {
     title: "Aly Raffauf",
     description: "Aly Raffauf's blog",
     images: ["/opengraph-image.png"],
+  },
+  
+  other: {
+    "at:author": `at://${ATPROTO_DID}`,
+    "at:me": `at://${ATPROTO_DID}`,
   },
 };
 
