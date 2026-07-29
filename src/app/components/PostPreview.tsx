@@ -21,7 +21,7 @@ export default function PostPreview({
     <>
       <Link
         key={slug}
-        to={`/blog/${slug}/`}
+        to={`/blog/${slug}`}
         className="block p-4 border-2 border-rose-200 rounded-lg hover:bg-rose-300 transition-colors hover:scale-105 hover:animate-jiggle"
       >
         {cover && !hideCover && (
