@@ -1,5 +1,3 @@
-"use client";
-
 import Scrobble from "@/app/components/Scrobble";
 import { useRockskyListens } from "@/hooks/useRockskyListens";
 

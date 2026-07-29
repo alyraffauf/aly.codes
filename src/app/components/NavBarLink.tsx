@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router";
 
 type NavBarLinkProps = {
   href: string;
@@ -7,7 +7,7 @@ type NavBarLinkProps = {
 
 export default function NavBarLink({ href, children }: NavBarLinkProps) {
   return (
-    <Link href={href} className="mr-4 hover:underline">
+    <Link to={href} className="mr-4 hover:underline">
       {children}
     </Link>
   );

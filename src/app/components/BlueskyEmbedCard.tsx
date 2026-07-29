@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { FaBluesky } from "react-icons/fa6";
 import { blueskyPostUrl, type BlueskyPostData } from "@/lib/atproto/bluesky";
@@ -30,7 +29,7 @@ export default function BlueskyEmbedCard({ data }: { data: BlueskyPostData | nul
       >
         <div className="flex items-center gap-3">
           {data.author.avatar && (
-            <Image
+            <img
               src={data.author.avatar}
               alt={data.author.displayName ?? data.author.handle}
               width={40}
@@ -53,7 +52,7 @@ export default function BlueskyEmbedCard({ data }: { data: BlueskyPostData | nul
       {data.embed?.type === "images" && (
         <div className="grid grid-cols-2 gap-2">
           {data.embed.images.map((image) => (
-            <Image
+            <img
               key={image.thumb}
               src={image.thumb}
               alt={image.alt}

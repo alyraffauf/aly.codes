@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { ImageResponse } from "next/og";
+import { ImageResponse } from "@vercel/og";
 import { RoseBackground, SIZE, loadQuicksandBold } from "./lib/rose-background";
 
 async function main() {

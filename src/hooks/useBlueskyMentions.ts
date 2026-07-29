@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { backlinkAtUri, fetchBacklinks } from "@/lib/atproto/backlinks";
 import { getBlueskyPostsByUris, type BlueskyPostData } from "@/lib/atproto/bluesky";

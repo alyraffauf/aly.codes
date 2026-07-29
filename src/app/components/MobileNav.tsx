@@ -1,7 +1,5 @@
-"use client";
-
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "react-router";
 import type { NavBarLink } from "@/content/navigation";
 
 type MobileNavProps = {
@@ -26,7 +24,7 @@ export default function MobileNav({ links }: MobileNavProps) {
           {links.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="hover:underline"
               onClick={() => setIsOpen(false)}
             >

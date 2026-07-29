@@ -1,7 +1,7 @@
 import SocialLink from "@/app/components/SocialLink";
 import { socialLinks } from "@/content/social";
 
-export default async function SocialLinkList() {
+export default function SocialLinkList() {
   return (
     <>
       <div className="grid gap-4 md:grid-cols-5">

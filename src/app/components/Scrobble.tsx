@@ -39,7 +39,6 @@ export default function Scrobble({
       className="group grid grid-cols-[3.5rem_1fr_auto] items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-rose-300"
     >
       {albumArt ? (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={albumArt}
           alt={`${album} album art`}

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router";
 
 type PostPreviewProps = {
   slug: string;
@@ -22,15 +21,14 @@ export default function PostPreview({
     <>
       <Link
         key={slug}
-        href={`/blog/${slug}`}
+        to={`/blog/${slug}/`}
         className="block p-4 border-2 border-rose-200 rounded-lg hover:bg-rose-300 transition-colors hover:scale-105 hover:animate-jiggle"
       >
         {cover && !hideCover && (
           <div className="relative h-80 mb-3">
-            <Image
+            <img
               src={`/${cover}`}
               alt={title}
-              fill
               className="object-cover rounded"
             />
           </div>

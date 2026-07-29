@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { type ProjectProps } from "@/app/components/Project";
 import { projects } from "@/content/projects";

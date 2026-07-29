@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import toml from "toml";
-import { ImageResponse } from "next/og";
+import { ImageResponse } from "@vercel/og";
 import { RoseBackground, SIZE, loadQuicksandBold } from "./lib/rose-background";
 
 function fontSizeForTitle(title: string): number {

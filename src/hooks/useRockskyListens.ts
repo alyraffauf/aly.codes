@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { getRecentRocksky } from "@/lib/providers/rocksky";
 import type { RockskyScrobbleRecord } from "@/lib/providers/rocksky";

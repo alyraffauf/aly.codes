@@ -1,35 +1,47 @@
-import Image from "next/image";
 import { AudioLines, FolderGit, Rss } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { getAboutContent } from "@/lib/content/about";
-import ProjectList from "@/app/components/ProjectList";
-import SocialLinkList from "@/app/components/SocialLinkList";
+import type { MetaFunction } from "react-router";
 import PostList from "@/app/components/PostList";
+import ProjectList from "@/app/components/ProjectList";
 import ScrobbleList from "@/app/components/ScrobbleList";
+import SocialLinkList from "@/app/components/SocialLinkList";
 import { ATPROTO_DID } from "@/config/atproto";
 import { getAtprotoIdentity } from "@/lib/atproto/identity";
+import { getAboutContent } from "@/lib/content/about";
+import { getAllPosts, type Post } from "@/lib/content/posts";
 
-const aboutContent = getAboutContent();
+export const meta: MetaFunction = () => [
+  { title: "Aly Raffauf" },
+  { tagName: "link", rel: "canonical", href: "https://aly.codes/" },
+];
 
-export default async function Home() {
+export async function loader() {
   const identity = await getAtprotoIdentity(ATPROTO_DID);
+  return {
+    aboutContent: getAboutContent(),
+    pds: identity?.pds ?? null,
+    posts: getAllPosts(),
+  };
+}
 
+type HomeProps = {
+  loaderData: { aboutContent: string; pds: string | null; posts: Post[] };
+};
+
+export default function Home({ loaderData }: HomeProps) {
   return (
     <>
       <section className="mb-12">
-        <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
-          <Image
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
+          <img
             src="/profile.jpg"
-            loading="eager"
             alt="Aly Raffauf"
             width={200}
             height={200}
             className="rounded-lg"
           />
-
-          {/*<h2 className="text-2xl font-semibold mb-4">About Me</h2>*/}
           <div className="flex flex-col gap-4">
-            <div className="prose prose-a:text-rose-700 prose-a:hover:underline max-w-none">
+            <div className="prose max-w-none prose-a:text-rose-700 prose-a:hover:underline">
               <ReactMarkdown
                 components={{
                   p({ children }) {
@@ -37,7 +49,7 @@ export default async function Home() {
                   },
                 }}
               >
-                {aboutContent}
+                {loaderData.aboutContent}
               </ReactMarkdown>
             </div>
           </div>
@@ -54,7 +66,7 @@ export default async function Home() {
             <AudioLines /> Recent Listens
           </span>
         </h2>
-        <ScrobbleList pds={identity?.pds ?? null} limit={3} />
+        <ScrobbleList pds={loaderData.pds} limit={3} />
       </section>
 
       <section className="mb-12">
@@ -72,8 +84,7 @@ export default async function Home() {
             <Rss /> Recent Blogs
           </span>
         </h2>
-
-        <PostList limit={3} />
+        <PostList posts={loaderData.posts} limit={3} />
       </section>
     </>
   );

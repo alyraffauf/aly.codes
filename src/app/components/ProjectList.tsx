@@ -1,5 +1,3 @@
-"use client";
-
 import Project from "@/app/components/Project";
 import useProjects from "@/hooks/useProjects";
 

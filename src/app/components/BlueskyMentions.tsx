@@ -1,5 +1,3 @@
-"use client";
-
 import { MessageCircle } from "lucide-react";
 import BlueskyEmbedCard from "./BlueskyEmbedCard";
 import { useBlueskyMentions } from "@/hooks/useBlueskyMentions";

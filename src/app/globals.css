@@ -1,8 +1,9 @@
+@import "@fontsource-variable/quicksand/wght.css";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --font-sans: var(--font-quicksand);
+  --font-sans: "Quicksand Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
 @keyframes pulse-subtle {
@@ -44,6 +45,6 @@
 }
 
 body {
-  font-family: var(--font-quicksand), sans-serif;
+  font-family: "Quicksand Variable", ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
 }

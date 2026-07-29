@@ -1,7 +1,4 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { Play } from "lucide-react";
 
 export default function BlueskyVideoPlayer({
@@ -52,7 +49,7 @@ export default function BlueskyVideoPlayer({
         }}
         className="relative block w-full overflow-hidden rounded-md"
       >
-        <Image
+        <img
           src={thumbnail}
           alt=""
           width={600}

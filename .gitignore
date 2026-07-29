@@ -19,6 +19,12 @@
 
 # production
 /build
+/.react-router
+
+# Generated static files
+/public/rss.xml
+/public/index.xml
+/public/.well-known
 
 # misc
 .DS_Store
