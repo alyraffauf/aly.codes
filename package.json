@@ -17,6 +17,13 @@
     "generate:static-files": "bun scripts/generate-static-files.mts"
   },
   "dependencies": {
+    "@atcute/atproto": "^4.0.3",
+    "@atcute/bluesky": "^4.0.16",
+    "@atcute/client": "^5.1.1",
+    "@atcute/microcosm": "^2.0.2",
+    "@atcute/password-session": "^1.0.2",
+    "@atcute/standard-site": "^2.0.2",
+    "@atcute/tangled": "^2.0.13",
     "@fontsource-variable/quicksand": "^5.3.0",
     "@tailwindcss/typography": "^0.5.20",
     "@vercel/og": "^0.11.1",
@@ -32,7 +39,6 @@
     "toml": "^5.0.0"
   },
   "devDependencies": {
-    "@atproto/api": "^0.20.31",
     "@react-router/dev": "^8.3.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/vite": "^4.3.3",

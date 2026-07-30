@@ -1,4 +1,5 @@
 import { CONSTELLATION } from "@/config/atproto";
+import { createAtprotoClient } from "@/lib/atproto/client";
 
 const DOCUMENT_BACKLINK_SOURCE =
   "app.bsky.feed.post:embed.external.associatedRefs[com.atproto.repo.strongRef].uri";
@@ -32,21 +33,20 @@ export async function fetchBacklinks(
     const pageSize = Math.min(PAGE_SIZE, remaining);
     if (pageSize <= 0) break;
 
-    const params = new URLSearchParams({
-      subject,
-      source,
-      limit: String(pageSize),
-    });
-    if (cursor) params.set("cursor", cursor);
-
-    const response = await fetch(
-      `${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`,
+    const response = await createAtprotoClient(CONSTELLATION).get(
+      "blue.microcosm.links.getBacklinks",
+      {
+        params: {
+          subject: subject as `${string}:${string}`,
+          source: source as `${string}:${string}`,
+          limit: pageSize,
+          cursor: cursor ?? undefined,
+        },
+      },
     );
-    if (!response.ok) {
-      throw new Error(`Failed to fetch backlinks: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`Failed to fetch backlinks: ${response.status}`);
 
-    const page: BacklinksResponse = await response.json();
+    const page: BacklinksResponse = response.data;
     allRecords.push(...(page.records ?? []));
     cursor = page.cursor ?? null;
   } while (cursor);

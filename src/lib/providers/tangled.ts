@@ -1,4 +1,5 @@
 import { ATPROTO_DID, CONSTELLATION, SLINGSHOT } from "@/config/atproto";
+import { createAtprotoClient } from "@/lib/atproto/client";
 
 export type TangledRepoRecord = {
   repoDid: string;
@@ -11,17 +12,17 @@ const STAR_SOURCE = "sh.tangled.feed.star:subject.did";
 
 export async function getTangledStars(repoDid: string): Promise<number> {
   try {
-    const params = new URLSearchParams({
-      subject: repoDid,
-      source: STAR_SOURCE,
-      limit: "1",
-    });
-    const response = await fetch(
-      `${CONSTELLATION}/xrpc/blue.microcosm.links.getBacklinks?${params.toString()}`,
+    const response = await createAtprotoClient(CONSTELLATION).get(
+      "blue.microcosm.links.getBacklinksCount",
+      {
+        params: {
+          subject: repoDid as `${string}:${string}`,
+          source: STAR_SOURCE as `${string}:${string}`,
+        },
+      },
     );
     if (!response.ok) return 0;
-    const data: { total?: number } = await response.json();
-    return data.total ?? 0;
+    return response.data.total;
   } catch {
     return 0;
   }
@@ -29,17 +30,12 @@ export async function getTangledStars(repoDid: string): Promise<number> {
 
 export async function getTangledRepo(rkey: string): Promise<TangledRepoRecord | null> {
   try {
-    const params = new URLSearchParams({
-      repo: ATPROTO_DID,
-      collection: "sh.tangled.repo",
-      rkey,
-    });
-    const response = await fetch(
-      `${SLINGSHOT}/xrpc/com.atproto.repo.getRecord?${params}`,
+    const response = await createAtprotoClient(SLINGSHOT).get(
+      "com.atproto.repo.getRecord",
+      { params: { repo: ATPROTO_DID, collection: "sh.tangled.repo", rkey } },
     );
     if (!response.ok) return null;
-    const data: { value: TangledRepoRecord } = await response.json();
-    return data.value;
+    return response.data.value as TangledRepoRecord;
   } catch {
     return null;
   }

@@ -4,7 +4,10 @@ import path from "path";
 import matter from "gray-matter";
 import toml from "toml";
 import sharp from "sharp";
-import { AtpAgent } from "@atproto/api";
+import { Client, ok } from "@atcute/client";
+import { PasswordSession } from "@atcute/password-session";
+import type {} from "@atcute/atproto";
+import type {} from "@atcute/standard-site";
 
 const SITE_URL = "https://aly.codes";
 const SITE_NAME = "Aly Raffauf";
@@ -75,6 +78,12 @@ async function loadImageBlob(
   return { data: resized, mimeType: "image/webp" };
 }
 
+function createUploadBlob(data: Uint8Array, mimeType: string): Blob {
+  const bytes = new Uint8Array(data.byteLength);
+  bytes.set(data);
+  return new Blob([bytes.buffer], { type: mimeType });
+}
+
 function stripMarkdown(markdown: string): string {
   return markdown
     .replace(/```[\s\S]*?```/g, "")
@@ -117,55 +126,69 @@ async function main() {
     );
   }
 
-  const agent = new AtpAgent({ service });
-  await agent.login({ identifier: handle, password });
-  const did = agent.session!.did;
+  const session = await PasswordSession.login({
+    service,
+    identifier: handle,
+    password,
+  });
+  const rpc = new Client({ handler: session });
+  const did = session.did;
 
   const { data: iconData, mimeType: iconMimeType } = await loadImageBlob(SITE_ICON);
-  const uploadedIcon = await agent.com.atproto.repo.uploadBlob(iconData, {
-    encoding: iconMimeType,
-  });
-  const icon = uploadedIcon.data.blob;
+  const { blob: icon } = await ok(
+    rpc.post("com.atproto.repo.uploadBlob", {
+      input: createUploadBlob(iconData, iconMimeType),
+    }),
+  );
 
-  const existingPubs = await agent.com.atproto.repo.listRecords({
-    repo: did,
-    collection: PUBLICATION_COLLECTION,
-  });
+  const existingPubs = await ok(
+    rpc.get("com.atproto.repo.listRecords", {
+      params: { repo: did, collection: PUBLICATION_COLLECTION },
+    }),
+  );
 
   let publicationUri: string;
-  if (existingPubs.data.records.length > 0) {
-    const record = existingPubs.data.records[0];
+  if (existingPubs.records.length > 0) {
+    const record = existingPubs.records[0];
     publicationUri = record.uri;
-    await agent.com.atproto.repo.putRecord({
-      repo: did,
-      collection: PUBLICATION_COLLECTION,
-      rkey: record.uri.split("/").pop()!,
-      record: {
-        $type: PUBLICATION_COLLECTION,
-        url: SITE_URL,
-        name: SITE_NAME,
-        description: SITE_DESCRIPTION,
-        icon,
-        basicTheme: BASIC_THEME,
-        preferences: { showInDiscover: true },
-      },
-    });
+    await ok(
+      rpc.post("com.atproto.repo.putRecord", {
+        input: {
+          repo: did,
+          collection: PUBLICATION_COLLECTION,
+          rkey: record.uri.split("/").pop()!,
+          record: {
+            $type: PUBLICATION_COLLECTION,
+            url: SITE_URL,
+            name: SITE_NAME,
+            description: SITE_DESCRIPTION,
+            icon,
+            basicTheme: BASIC_THEME,
+            preferences: { showInDiscover: true },
+          },
+        },
+      }),
+    );
     console.log(`Updated publication record: ${publicationUri}`);
   } else {
-    const created = await agent.com.atproto.repo.createRecord({
-      repo: did,
-      collection: PUBLICATION_COLLECTION,
-      record: {
-        $type: PUBLICATION_COLLECTION,
-        url: SITE_URL,
-        name: SITE_NAME,
-        description: SITE_DESCRIPTION,
-        icon,
-        basicTheme: BASIC_THEME,
-        preferences: { showInDiscover: true },
-      },
-    });
-    publicationUri = created.data.uri;
+    const created = await ok(
+      rpc.post("com.atproto.repo.createRecord", {
+        input: {
+          repo: did,
+          collection: PUBLICATION_COLLECTION,
+          record: {
+            $type: PUBLICATION_COLLECTION,
+            url: SITE_URL,
+            name: SITE_NAME,
+            description: SITE_DESCRIPTION,
+            icon,
+            basicTheme: BASIC_THEME,
+            preferences: { showInDiscover: true },
+          },
+        },
+      }),
+    );
+    publicationUri = created.uri;
     console.log(`Created publication record: ${publicationUri}`);
   }
 
@@ -190,10 +213,12 @@ async function main() {
     let coverImage;
     if (data.cover) {
       const { data: blobData, mimeType } = await loadImageBlob(data.cover);
-      const uploaded = await agent.com.atproto.repo.uploadBlob(blobData, {
-        encoding: mimeType,
-      });
-      coverImage = uploaded.data.blob;
+      const { blob } = await ok(
+        rpc.post("com.atproto.repo.uploadBlob", {
+          input: createUploadBlob(blobData, mimeType),
+        }),
+      );
+      coverImage = blob;
     }
 
     const record = {
@@ -211,21 +236,20 @@ async function main() {
     let documentUri: string;
     if (data.atUri) {
       const rkey = data.atUri.split("/").pop()!;
-      await agent.com.atproto.repo.putRecord({
-        repo: did,
-        collection: DOCUMENT_COLLECTION,
-        rkey,
-        record,
-      });
+      await ok(
+        rpc.post("com.atproto.repo.putRecord", {
+          input: { repo: did, collection: DOCUMENT_COLLECTION, rkey, record },
+        }),
+      );
       documentUri = data.atUri;
       console.log(`Updated document record for ${slug}: ${documentUri}`);
     } else {
-      const created = await agent.com.atproto.repo.createRecord({
-        repo: did,
-        collection: DOCUMENT_COLLECTION,
-        record,
-      });
-      documentUri = created.data.uri;
+      const created = await ok(
+        rpc.post("com.atproto.repo.createRecord", {
+          input: { repo: did, collection: DOCUMENT_COLLECTION, record },
+        }),
+      );
+      documentUri = created.uri;
       fs.writeFileSync(fullPath, setFrontmatterField(raw, "atUri", documentUri));
       console.log(`Created document record for ${slug}: ${documentUri}`);
     }

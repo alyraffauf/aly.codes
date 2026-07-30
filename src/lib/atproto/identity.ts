@@ -1,16 +1,15 @@
-import type { AtprotoDidDocument } from "@/lib/atproto/did";
-import { resolveDidDocument } from "@/lib/atproto/did";
+import { resolveAtprotoMiniDoc } from "@/lib/atproto/did";
+import type { Did } from "@atcute/lexicons";
 
 export type AtprotoIdentity = {
   did: string;
   handle: string | null;
   pds: string;
-  document: AtprotoDidDocument;
 };
 
 const identityPromises = new Map<string, Promise<AtprotoIdentity | null>>();
 
-export function getAtprotoIdentity(did: string): Promise<AtprotoIdentity | null> {
+export function getAtprotoIdentity(did: Did): Promise<AtprotoIdentity | null> {
   const cachedIdentity = identityPromises.get(did);
   if (cachedIdentity) return cachedIdentity;
 
@@ -19,24 +18,14 @@ export function getAtprotoIdentity(did: string): Promise<AtprotoIdentity | null>
   return identityPromise;
 }
 
-async function resolveAtprotoIdentity(did: string): Promise<AtprotoIdentity | null> {
+async function resolveAtprotoIdentity(did: Did): Promise<AtprotoIdentity | null> {
   try {
-    const document = await resolveDidDocument(did);
-    const pds = document.service.find(
-      (service) =>
-        service.type === "AtprotoPersonalDataServer" &&
-        service.id.endsWith("#atproto_pds"),
-    )?.serviceEndpoint;
-
-    if (!pds) return null;
-
-    const handleUri = document.alsoKnownAs.find((uri) => uri.startsWith("at://"));
+    const miniDoc = await resolveAtprotoMiniDoc(did);
 
     return {
-      did,
-      handle: handleUri?.slice("at://".length) ?? null,
-      pds,
-      document,
+      did: miniDoc.did,
+      handle: miniDoc.handle === "handle.invalid" ? null : miniDoc.handle,
+      pds: miniDoc.pds,
     };
   } catch {
     return null;

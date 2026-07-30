@@ -1,50 +1,30 @@
-export type AtprotoDidDocument = {
-  "@context": string[];
-  id: `did:${string}`;
-  alsoKnownAs: string[];
-  verificationMethod: AtprotoVerificationMethod[];
-  service: AtprotoService[];
+import { SLINGSHOT } from "@/config/atproto";
+import { createAtprotoClient } from "@/lib/atproto/client";
+import type { ActorIdentifier, Did } from "@atcute/lexicons";
+
+export type AtprotoMiniDoc = {
+  did: Did;
+  handle: string;
+  pds: string;
+  signing_key: string;
 };
 
-type AtprotoVerificationMethod = {
-  id: string;
-  type: "Multikey";
-  controller: `did:${string}`;
-  publicKeyMultibase: string;
-};
-
-type AtprotoService = {
-  id: string;
-  type: "AtprotoPersonalDataServer";
-  serviceEndpoint: string;
-};
-
-export async function resolveDidDocument(did: string): Promise<AtprotoDidDocument> {
-  const response = await fetch(getDidDocumentUrl(did));
+/**
+ * Resolves an AT Protocol identity through Slingshot's verified MiniDoc
+ * endpoint. Unlike a raw DID document, this returns the PDS and handle we
+ * actually need, after Slingshot has validated them against the DID.
+ */
+export async function resolveAtprotoMiniDoc(
+  identifier: ActorIdentifier,
+): Promise<AtprotoMiniDoc> {
+  const response = await createAtprotoClient(SLINGSHOT).get(
+    "blue.microcosm.identity.resolveMiniDoc",
+    { params: { identifier } },
+  );
 
   if (!response.ok) {
-    throw new Error(`Failed to resolve DID: ${did}`);
+    throw new Error(`Failed to resolve AT Protocol identity: ${identifier}`);
   }
 
-  return (await response.json()) as AtprotoDidDocument;
-}
-
-function getDidDocumentUrl(did: string): string {
-  if (did.startsWith("did:plc:")) {
-    return `https://plc.directory/${encodeURIComponent(did)}`;
-  }
-
-  if (did.startsWith("did:web:")) {
-    const [, , identifier, ...pathParts] = did.split(":");
-    const hostname = decodeURIComponent(identifier);
-
-    if (pathParts.length === 0) {
-      return `https://${hostname}/.well-known/did.json`;
-    }
-
-    const path = pathParts.map(decodeURIComponent).join("/");
-    return `https://${hostname}/${path}/did.json`;
-  }
-
-  throw new Error(`Unsupported DID method: ${did}`);
+  return response.data;
 }

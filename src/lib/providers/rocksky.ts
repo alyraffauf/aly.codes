@@ -1,4 +1,5 @@
 import { ATPROTO_DID } from "@/config/atproto";
+import { createAtprotoClient } from "@/lib/atproto/client";
 
 export type RockskyScrobbleRecord = {
   $type: "app.rocksky.scrobble";
@@ -41,20 +42,21 @@ export async function getRecentRocksky(
   if (!pds) return [];
 
   try {
-    const params = new URLSearchParams({
-      repo: ATPROTO_DID,
-      collection: "app.rocksky.scrobble",
-      limit: String(limit),
-      reverse: "false",
-    });
-
-    const response = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`, {
-      cache: "no-store",
-    });
+    const response = await createAtprotoClient(pds).get(
+      "com.atproto.repo.listRecords",
+      {
+        params: {
+          repo: ATPROTO_DID,
+          collection: "app.rocksky.scrobble",
+          limit,
+          reverse: false,
+        },
+      },
+    );
 
     if (!response.ok) return [];
 
-    const data = (await response.json()) as ListRecordsResponse;
+    const data = response.data as ListRecordsResponse;
 
     return data.records.map(({ value }) => value);
   } catch {

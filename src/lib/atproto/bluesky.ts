@@ -1,3 +1,6 @@
+import { createAtprotoClient } from "@/lib/atproto/client";
+import type { ResourceUri } from "@atcute/lexicons";
+
 export type BlueskyEmbed =
   | { type: "images"; images: { thumb: string; alt: string }[] }
   | { type: "video"; thumbnail: string; playlist: string }
@@ -31,7 +34,7 @@ export function extractBlueskyEmbedRefs(content: string): string[] {
   );
 }
 
-const GET_POSTS_ENDPOINT = "https://public.api.bsky.app/xrpc/app.bsky.feed.getPosts";
+const BLUESKY_PUBLIC_API = "https://public.api.bsky.app";
 const POST_BATCH_SIZE = 25;
 
 type BlueskyPostView = {
@@ -93,13 +96,13 @@ export async function getBlueskyPostsByUris(
 
   for (let index = 0; index < atUris.length; index += POST_BATCH_SIZE) {
     const batch = atUris.slice(index, index + POST_BATCH_SIZE);
-    const params = new URLSearchParams();
-    for (const uri of batch) params.append("uris", uri);
-
     let posts: BlueskyPostView[] = [];
     try {
-      const response = await fetch(`${GET_POSTS_ENDPOINT}?${params.toString()}`);
-      if (response.ok) posts = (await response.json()).posts ?? [];
+      const response = await createAtprotoClient(BLUESKY_PUBLIC_API).get(
+        "app.bsky.feed.getPosts",
+        { params: { uris: batch as ResourceUri[] } },
+      );
+      if (response.ok) posts = response.data.posts as BlueskyPostView[];
     } catch {
       posts = [];
     }
