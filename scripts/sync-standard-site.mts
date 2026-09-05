@@ -118,7 +118,7 @@ function setFrontmatterField(raw: string, field: string, value: string): string 
 async function main() {
   const handle = process.env.ATPROTO_HANDLE;
   const password = process.env.ATPROTO_APP_PASSWORD;
-  const service = process.env.ATPROTO_SERVICE ?? "https://pds.cute.haus";
+  const service = process.env.ATPROTO_SERVICE ?? "https://aly.social";
 
   if (!handle || !password) {
     throw new Error(
