@@ -13,7 +13,7 @@ export const links: LinksFunction = () => [
 export default function Projects() {
   return (
     <>
-      <h2 className="mb-4 text-2xl font-semibold">Projects</h2>
+      <h1 className="mb-4 text-2xl font-semibold">Projects</h1>
       <ProjectList />
     </>
   );

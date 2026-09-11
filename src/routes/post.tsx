@@ -88,7 +88,7 @@ export default function PostRoute({ loaderData }: PostProps) {
         dangerouslySetInnerHTML={{ __html: postSchema }}
       />
       {post.atUri && <link rel="site.standard.document" href={post.atUri} />}
-      <h2 className="mb-2 text-2xl font-semibold">{post.title}</h2>
+      <h1 className="mb-2 text-2xl font-semibold">{post.title}</h1>
       <p className="mb-8 text-sm text-zinc-600">{post.date}</p>
 
       {post.cover && !post.hideCover && (

@@ -22,7 +22,7 @@ type BlogProps = {
 export default function Blog({ loaderData }: BlogProps) {
   return (
     <>
-      <h2 className="mb-4 text-2xl font-semibold">Blog</h2>
+      <h1 className="mb-4 text-2xl font-semibold">Blog</h1>
       <PostList posts={loaderData.posts} />
     </>
   );

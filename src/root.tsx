@@ -1,4 +1,12 @@
-import { Link, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+  Link,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLocation,
+} from "react-router";
 import type { LinksFunction, MetaFunction } from "react-router";
 import BackgroundRoses from "@/app/components/BackgroundRoses";
 import MobileNav from "@/app/components/MobileNav";
@@ -54,6 +62,8 @@ export const links: LinksFunction = () => [
 ];
 
 export default function Root() {
+  const location = useLocation();
+
   return (
     <html lang="en" className="bg-pink-100 text-zinc-900">
       <head>
@@ -70,9 +80,15 @@ export default function Root() {
         <BackgroundRoses />
         <main className="min-h-screen max-w-3xl mx-auto p-8 text-zinc-900">
           <header className="mb-12 flex items-center justify-between">
-            <h1 className="text-4xl font-bold">
-              <Link to="/">Aly Raffauf</Link>
-            </h1>
+            {location.pathname === "/" ? (
+              <h1 className="text-4xl font-bold">
+                <Link to="/">Aly Raffauf</Link>
+              </h1>
+            ) : (
+              <div className="text-4xl font-bold">
+                <Link to="/">Aly Raffauf</Link>
+              </div>
+            )}
             <nav className="hidden gap-4 md:flex">
               {navBarLinks.map((link) => (
                 <NavBarLink key={link.href} href={link.href}>
