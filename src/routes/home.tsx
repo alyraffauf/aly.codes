@@ -63,19 +63,19 @@ export default function Home({ loaderData }: HomeProps) {
       <section className="mb-12">
         <h2 className="mb-4 text-2xl font-semibold">
           <span className="flex items-center gap-2">
-            <AudioLines /> Recent Listens
+            <FolderGit /> Recent Projects
           </span>
         </h2>
-        <ScrobbleList pds={loaderData.pds} limit={3} />
+        <ProjectList limit={8} />
       </section>
 
       <section className="mb-12">
         <h2 className="mb-4 text-2xl font-semibold">
           <span className="flex items-center gap-2">
-            <FolderGit /> Recent Projects
+            <AudioLines /> Recent Listens
           </span>
         </h2>
-        <ProjectList limit={8} />
+        <ScrobbleList pds={loaderData.pds} limit={3} />
       </section>
 
       <section className="mb-12">
