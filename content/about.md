@@ -1,11 +1,13 @@
-Hi, I’m Aly! I spend my time toying with 
-[infrastructure](https://github.com/alyraffauf/infra),
-[exploring](https://github.com/alyraffauf/tartarus) with AI, and building 
-[decentralized](https://github.com/alyraffauf/atbbs) communities. I care
-deeply about free software, open culture, and building better futures with tech.
-And when I’m not at my computer, I’m probably cycling somewhere I shouldn’t.
+Hi, I’m Aly. I host public
+[infrastructure](https://github.com/alyraffauf/infra), experiment with
+[LLM agents](https://github.com/alyraffauf/tartarus), and build
+[decentralized web](https://github.com/alyraffauf/atbbs) applications for
+communities on the [AT Protocol](https://atproto.com).
 
-This site is hosted on [cute.haus](https://cute.haus), and available via
-[atproto](https://atproto.com/) with
+I also maintain [open-source](https://tangled.org/aly.codes/tg)
+[projects](https://github.com/alyraffauf/switchyard) for the community
+and websites for clients. When I’m away from a computer, I’m probably 
+cycling somewhere I shouldn’t.
+
+You can subscribe to this blog with your AT Protocol account through
 [Standard Reader](https://standard-reader.app/subscribe/did:plc:zntngpowgd6rorjt3haywj36/3m36bacisus2x).
-

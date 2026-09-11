@@ -36,8 +36,8 @@ export default function Home({ loaderData }: HomeProps) {
           <img
             src="/profile.jpg"
             alt="Aly Raffauf"
-            width={200}
-            height={200}
+            width={240}
+            height={240}
             className="rounded-lg"
           />
           <div className="flex flex-col gap-4">
