@@ -26,11 +26,7 @@ export default function PostPreview({
       >
         {cover && !hideCover && (
           <div className="relative h-80 mb-3">
-            <img
-              src={`/${cover}`}
-              alt={title}
-              className="object-cover rounded"
-            />
+            <img src={`/${cover}`} alt={title} className="object-cover rounded" />
           </div>
         )}
 

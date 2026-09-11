@@ -6,7 +6,7 @@ communities on the [AT Protocol](https://atproto.com).
 
 I also maintain [open-source](https://tangled.org/aly.codes/tg)
 [projects](https://github.com/alyraffauf/switchyard) for the community
-and websites for clients. When I’m away from a computer, I’m probably 
+and websites for clients. When I’m away from a computer, I’m probably
 cycling somewhere I shouldn’t.
 
 You can subscribe to this blog with your AT Protocol account through
