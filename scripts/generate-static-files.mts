@@ -44,6 +44,36 @@ ${items}
 </rss>`;
 }
 
+function generateSitemap(): string {
+  const pages = [
+    { path: "/", lastModified: undefined },
+    { path: "/blog/", lastModified: undefined },
+    { path: "/projects/", lastModified: undefined },
+    ...getAllPosts().map((post) => ({
+      path: `/blog/${post.slug}/`,
+      lastModified: post.date,
+    })),
+  ];
+
+  const urls = pages
+    .map(
+      ({ path, lastModified }) => `  <url>
+    <loc>${SITE_URL}${path}</loc>${
+      lastModified
+        ? `
+    <lastmod>${lastModified}</lastmod>`
+        : ""
+    }
+  </url>`,
+    )
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`;
+}
+
 function writeStaticFile(relativePath: string, content: string): void {
   const destination = path.join(publicDirectory, relativePath);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
@@ -52,5 +82,10 @@ function writeStaticFile(relativePath: string, content: string): void {
 
 writeStaticFile("rss.xml", generateRss());
 writeStaticFile("index.xml", generateRss());
+writeStaticFile(
+  "robots.txt",
+  `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+);
+writeStaticFile("sitemap.xml", generateSitemap());
 writeStaticFile(".well-known/atproto-did", ATPROTO_DID);
 writeStaticFile(".well-known/site.standard.publication", PUBLICATION_URI);
