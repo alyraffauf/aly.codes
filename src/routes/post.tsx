@@ -63,9 +63,30 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 export default function PostRoute({ loaderData }: PostProps) {
   const { post } = loaderData;
   const blueskyDataByRef = new Map(loaderData.blueskyPosts);
+  const canonicalUrl = `https://aly.codes/blog/${post.slug}/`;
+  const coverUrl = post.cover ? `https://aly.codes/${post.cover}` : undefined;
+  const postSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    url: canonicalUrl,
+    mainEntityOfPage: canonicalUrl,
+    author: {
+      "@id": "https://aly.codes/#aly-raffauf",
+      "@type": "Person",
+      name: "Aly Raffauf",
+    },
+    ...(coverUrl ? { image: coverUrl } : {}),
+  }).replace(/</g, "\\u003c");
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: postSchema }}
+      />
       {post.atUri && <link rel="site.standard.document" href={post.atUri} />}
       <h2 className="mb-2 text-2xl font-semibold">{post.title}</h2>
       <p className="mb-8 text-sm text-zinc-600">{post.date}</p>
@@ -90,7 +111,9 @@ export default function PostRoute({ loaderData }: PostProps) {
                 child.props.className?.includes("language-bsky")
               ) {
                 const reference = String(child.props.children).trim();
-                return <BlueskyEmbedCard data={blueskyDataByRef.get(reference) ?? null} />;
+                return (
+                  <BlueskyEmbedCard data={blueskyDataByRef.get(reference) ?? null} />
+                );
               }
               return <pre>{children}</pre>;
             },

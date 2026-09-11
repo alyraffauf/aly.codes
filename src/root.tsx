@@ -8,6 +8,22 @@ import { PUBLICATION_URI } from "@/config/standard-site";
 import { navBarLinks } from "@/content/navigation";
 import "./app/globals.css";
 
+const personSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://aly.codes/#aly-raffauf",
+  name: "Aly Raffauf",
+  url: "https://aly.codes/",
+  image: "https://aly.codes/profile.jpg",
+  jobTitle: "Software engineer",
+  sameAs: [
+    "https://github.com/alyraffauf",
+    "https://linkedin.com/in/alyraffauf",
+    "https://bsky.app/profile/aly.codes",
+    "https://tangled.org/aly.codes",
+  ],
+}).replace(/</g, "\\u003c");
+
 export const meta: MetaFunction = () => [
   { title: "Aly Raffauf" },
   { name: "description", content: "Aly's corner of the internet." },
@@ -43,6 +59,10 @@ export default function Root() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: personSchema }}
+        />
         <Meta />
         <Links />
       </head>
