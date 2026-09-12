@@ -52,10 +52,7 @@ export const meta: MetaFunction = () => [
 
 export const links: LinksFunction = () => [
   { rel: "alternate", type: "application/rss+xml", href: "/rss.xml" },
-  {
-    rel: "icon",
-    href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23fda4af'>A</text></svg>",
-  },
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
   ...(PUBLICATION_URI
     ? [{ rel: "site.standard.publication", href: PUBLICATION_URI }]
     : []),
