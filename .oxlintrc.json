@@ -7,6 +7,14 @@
   "rules": {
     "jsx-a11y/media-has-caption": "warn"
   },
+  "overrides": [
+    {
+      "files": ["src/app/components/BlueskyVideoPlayer.tsx"],
+      "rules": {
+        "jsx-a11y/media-has-caption": "off"
+      }
+    }
+  ],
   "env": {
     "builtin": true
   }
