@@ -39,19 +39,23 @@
     "toml": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
     "@react-router/dev": "^8.4.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "dotenv": "^17.4.2",
     "oxlint": "^1.88.0",
     "prettier": "^3.9.10",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "vite-plugin-babel": "^1.7.3"
   },
   "trustedDependencies": [
     "esbuild",
