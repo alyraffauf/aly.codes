@@ -52,6 +52,7 @@ export const meta: MetaFunction = () => [
 
 export const links: LinksFunction = () => [
   { rel: "alternate", type: "application/rss+xml", href: "/rss.xml" },
+  { rel: "icon", type: "image/png", sizes: "64x64", href: "/favicon.png" },
   { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
   ...(PUBLICATION_URI
     ? [{ rel: "site.standard.publication", href: PUBLICATION_URI }]
