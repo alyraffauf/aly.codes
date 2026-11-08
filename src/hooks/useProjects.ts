@@ -10,8 +10,8 @@ export default function useProjects() {
 
   useEffect(() => {
     async function fetchData() {
-      const cached = localStorage.getItem("projectsData");
-      const cacheTime = localStorage.getItem("projectsDataTime");
+      const cached = localStorage.getItem("projectsData:v2");
+      const cacheTime = localStorage.getItem("projectsDataTime:v2");
 
       if (cached && cacheTime && Date.now() - Number(cacheTime) < 600000) {
         try {
@@ -41,7 +41,7 @@ export default function useProjects() {
           }
 
           const [repo, stars] = await Promise.all([
-            getTangledRepo(project.title),
+            getTangledRepo(project.repoDid),
             getTangledStars(project.repoDid),
           ]);
 
@@ -57,8 +57,8 @@ export default function useProjects() {
 
       const sorted = data.sort((a, b) => b.stars - a.stars);
 
-      localStorage.setItem("projectsData", JSON.stringify(sorted));
-      localStorage.setItem("projectsDataTime", String(Date.now()));
+      localStorage.setItem("projectsData:v2", JSON.stringify(sorted));
+      localStorage.setItem("projectsDataTime:v2", String(Date.now()));
 
       setProjectsWithData(sorted);
       setLoading(false);

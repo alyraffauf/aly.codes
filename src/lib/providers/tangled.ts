@@ -1,41 +1,44 @@
-import { ATPROTO_DID, CONSTELLATION, SLINGSHOT } from "@/config/atproto";
-import { createAtprotoClient } from "@/lib/atproto/client";
+import { TANGLED_API } from "@/config/atproto";
 
 export type TangledRepoRecord = {
-  repoDid: string;
   description?: string;
   website?: string;
-  topics?: string[];
 };
-
-const STAR_SOURCE = "sh.tangled.feed.star:subject.did";
 
 export async function getTangledStars(repoDid: string): Promise<number> {
   try {
-    const response = await createAtprotoClient(CONSTELLATION).get(
-      "blue.microcosm.links.getBacklinksCount",
-      {
-        params: {
-          subject: repoDid as `${string}:${string}`,
-          source: STAR_SOURCE as `${string}:${string}`,
-        },
-      },
-    );
+    const url = new URL("/xrpc/org.tangled.feed.countStars", TANGLED_API);
+    url.searchParams.set("subject", repoDid);
+    const response = await fetch(url);
     if (!response.ok) return 0;
-    return response.data.total;
+    const data = await response.json();
+    return Number.isSafeInteger(data.count) && data.count >= 0 ? data.count : 0;
   } catch {
     return 0;
   }
 }
 
-export async function getTangledRepo(rkey: string): Promise<TangledRepoRecord | null> {
+export async function getTangledRepo(
+  repoDid: string,
+): Promise<TangledRepoRecord | null> {
   try {
-    const response = await createAtprotoClient(SLINGSHOT).get(
-      "com.atproto.repo.getRecord",
-      { params: { repo: ATPROTO_DID, collection: "sh.tangled.repo", rkey } },
-    );
+    // Bobbin resolves the repo identity to its knot-hosted manifest.
+    const url = new URL("/xrpc/org.tangled.repo.getRepoByRepoDid", TANGLED_API);
+    url.searchParams.set("repoDid", repoDid);
+    const response = await fetch(url);
     if (!response.ok) return null;
-    return response.data.value as TangledRepoRecord;
+    const data = await response.json();
+    if (
+      data.uri !== `at://${repoDid}/org.tangled.repo.manifest/self` ||
+      data.value?.$type !== "org.tangled.repo.manifest"
+    ) {
+      return null;
+    }
+    return {
+      description:
+        typeof data.value.description === "string" ? data.value.description : undefined,
+      website: typeof data.value.website === "string" ? data.value.website : undefined,
+    };
   } catch {
     return null;
   }
