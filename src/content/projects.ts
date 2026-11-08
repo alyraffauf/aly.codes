@@ -16,19 +16,16 @@ export type Project = GithubProject | TangledProject;
 
 export const projects: Project[] = [
   {
-    title: "nynx",
-    source: "github",
-    repo: "alyraffauf/nynx",
+    title: "albedo",
+    source: "tangled",
+    repo: "okami.mom/albedo",
+    repoDid: "did:plc:l7hhzcbqqvpcquau5waryzdu",
+    language: "Gleam",
   },
   {
-    title: "switchyard",
+    title: "appherder",
     source: "github",
-    repo: "alyraffauf/switchyard",
-  },
-  {
-    title: "infra",
-    source: "github",
-    repo: "alyraffauf/infra",
+    repo: "alyraffauf/appherder",
   },
   {
     title: "asterism",
@@ -38,31 +35,9 @@ export const projects: Project[] = [
     language: "Go",
   },
   {
-    title: "tartarus",
-    source: "github",
-    repo: "alyraffauf/tartarus",
-  },
-  {
     title: "atbbs",
     source: "github",
     repo: "alyraffauf/atbbs",
-  },
-  {
-    title: "appherder",
-    source: "github",
-    repo: "alyraffauf/appherder",
-  },
-  {
-    title: "watsup",
-    source: "github",
-    repo: "alyraffauf/watsup",
-  },
-  {
-    title: "morsels",
-    source: "tangled",
-    repo: "aly.codes/morsels",
-    repoDid: "did:plc:rdgtjxv7f5jgxvy3hruwv77q",
-    language: "Python",
   },
   {
     title: "citytexture",
@@ -75,11 +50,6 @@ export const projects: Project[] = [
     repo: "alyraffauf/dewy",
   },
   {
-    title: "kyanite",
-    source: "github",
-    repo: "alyraffauf/kyanite",
-  },
-  {
     title: "entwine",
     source: "tangled",
     repo: "aly.codes/entwine",
@@ -87,10 +57,59 @@ export const projects: Project[] = [
     language: "Gleam",
   },
   {
+    title: "hoenn",
+    source: "github",
+    repo: "devon-systems/hoenn",
+  },
+  {
+    title: "kyanite",
+    source: "github",
+    repo: "alyraffauf/kyanite",
+  },
+  {
+    title: "morsels",
+    source: "tangled",
+    repo: "aly.codes/morsels",
+    repoDid: "did:plc:rdgtjxv7f5jgxvy3hruwv77q",
+    language: "Python",
+  },
+  {
+    title: "nynx",
+    source: "github",
+    repo: "alyraffauf/nynx",
+  },
+  {
+    title: "sinnoh",
+    source: "github",
+    repo: "devon-systems/sinnoh",
+  },
+  {
+    title: "skytrace",
+    source: "tangled",
+    repo: "aly.codes/skytrace",
+    repoDid: "did:plc:t2ou7sgchlpg4z3nvsyqjzxu",
+    language: "TypeScript",
+  },
+  {
+    title: "switchyard",
+    source: "github",
+    repo: "alyraffauf/switchyard",
+  },
+  {
+    title: "tartarus",
+    source: "github",
+    repo: "alyraffauf/tartarus",
+  },
+  {
     title: "tg",
     source: "tangled",
     repo: "aly.codes/tg",
     repoDid: "did:plc:g5uweck3xar3m745g43giuhr",
     language: "Go",
+  },
+  {
+    title: "watsup",
+    source: "github",
+    repo: "alyraffauf/watsup",
   },
 ];
