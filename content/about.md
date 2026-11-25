@@ -1,13 +1,5 @@
-Hi, I’m Aly. I host public
-[infrastructure](https://github.com/alyraffauf/infra), experiment with
-[LLM agents](https://github.com/alyraffauf/tartarus), and build
-[decentralized web](https://github.com/alyraffauf/atbbs) applications for
-communities on the [AT Protocol](https://atproto.com).
+Hi, I'm Aly. I'm a software engineer at [Dusk Labs](https://dusklabs.xyz). My work spans applied AI, infrastructure, and the decentralized web.
 
-I also maintain [open-source](https://tangled.org/aly.codes/tg)
-[projects](https://github.com/alyraffauf/switchyard) for the community
-and websites for clients. When I’m away from a computer, I’m probably
-cycling somewhere I shouldn’t.
+I also maintain [several](https://albedo.sh) [open-source](https://tangled.org/aly.codes/tg) [projects](https://github.com/alyraffauf/switchyard). I am active in the Nix community and host public [infrastructure](https://github.com/alyraffauf/devon-systems) and [apps](https://atbbs.xyz) for all to use.
 
-You can subscribe to this blog with your AT Protocol account through
-[Standard Reader](https://standard-reader.app/subscribe/did:plc:zntngpowgd6rorjt3haywj36/3m36bacisus2x).
+Off the computer, I'm probably out cycling places I shouldn't. 
