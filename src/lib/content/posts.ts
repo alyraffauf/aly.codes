@@ -22,7 +22,7 @@ export function getAllPosts(limit?: number): Post[] {
 
   const posts = filenames
     .filter((name) => name.endsWith(".md"))
-    .map((filename) => {
+    .flatMap((filename) => {
       const slug = filename.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, filename);
       const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -34,17 +34,21 @@ export function getAllPosts(limit?: number): Post[] {
         },
       });
 
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        description: data.description,
-        content,
-        cover: data.cover ?? null,
-        hideCover: data.hideCover ?? false,
-        tags: data.tags ?? [],
-        atUri: data.atUri ?? null,
-      };
+      if (data.draft === true) return [];
+
+      return [
+        {
+          slug,
+          title: data.title,
+          date: data.date,
+          description: data.description,
+          content,
+          cover: data.cover ?? null,
+          hideCover: data.hideCover ?? false,
+          tags: data.tags ?? [],
+          atUri: data.atUri ?? null,
+        },
+      ];
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 

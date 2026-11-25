@@ -208,6 +208,8 @@ async function main() {
       engines: { toml: toml.parse.bind(toml) },
     });
 
+    if (data.draft === true) continue;
+
     const slug = filename.replace(/\.md$/, "");
 
     let coverImage;
